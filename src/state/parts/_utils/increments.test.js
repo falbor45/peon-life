@@ -50,7 +50,7 @@ describe('increments', () => {
     const expectedState = {
       ...initialState,
       goldBase: 1,
-      coalBase: 0.2,
+      coalBase: 0.3,
       ironBase: 0.8,
     };
     expect(increments(testState, action)).toEqual(expectedState);
