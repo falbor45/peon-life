@@ -42,13 +42,18 @@ describe('increments', () => {
       foodBase: null
     };
 
+    const testState = {
+      ...initialState,
+      coalBase: 0.1
+    };
+
     const expectedState = {
       ...initialState,
-      goldBase: initialState.goldBase + 1,
-      coalBase: initialState.coalBase + 0.2,
-      ironBase: initialState.ironBase + 0.8,
+      goldBase: 1,
+      coalBase: 0.2,
+      ironBase: 0.8,
     };
-    expect(increments(initialState, action)).toEqual(expectedState);
+    expect(increments(testState, action)).toEqual(expectedState);
   });
   it('should properly decrement values of base increments', () => {
     const action = {
@@ -61,13 +66,18 @@ describe('increments', () => {
       foodBase: null
     };
 
+    const testState = {
+      ...initialState,
+      ironBase: 1
+    }
+
     const expectedState = {
       ...initialState,
-      goldBase: initialState.goldBase - 1,
-      coalBase: initialState.coalBase - 0.2,
-      ironBase: initialState.ironBase - 0.8
+      goldBase: -1,
+      coalBase: -0.2,
+      ironBase: 0.2
     };
-    expect(increments(initialState, action)).toEqual(expectedState);
+    expect(increments(testState, action)).toEqual(expectedState);
   });
   it('should properly increase multiplier', () => {
     const action = {
@@ -80,13 +90,18 @@ describe('increments', () => {
       foodMulti: null
     };
 
+    const testState = {
+      ...initialState,
+      coalMulti: 0.1
+    }
+
     const expectedState = {
       ...initialState,
-      goldMulti: initialState.goldMulti + 1,
-      coalMulti: initialState.coalMulti + 0.2,
-      ironMulti: initialState.ironMulti + 0.8
+      goldMulti: 2,
+      coalMulti: 0.3,
+      ironMulti: 1.8
     };
-    expect(increments(initialState, action)).toEqual(expectedState);
+    expect(increments(testState, action)).toEqual(expectedState);
   });
   it('should properly decrease multiplier', () => {
     const action = {
@@ -101,9 +116,9 @@ describe('increments', () => {
 
     const expectedState = {
       ...initialState,
-      goldMulti: initialState.goldMulti + 1,
-      coalMulti: initialState.coalMulti + 0.2,
-      ironMulti: initialState.ironMulti + 0.8
+      goldMulti: 0,
+      coalMulti: 0.8,
+      ironMulti: 0.2
     };
     expect(increments(initialState, action)).toEqual(expectedState)
   });

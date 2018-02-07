@@ -30,13 +30,18 @@ describe('resources', () => {
       food: null
     };
 
+    const testState = {
+      ...initialState,
+      coal: 0.1
+    }
+
     const expectedState = {
       ...initialState,
-      gold: initialState.gold + 1,
-      coal: initialState.coal + 0.2,
-      iron: initialState.iron + 0.8,
+      gold: 1,
+      coal: 0.3,
+      iron: 0.8,
     };
-    expect(resources(initialState, action)).toEqual(expectedState)
+    expect(resources(testState, action)).toEqual(expectedState)
   });
   it('should properly decrement values of resources', () => {
     const action = {
@@ -49,12 +54,17 @@ describe('resources', () => {
       food: null
     };
 
+    const testState = {
+      ...initialState,
+      iron: 1
+    }
+
     const expectedState = {
       ...initialState,
-      gold: initialState.gold - 1,
-      coal: initialState.coal - 0.2,
-      iron: initialState.iron - 0.8
+      gold: -1,
+      coal: -0.2,
+      iron: 0.2
     };
-    expect(resources(initialState, action)).toEqual(expectedState)
+    expect(resources(testState, action)).toEqual(expectedState)
   });
 })
