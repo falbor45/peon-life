@@ -4,6 +4,14 @@ const initialState = {
   fetching: null,
   error: null,
   data: null,
+  unitLimit: 5,
+  units: 0,
+  efficiency: {
+    miners: 0.2,
+    quarriers: 0.2,
+    lumberjacks: 0.2,
+    farmers: 0.2
+  },
   workers: {
     miners: 0,
     quarriers: 0,
@@ -79,6 +87,7 @@ describe('units', () => {
 
     const expectedState = {
       ...initialState,
+      units: 1,
       workers: {
         ...initialState.workers,
         miners: 1
@@ -94,6 +103,7 @@ describe('units', () => {
 
     const expectedState = {
       ...initialState,
+      units: 1,
       workers: {
         ...initialState.workers,
         quarriers: 1
@@ -109,6 +119,7 @@ describe('units', () => {
 
     const expectedState = {
       ...initialState,
+      units: 1,
       workers: {
         ...initialState.workers,
         lumberjacks: 1
@@ -124,11 +135,100 @@ describe('units', () => {
 
     const expectedState = {
       ...initialState,
+      units: 1,
       workers: {
         ...initialState.workers,
         farmers: 1
       }
     };
     expect(units(initialState, action)).toEqual(expectedState);
+  });
+  it('should increase unit limit', () => {
+    const action = {
+      type: 'INCREASE_UNIT_LIMIT',
+      value: 10,
+    };
+
+    const expectedState = {
+      ...initialState,
+      unitLimit: 15
+    };
+    expect(units(initialState, action)).toEqual(expectedState)
+  });
+  it('should not exceed unit limit', () => {
+    const action = {
+      type: 'ADD_WORKER',
+      worker: 'miner'
+    };
+
+    const testState = {
+      ...initialState,
+      units: 5
+    };
+    expect(units(testState, action)).toEqual(testState);
+  });
+  it('should increase miner efficiency', () => {
+    const action = {
+      type: 'INCREASE_WORKER_EFFICIENCY',
+      worker: 'miner',
+      value: 0.1
+    };
+
+    const expectedState = {
+      ...initialState,
+      efficiency: {
+        ...initialState.efficiency,
+        miners: 0.3
+      }
+    };
+    expect(units(initialState, action)).toEqual(expectedState)
+  });
+  it('should increase quarrier efficiency', () => {
+    const action = {
+      type: 'INCREASE_WORKER_EFFICIENCY',
+      worker: 'quarrier',
+      value: 0.1
+    };
+
+    const expectedState = {
+      ...initialState,
+      efficiency: {
+        ...initialState.efficiency,
+        quarriers: 0.3
+      }
+    };
+    expect(units(initialState, action)).toEqual(expectedState)
+  });
+  it('should increase lumberjack efficiency', () => {
+    const action = {
+      type: 'INCREASE_WORKER_EFFICIENCY',
+      worker: 'lumberjack',
+      value: 0.1
+    };
+
+    const expectedState = {
+      ...initialState,
+      efficiency: {
+        ...initialState.efficiency,
+        lumberjacks: 0.3
+      }
+    };
+    expect(units(initialState, action)).toEqual(expectedState)
+  });
+  it('should increase farmer efficiency', () => {
+    const action = {
+      type: 'INCREASE_WORKER_EFFICIENCY',
+      worker: 'farmer',
+      value: 0.1
+    };
+
+    const expectedState = {
+      ...initialState,
+      efficiency: {
+        ...initialState.efficiency,
+        farmers: 0.3
+      }
+    };
+    expect(units(initialState, action)).toEqual(expectedState)
   });
 });
