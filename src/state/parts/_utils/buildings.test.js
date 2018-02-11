@@ -4,6 +4,7 @@ const initialState = {
   fetching: null,
   error: null,
   data: null,
+  buildingsQuant: 0,
   buildings: {
     cottages: 0,
     mines: 0,
@@ -29,8 +30,17 @@ describe('buildings', () => {
     };
 
     const expectedState = {
-      ...initialState,
-      fetching: true
+      fetching: true,
+      error: null,
+      data: null,
+      buildingsQuant: 0,
+      buildings: {
+        cottages: 0,
+        mines: 0,
+        quarries: 0,
+        sawmills: 0,
+        windmills: 0
+      }
     };
     expect(buildings(initialState, action)).toEqual(expectedState);
   });
@@ -46,10 +56,17 @@ describe('buildings', () => {
     };
 
     const expectedState = {
-      ...initialState,
       fetching: false,
       error: null,
-      data: {}
+      data: {},
+      buildingsQuant: 0,
+      buildings: {
+        cottages: 0,
+        mines: 0,
+        quarries: 0,
+        sawmills: 0,
+        windmills: 0
+      }
     };
     expect(buildings(testState, action)).toEqual(expectedState);
   });
@@ -65,86 +82,201 @@ describe('buildings', () => {
     };
 
     const expectedState = {
-      ...initialState,
       fetching: false,
       error: 'Malformed JSON!',
-      data: null
+      data: null,
+      buildingsQuant: 0,
+      buildings: {
+        cottages: 0,
+        mines: 0,
+        quarries: 0,
+        sawmills: 0,
+        windmills: 0
+      }
     };
     expect(buildings(testState, action)).toEqual(expectedState);
   });
   it('should add cottage', () => {
     const action = {
       type: 'ADD_BUILDING',
-      building: 'cottage'
+      building: 'cottages'
+    };
+
+    const testState = {
+      fetching: null,
+      error: null,
+      data: null,
+      buildingsQuant: 0,
+      buildings: {
+        cottages: 0,
+        mines: 0,
+        quarries: 0,
+        sawmills: 0,
+        windmills: 0
+      }
     };
 
     const expectedState = {
-      ...initialState,
+      fetching: null,
+      error: null,
+      data: null,
+      buildingsQuant: 1,
       buildings: {
-        ...initialState.buildings,
-        cottages: 1
+        cottages: 1,
+        mines: 0,
+        quarries: 0,
+        sawmills: 0,
+        windmills: 0
       }
     };
-    expect(buildings(initialState, action)).toEqual(expectedState);
+    expect(buildings(testState, action)).toEqual(expectedState);
   });
   it('should add mine', () => {
     const action = {
       type: 'ADD_BUILDING',
-      building: 'mine'
+      building: 'mines'
+    };
+
+    const testState = {
+      fetching: null,
+      error: null,
+      data: null,
+      buildingsQuant: 0,
+      buildings: {
+        cottages: 0,
+        mines: 0,
+        quarries: 0,
+        sawmills: 0,
+        windmills: 0
+      }
     };
 
     const expectedState = {
-      ...initialState,
+      fetching: null,
+      error: null,
+      data: null,
+      buildingsQuant: 1,
       buildings: {
-        ...initialState.buildings,
-        mines: 1
+        cottages: 0,
+        mines: 1,
+        quarries: 0,
+        sawmills: 0,
+        windmills: 0
       }
     };
-    expect(buildings(initialState, action)).toEqual(expectedState);
+    expect(buildings(testState, action)).toEqual(expectedState);
   });
   it('should add quarry', () => {
     const action = {
       type: 'ADD_BUILDING',
-      building: 'quarry'
+      building: 'quarries'
+    };
+
+    const testState = {
+      fetching: null,
+      error: null,
+      data: null,
+      buildingsQuant: 0,
+      buildings: {
+        cottages: 0,
+        mines: 0,
+        quarries: 0,
+        sawmills: 0,
+        windmills: 0
+      }
     };
 
     const expectedState = {
-      ...initialState,
+      fetching: null,
+      error: null,
+      data: null,
+      buildingsQuant: 1,
       buildings: {
-        ...initialState.buildings,
-        quarries: 1
+        cottages: 0,
+        mines: 0,
+        quarries: 1,
+        sawmills: 0,
+        windmills: 0
       }
     };
-    expect(buildings(initialState, action)).toEqual(expectedState);
+    expect(buildings(testState, action)).toEqual(expectedState);
   });
   it('should add sawmill', () => {
     const action = {
       type: 'ADD_BUILDING',
-      building: 'sawmill'
+      building: 'sawmills'
+    };
+
+    const testState = {
+      fetching: null,
+      error: null,
+      data: null,
+      buildingsQuant: 0,
+      buildings: {
+        cottages: 0,
+        mines: 0,
+        quarries: 0,
+        sawmills: 0,
+        windmills: 0
+      }
     };
 
     const expectedState = {
-      ...initialState,
+      fetching: null,
+      error: null,
+      data: null,
+      buildingsQuant: 1,
       buildings: {
-        ...initialState.buildings,
-        sawmills: 1
+        cottages: 0,
+        mines: 0,
+        quarries: 0,
+        sawmills: 1,
+        windmills: 0
       }
     };
-    expect(buildings(initialState, action)).toEqual(expectedState);
+    expect(buildings(testState, action)).toEqual(expectedState);
   });
   it('should add windmill', () => {
     const action = {
       type: 'ADD_BUILDING',
-      building: 'windmill'
+      building: 'windmills'
+    };
+
+    const testState = {
+      fetching: null,
+      error: null,
+      data: null,
+      buildingsQuant: 0,
+      buildings: {
+        cottages: 0,
+        mines: 0,
+        quarries: 0,
+        sawmills: 0,
+        windmills: 0
+      }
     };
 
     const expectedState = {
-      ...initialState,
+      fetching: null,
+      error: null,
+      data: null,
+      buildingsQuant: 1,
       buildings: {
-        ...initialState.buildings,
+        cottages: 0,
+        mines: 0,
+        quarries: 0,
+        sawmills: 0,
         windmills: 1
       }
     };
-    expect(buildings(initialState, action)).toEqual(expectedState);
+    expect(buildings(testState, action)).toEqual(expectedState);
   });
 });
+
+/**
+ * for some reason tests for each building when launched through
+ * expect(buildings(initialState, action)).toEqual(expectedState);
+ * expected a currently tested building number to be 1 and all the
+ * PREVIOUS ones
+ * No idea why tho
+ **/
