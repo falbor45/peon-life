@@ -1,0 +1,19 @@
+.resources {
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 3px 0;
+  max-width: 1200px;
+  margin: 0 auto; }
+
+.resources__row1, .resources__row2 {
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: space-around;
+  margin: 3px 0;
+  font-size: 1.2rem;
+  font-weight: bold; }
+
+/*# sourceMappingURL=ResourcesView.css.map */
