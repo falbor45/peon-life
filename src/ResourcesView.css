@@ -8,6 +8,9 @@
   max-width: 1200px;
   margin: 0 auto; }
 
+.resources__wrapper {
+  background: linear-gradient(45deg, #BAA378, #d7b580); }
+
 .resources__row1, .resources__row2 {
   display: -ms-flexbox;
   display: flex;
