@@ -3,13 +3,51 @@ const initialState = {
   error: null,
   data: null,
   buildingsQuant: 0,
-  buildings: {
-    cottages: 0,
-    mines: 0,
-    quarries: 0,
-    sawmills: 0,
-    windmills: 0,
+  cottages: {
+    quantity: 0,
+    cost: {
+      base: null,
+      multiplier: null,
+      combined: null
+    }
+  },
+  mines: {
+    quantity: 0,
+    cost: {
+      base: null,
+      multiplier: null,
+      combined: null
+    }
+  },
+  quarries: {
+    quantity: 0,
+    cost: {
+      base: null,
+      multiplier: null,
+      combined: null
+    }
+  },
+  sawmills: {
+    quantity: 0,
+    cost: {
+      base: null,
+      multiplier: null,
+      combined: null
+    }
+  },
+  windmills: {
+    quantity: 0,
+    cost: {
+      base: null,
+      multiplier: null,
+      combined: null
+    }
   }
+}
+
+const roundNum = (num, fixed) => {
+  let re = new RegExp('^-?\\d+(?:\.\\d{0,' + (fixed || -1) + '})?');
+  return Math.round(parseFloat(num.toString().match(re)[0]) * 10) / 10
 }
 
 export default (state = initialState, action) => {
@@ -34,8 +72,21 @@ export default (state = initialState, action) => {
         error: action.error
       }
     }
+    case 'SET_SETTINGS': {
+      return {
+        ...state,
+        buildingsQuant: action.data.buildingsQuant,
+        cottages: action.data.cottages,
+        mines: action.data.mines,
+        quarries: action.data.quarries,
+        sawmills: action.data.sawmills,
+        windmills: action.data.windmills
+      }
+    }
     case 'ADD_BUILDING': {
-      state.buildings[action.building] += 1;
+      state[action.building].quantity += 1;
+      state[action.building].cost.combined = roundNum(state[action.building].cost.base * state[action.building].cost.multiplier, 2);
+      state[action.building].cost.multiplier = Math.pow(state[action.building].cost.multiplier, state[action.building].quantity + 1);
       return {
         ...state,
         buildingsQuant: state.buildingsQuant + 1
