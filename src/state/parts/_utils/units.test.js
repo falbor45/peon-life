@@ -119,9 +119,9 @@ describe('units', () => {
         quantity: 0,
         efficiency: 0.2,
         cost: {
-          base: null,
-          multiplier: null,
-          combined: null
+          base: 2,
+          multiplier: 1.08,
+          combined: 2
         }
       },
       quarriers: {
@@ -163,9 +163,9 @@ describe('units', () => {
         quantity: 1,
         efficiency: 0.2,
         cost: {
-          base: null,
-          multiplier: null,
-          combined: null
+          base: 2,
+          multiplier: 1.1664,
+          combined: 2.2
         }
       },
       quarriers: {
@@ -223,9 +223,9 @@ describe('units', () => {
         quantity: 0,
         efficiency: 0.2,
         cost: {
-          base: null,
-          multiplier: null,
-          combined: null
+          base: 10,
+          multiplier: 2,
+          combined: 10
         }
       },
       lumberjacks: {
@@ -267,9 +267,9 @@ describe('units', () => {
         quantity: 1,
         efficiency: 0.2,
         cost: {
-          base: null,
-          multiplier: null,
-          combined: null
+          base: 10,
+          multiplier: 4,
+          combined: 20
         }
       },
       lumberjacks: {
@@ -327,9 +327,9 @@ describe('units', () => {
         quantity: 0,
         efficiency: 0.2,
         cost: {
-          base: null,
-          multiplier: null,
-          combined: null
+          base: 1,
+          multiplier: 1.2,
+          combined: 1
         }
       },
       farmers: {
@@ -371,9 +371,9 @@ describe('units', () => {
         quantity: 1,
         efficiency: 0.2,
         cost: {
-          base: null,
-          multiplier: null,
-          combined: null
+          base: 1,
+          multiplier: 1.44,
+          combined: 1.2
         }
       },
       farmers: {
@@ -431,9 +431,9 @@ describe('units', () => {
         quantity: 0,
         efficiency: 0.2,
         cost: {
-          base: null,
-          multiplier: null,
-          combined: null
+          base: 1000,
+          multiplier: 1.849,
+          combined: 1000
         }
       }
     };
@@ -475,9 +475,9 @@ describe('units', () => {
         quantity: 1,
         efficiency: 0.2,
         cost: {
-          base: null,
-          multiplier: null,
-          combined: null
+          base: 1000,
+          multiplier: 3.4188009999999998,
+          combined: 1849
         }
       }
     };
@@ -511,9 +511,9 @@ describe('units', () => {
         quantity: 0,
         efficiency: 0.2,
         cost: {
-          base: null,
-          multiplier: null,
-          combined: null
+          base: 10,
+          multiplier: 2.44832,
+          combined: 20.7
         }
       },
       quarriers: {
