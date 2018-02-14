@@ -4,17 +4,41 @@ const initialState = {
   data: null,
   unitLimit: 5,
   units: 0,
-  efficiency: {
-    miners: 0.2,
-    quarriers: 0.2,
-    lumberjacks: 0.2,
-    farmers: 0.2
+  miners: {
+    quantity: 0,
+    efficiency: 0.2,
+    cost: {
+      base: null,
+      multiplier: null,
+      combined: null
+    }
   },
-  workers: {
-    miners: 0,
-    quarriers: 0,
-    lumberjacks: 0,
-    farmers: 0,
+  quarriers: {
+    quantity: 0,
+    efficiency: 0.2,
+    cost: {
+      base: null,
+      multiplier: null,
+      combined: null
+    }
+  },
+  lumberjacks: {
+    quantity: 0,
+    efficiency: 0.2,
+    cost: {
+      base: null,
+      multiplier: null,
+      combined: null
+    }
+  },
+  farmers: {
+    quantity: 0,
+    efficiency: 0.2,
+    cost: {
+      base: null,
+      multiplier: null,
+      combined: null
+    }
   }
 }
 
@@ -46,14 +70,14 @@ export default (state = initialState, action) => {
       }
     }
     case 'ADD_WORKER': {
-      state.workers[action.worker] += 1;
+      state[action.worker].quantity += 1;
       return {
         ...state,
         units: state.units !== state.unitLimit ? state.units + 1 : state.units
       }
     }
     case 'INCREASE_WORKER_EFFICIENCY': {
-      state.efficiency[action.worker] = roundNum((state.efficiency[action.worker] + action.value), 2);
+      state[action.worker].efficiency = roundNum((state[action.worker].efficiency + action.value), 2);
       return {
         ...state,
       }

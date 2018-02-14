@@ -6,17 +6,41 @@ const initialState = {
   data: null,
   unitLimit: 5,
   units: 0,
-  efficiency: {
-    miners: 0.2,
-    quarriers: 0.2,
-    lumberjacks: 0.2,
-    farmers: 0.2
+  miners: {
+    quantity: 0,
+    efficiency: 0.2,
+    cost: {
+      base: null,
+      multiplier: null,
+      combined: null
+    }
   },
-  workers: {
-    miners: 0,
-    quarriers: 0,
-    lumberjacks: 0,
-    farmers: 0,
+  quarriers: {
+    quantity: 0,
+    efficiency: 0.2,
+    cost: {
+      base: null,
+      multiplier: null,
+      combined: null
+    }
+  },
+  lumberjacks: {
+    quantity: 0,
+    efficiency: 0.2,
+    cost: {
+      base: null,
+      multiplier: null,
+      combined: null
+    }
+  },
+  farmers: {
+    quantity: 0,
+    efficiency: 0.2,
+    cost: {
+      base: null,
+      multiplier: null,
+      combined: null
+    }
   }
 }
 
@@ -91,17 +115,41 @@ describe('units', () => {
       data: null,
       unitLimit: 5,
       units: 0,
-      efficiency: {
-        miners: 0.2,
-        quarriers: 0.2,
-        lumberjacks: 0.2,
-        farmers: 0.2
+      miners: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       },
-      workers: {
-        miners: 0,
-        quarriers: 0,
-        lumberjacks: 0,
-        farmers: 0,
+      quarriers: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      lumberjacks: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      farmers: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       }
     };
 
@@ -111,17 +159,41 @@ describe('units', () => {
       data: null,
       unitLimit: 5,
       units: 1,
-      efficiency: {
-        miners: 0.2,
-        quarriers: 0.2,
-        lumberjacks: 0.2,
-        farmers: 0.2
+      miners: {
+        quantity: 1,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       },
-      workers: {
-        miners: 1,
-        quarriers: 0,
-        lumberjacks: 0,
-        farmers: 0,
+      quarriers: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      lumberjacks: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      farmers: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       }
     };
     expect(units(testState, action)).toEqual(expectedState);
@@ -138,17 +210,41 @@ describe('units', () => {
       data: null,
       unitLimit: 5,
       units: 0,
-      efficiency: {
-        miners: 0.2,
-        quarriers: 0.2,
-        lumberjacks: 0.2,
-        farmers: 0.2
+      miners: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       },
-      workers: {
-        miners: 0,
-        quarriers: 0,
-        lumberjacks: 0,
-        farmers: 0,
+      quarriers: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      lumberjacks: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      farmers: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       }
     };
 
@@ -158,17 +254,41 @@ describe('units', () => {
       data: null,
       unitLimit: 5,
       units: 1,
-      efficiency: {
-        miners: 0.2,
-        quarriers: 0.2,
-        lumberjacks: 0.2,
-        farmers: 0.2
+      miners: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       },
-      workers: {
-        miners: 0,
-        quarriers: 1,
-        lumberjacks: 0,
-        farmers: 0,
+      quarriers: {
+        quantity: 1,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      lumberjacks: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      farmers: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       }
     };
     expect(units(testState, action)).toEqual(expectedState);
@@ -185,17 +305,41 @@ describe('units', () => {
       data: null,
       unitLimit: 5,
       units: 0,
-      efficiency: {
-        miners: 0.2,
-        quarriers: 0.2,
-        lumberjacks: 0.2,
-        farmers: 0.2
+      miners: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       },
-      workers: {
-        miners: 0,
-        quarriers: 0,
-        lumberjacks: 0,
-        farmers: 0,
+      quarriers: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      lumberjacks: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      farmers: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       }
     };
 
@@ -205,17 +349,41 @@ describe('units', () => {
       data: null,
       unitLimit: 5,
       units: 1,
-      efficiency: {
-        miners: 0.2,
-        quarriers: 0.2,
-        lumberjacks: 0.2,
-        farmers: 0.2
+      miners: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       },
-      workers: {
-        miners: 0,
-        quarriers: 0,
-        lumberjacks: 1,
-        farmers: 0,
+      quarriers: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      lumberjacks: {
+        quantity: 1,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      farmers: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       }
     };
     expect(units(testState, action)).toEqual(expectedState);
@@ -232,17 +400,41 @@ describe('units', () => {
       data: null,
       unitLimit: 5,
       units: 0,
-      efficiency: {
-        miners: 0.2,
-        quarriers: 0.2,
-        lumberjacks: 0.2,
-        farmers: 0.2
+      miners: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       },
-      workers: {
-        miners: 0,
-        quarriers: 0,
-        lumberjacks: 0,
-        farmers: 0,
+      quarriers: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      lumberjacks: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      farmers: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       }
     };
 
@@ -252,17 +444,41 @@ describe('units', () => {
       data: null,
       unitLimit: 5,
       units: 1,
-      efficiency: {
-        miners: 0.2,
-        quarriers: 0.2,
-        lumberjacks: 0.2,
-        farmers: 0.2
+      miners: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       },
-      workers: {
-        miners: 0,
-        quarriers: 0,
-        lumberjacks: 0,
-        farmers: 1,
+      quarriers: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      lumberjacks: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      farmers: {
+        quantity: 1,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       }
     };
     expect(units(testState, action)).toEqual(expectedState);
@@ -291,17 +507,41 @@ describe('units', () => {
       data: null,
       unitLimit: 5,
       units: 5,
-      efficiency: {
-        miners: 0.2,
-        quarriers: 0.2,
-        lumberjacks: 0.2,
-        farmers: 0.2
+      miners: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       },
-      workers: {
-        miners: 1,
-        quarriers: 2,
-        lumberjacks: 2,
-        farmers: 0,
+      quarriers: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      lumberjacks: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      farmers: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       }
     };
     expect(units(testState, action)).toEqual(testState);
@@ -319,17 +559,41 @@ describe('units', () => {
       data: null,
       unitLimit: 5,
       units: 1,
-      efficiency: {
-        miners: 0.2,
-        quarriers: 0.2,
-        lumberjacks: 0.2,
-        farmers: 0.2
+      miners: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       },
-      workers: {
-        miners: 1,
-        quarriers: 0,
-        lumberjacks: 0,
-        farmers: 0,
+      quarriers: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      lumberjacks: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      farmers: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       }
     };
 
@@ -339,17 +603,41 @@ describe('units', () => {
       data: null,
       unitLimit: 5,
       units: 1,
-      efficiency: {
-        miners: 0.3,
-        quarriers: 0.2,
-        lumberjacks: 0.2,
-        farmers: 0.2
+      miners: {
+        quantity: 0,
+        efficiency: 0.3,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       },
-      workers: {
-        miners: 1,
-        quarriers: 0,
-        lumberjacks: 0,
-        farmers: 0,
+      quarriers: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      lumberjacks: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      farmers: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       }
     };
     expect(units(testState, action)).toEqual(expectedState)
@@ -367,17 +655,41 @@ describe('units', () => {
       data: null,
       unitLimit: 5,
       units: 1,
-      efficiency: {
-        miners: 0.2,
-        quarriers: 0.2,
-        lumberjacks: 0.2,
-        farmers: 0.2
+      miners: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       },
-      workers: {
-        miners: 0,
-        quarriers: 1,
-        lumberjacks: 0,
-        farmers: 0,
+      quarriers: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      lumberjacks: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      farmers: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       }
     };
 
@@ -387,17 +699,41 @@ describe('units', () => {
       data: null,
       unitLimit: 5,
       units: 1,
-      efficiency: {
-        miners: 0.2,
-        quarriers: 0.9,
-        lumberjacks: 0.2,
-        farmers: 0.2
+      miners: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       },
-      workers: {
-        miners: 0,
-        quarriers: 1,
-        lumberjacks: 0,
-        farmers: 0,
+      quarriers: {
+        quantity: 0,
+        efficiency: 0.9,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      lumberjacks: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      farmers: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       }
     };
     expect(units(testState, action)).toEqual(expectedState)
@@ -415,17 +751,41 @@ describe('units', () => {
       data: null,
       unitLimit: 5,
       units: 1,
-      efficiency: {
-        miners: 0.2,
-        quarriers: 0.2,
-        lumberjacks: 0.2,
-        farmers: 0.2
+      miners: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       },
-      workers: {
-        miners: 0,
-        quarriers: 0,
-        lumberjacks: 1,
-        farmers: 0,
+      quarriers: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      lumberjacks: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      farmers: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       }
     };
 
@@ -435,17 +795,41 @@ describe('units', () => {
       data: null,
       unitLimit: 5,
       units: 1,
-      efficiency: {
-        miners: 0.2,
-        quarriers: 0.2,
-        lumberjacks: 0.2,
-        farmers: 0.2
+      miners: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       },
-      workers: {
-        miners: 0,
-        quarriers: 0,
-        lumberjacks: 1,
-        farmers: 0,
+      quarriers: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      lumberjacks: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      farmers: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       }
     };
     expect(units(testState, action)).toEqual(expectedState)
@@ -463,17 +847,41 @@ describe('units', () => {
       data: null,
       unitLimit: 5,
       units: 1,
-      efficiency: {
-        miners: 0.2,
-        quarriers: 0.2,
-        lumberjacks: 0.2,
-        farmers: 0.2
+      miners: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       },
-      workers: {
-        miners: 0,
-        quarriers: 0,
-        lumberjacks: 0,
-        farmers: 1,
+      quarriers: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      lumberjacks: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      farmers: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       }
     };
 
@@ -483,17 +891,41 @@ describe('units', () => {
       data: null,
       unitLimit: 5,
       units: 1,
-      efficiency: {
-        miners: 0.2,
-        quarriers: 0.2,
-        lumberjacks: 0.2,
-        farmers: 1.2
+      miners: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       },
-      workers: {
-        miners: 0,
-        quarriers: 0,
-        lumberjacks: 0,
-        farmers: 1,
+      quarriers: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      lumberjacks: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      farmers: {
+        quantity: 0,
+        efficiency: 1.2,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       }
     };
     expect(units(testState, action)).toEqual(expectedState)
