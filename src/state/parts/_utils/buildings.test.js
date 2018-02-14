@@ -5,12 +5,45 @@ const initialState = {
   error: null,
   data: null,
   buildingsQuant: 0,
-  buildings: {
-    cottages: 0,
-    mines: 0,
-    quarries: 0,
-    sawmills: 0,
-    windmills: 0
+  cottages: {
+    quantity: 0,
+    cost: {
+      base: null,
+      multiplier: null,
+      combined: null
+    }
+  },
+  mines: {
+    quantity: 0,
+    cost: {
+      base: null,
+      multiplier: null,
+      combined: null
+    }
+  },
+  quarries: {
+    quantity: 0,
+    cost: {
+      base: null,
+      multiplier: null,
+      combined: null
+    }
+  },
+  sawmills: {
+    quantity: 0,
+    cost: {
+      base: null,
+      multiplier: null,
+      combined: null
+    }
+  },
+  windmills: {
+    quantity: 0,
+    cost: {
+      base: null,
+      multiplier: null,
+      combined: null
+    }
   }
 };
 
@@ -34,12 +67,45 @@ describe('buildings', () => {
       error: null,
       data: null,
       buildingsQuant: 0,
-      buildings: {
-        cottages: 0,
-        mines: 0,
-        quarries: 0,
-        sawmills: 0,
-        windmills: 0
+      cottages: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      mines: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      quarries: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      sawmills: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      windmills: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       }
     };
     expect(buildings(initialState, action)).toEqual(expectedState);
@@ -60,16 +126,147 @@ describe('buildings', () => {
       error: null,
       data: {},
       buildingsQuant: 0,
-      buildings: {
-        cottages: 0,
-        mines: 0,
-        quarries: 0,
-        sawmills: 0,
-        windmills: 0
+      cottages: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      mines: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      quarries: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      sawmills: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      windmills: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       }
     };
     expect(buildings(testState, action)).toEqual(expectedState);
   });
+  it('should set game settings', () => {
+
+    const action = {
+      type: 'SET_SETTINGS',
+      data: {
+        buildingsQuant: 5,
+          cottages: {
+          quantity: 0,
+          cost: {
+            base: 10,
+            multiplier: 1.02,
+            combined: 10
+          }
+        },
+        mines: {
+          quantity: 0,
+          cost: {
+            base: 12,
+            multiplier: 1.08,
+            combined: 12
+          }
+        },
+        quarries: {
+          quantity: 0,
+          cost: {
+            base: 20,
+            multiplier: 1.001,
+            combined: 20
+          }
+        },
+        sawmills: {
+          quantity: 0,
+          cost: {
+            base: 1,
+            multiplier: 1.9,
+            combined: 1
+          }
+        },
+        windmills: {
+          quantity: 0,
+          cost: {
+            base: 1,
+            multiplier: 1.9,
+            combined: 1
+          }
+        }
+      }
+    }
+
+    const expectedState = {
+      fetching: null,
+      error: null,
+      data: null,
+      buildingsQuant: 5,
+      cottages: {
+        quantity: 0,
+        cost: {
+          base: 10,
+          multiplier: 1.02,
+          combined: 10
+        }
+      },
+      mines: {
+        quantity: 0,
+        cost: {
+          base: 12,
+          multiplier: 1.08,
+          combined: 12
+        }
+      },
+      quarries: {
+        quantity: 0,
+        cost: {
+          base: 20,
+          multiplier: 1.001,
+          combined: 20
+        }
+      },
+      sawmills: {
+        quantity: 0,
+        cost: {
+          base: 1,
+          multiplier: 1.9,
+          combined: 1
+        }
+      },
+      windmills: {
+        quantity: 0,
+        cost: {
+          base: 1,
+          multiplier: 1.9,
+          combined: 1
+        }
+      }
+    }
+
+    expect(buildings(initialState, action)).toEqual(expectedState)
+  })
   it('should return an error when one occurs during fetch', () => {
     const action = {
       type: 'FETCH_FAIL',
@@ -86,12 +283,45 @@ describe('buildings', () => {
       error: 'Malformed JSON!',
       data: null,
       buildingsQuant: 0,
-      buildings: {
-        cottages: 0,
-        mines: 0,
-        quarries: 0,
-        sawmills: 0,
-        windmills: 0
+      cottages: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      mines: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      quarries: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      sawmills: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      windmills: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       }
     };
     expect(buildings(testState, action)).toEqual(expectedState);
@@ -107,12 +337,45 @@ describe('buildings', () => {
       error: null,
       data: null,
       buildingsQuant: 0,
-      buildings: {
-        cottages: 0,
-        mines: 0,
-        quarries: 0,
-        sawmills: 0,
-        windmills: 0
+      cottages: {
+        quantity: 0,
+        cost: {
+          base: 2,
+          multiplier: 1.08,
+          combined: 2
+        }
+      },
+      mines: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      quarries: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      sawmills: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      windmills: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       }
     };
 
@@ -121,12 +384,45 @@ describe('buildings', () => {
       error: null,
       data: null,
       buildingsQuant: 1,
-      buildings: {
-        cottages: 1,
-        mines: 0,
-        quarries: 0,
-        sawmills: 0,
-        windmills: 0
+      cottages: {
+        quantity: 1,
+        cost: {
+          base: 2,
+          multiplier: 1.1664,
+          combined: 2.2
+        }
+      },
+      mines: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      quarries: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      sawmills: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      windmills: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       }
     };
     expect(buildings(testState, action)).toEqual(expectedState);
@@ -142,12 +438,45 @@ describe('buildings', () => {
       error: null,
       data: null,
       buildingsQuant: 0,
-      buildings: {
-        cottages: 0,
-        mines: 0,
-        quarries: 0,
-        sawmills: 0,
-        windmills: 0
+      cottages: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      mines: {
+        quantity: 0,
+        cost: {
+          base: 10,
+          multiplier: 2,
+          combined: 10
+        }
+      },
+      quarries: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      sawmills: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      windmills: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       }
     };
 
@@ -156,12 +485,45 @@ describe('buildings', () => {
       error: null,
       data: null,
       buildingsQuant: 1,
-      buildings: {
-        cottages: 0,
-        mines: 1,
-        quarries: 0,
-        sawmills: 0,
-        windmills: 0
+      cottages: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      mines: {
+        quantity: 1,
+        cost: {
+          base: 10,
+          multiplier: 4,
+          combined: 20
+        }
+      },
+      quarries: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      sawmills: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      windmills: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       }
     };
     expect(buildings(testState, action)).toEqual(expectedState);
@@ -177,12 +539,45 @@ describe('buildings', () => {
       error: null,
       data: null,
       buildingsQuant: 0,
-      buildings: {
-        cottages: 0,
-        mines: 0,
-        quarries: 0,
-        sawmills: 0,
-        windmills: 0
+      cottages: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      mines: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      quarries: {
+        quantity: 0,
+        cost: {
+          base: 1,
+          multiplier: 1.2,
+          combined: 1
+        }
+      },
+      sawmills: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      windmills: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       }
     };
 
@@ -191,12 +586,45 @@ describe('buildings', () => {
       error: null,
       data: null,
       buildingsQuant: 1,
-      buildings: {
-        cottages: 0,
-        mines: 0,
-        quarries: 1,
-        sawmills: 0,
-        windmills: 0
+      cottages: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      mines: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      quarries: {
+        quantity: 1,
+        cost: {
+          base: 1,
+          multiplier: 1.44,
+          combined: 1.2
+        }
+      },
+      sawmills: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      windmills: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       }
     };
     expect(buildings(testState, action)).toEqual(expectedState);
@@ -212,12 +640,45 @@ describe('buildings', () => {
       error: null,
       data: null,
       buildingsQuant: 0,
-      buildings: {
-        cottages: 0,
-        mines: 0,
-        quarries: 0,
-        sawmills: 0,
-        windmills: 0
+      cottages: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      mines: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      quarries: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      sawmills: {
+        quantity: 0,
+        cost: {
+          base: 1000,
+          multiplier: 1.849,
+          combined: 1000
+        }
+      },
+      windmills: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       }
     };
 
@@ -226,12 +687,45 @@ describe('buildings', () => {
       error: null,
       data: null,
       buildingsQuant: 1,
-      buildings: {
-        cottages: 0,
-        mines: 0,
-        quarries: 0,
-        sawmills: 1,
-        windmills: 0
+      cottages: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      mines: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      quarries: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      sawmills: {
+        quantity: 1,
+        cost: {
+          base: 1000,
+          multiplier: 3.4188009999999998,
+          combined: 1849
+        }
+      },
+      windmills: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
       }
     };
     expect(buildings(testState, action)).toEqual(expectedState);
@@ -247,12 +741,45 @@ describe('buildings', () => {
       error: null,
       data: null,
       buildingsQuant: 0,
-      buildings: {
-        cottages: 0,
-        mines: 0,
-        quarries: 0,
-        sawmills: 0,
-        windmills: 0
+      cottages: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      mines: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      quarries: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      sawmills: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      windmills: {
+        quantity: 0,
+        cost: {
+          base: 1000,
+          multiplier: 1.849,
+          combined: 1000
+        }
       }
     };
 
@@ -261,12 +788,45 @@ describe('buildings', () => {
       error: null,
       data: null,
       buildingsQuant: 1,
-      buildings: {
-        cottages: 0,
-        mines: 0,
-        quarries: 0,
-        sawmills: 0,
-        windmills: 1
+      cottages: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      mines: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      quarries: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      sawmills: {
+        quantity: 0,
+        cost: {
+          base: null,
+          multiplier: null,
+          combined: null
+        }
+      },
+      windmills: {
+        quantity: 1,
+        cost: {
+          base: 1000,
+          multiplier: 3.4188009999999998,
+          combined: 1849
+        }
       }
     };
     expect(buildings(testState, action)).toEqual(expectedState);
