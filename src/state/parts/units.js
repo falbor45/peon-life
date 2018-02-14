@@ -69,8 +69,21 @@ export default (state = initialState, action) => {
         error: action.error
       }
     }
+    case 'SET_SETTINGS': {
+      return {
+        ...state,
+        unitLimit: action.data.unitLimit,
+        units: action.data.units,
+        miners: action.data.miners,
+        quarriers: action.data.quarriers,
+        lumberjacks: action.data.lumberjacks,
+        farmers: action.data.farmers
+      }
+    }
     case 'ADD_WORKER': {
       state[action.worker].quantity += 1;
+      state[action.worker].cost.combined = roundNum(state[action.worker].cost.base * state[action.worker].cost.multiplier, 2);
+      state[action.worker].cost.multiplier = Math.pow(state[action.worker].cost.multiplier, state[action.worker].quantity + 1);
       return {
         ...state,
         units: state.units !== state.unitLimit ? state.units + 1 : state.units
