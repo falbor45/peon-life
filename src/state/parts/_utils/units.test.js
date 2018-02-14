@@ -84,6 +84,96 @@ describe('units', () => {
     };
     expect(units(testState, action)).toEqual(expectedState);
   });
+  it('should set game settings', () => {
+    const action = {
+      type: 'SET_SETTINGS',
+      data: {
+        unitLimit: 20,
+        units: 0,
+        miners: {
+          quantity: 0,
+          efficiency: 0.2,
+          cost: {
+            base: 10,
+            multiplier: 1.02,
+            combined: 10
+          }
+        },
+        quarriers: {
+          quantity: 0,
+          efficiency: 0.2,
+          cost: {
+            base: 12,
+            multiplier: 1.08,
+            combined: 12
+          }
+        },
+        lumberjacks: {
+          quantity: 0,
+          efficiency: 0.2,
+          cost: {
+            base: 20,
+            multiplier: 1.001,
+            combined: 20
+          }
+        },
+        farmers: {
+          quantity: 0,
+          efficiency: 0.2,
+          cost: {
+            base: 1,
+            multiplier: 1.9,
+            combined: 1
+          }
+        }
+      }
+    }
+
+    const expectedState = {
+      fetching: null,
+      error: null,
+      data: null,
+      unitLimit: 20,
+      units: 0,
+      miners: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: 10,
+          multiplier: 1.02,
+          combined: 10
+        }
+      },
+      quarriers: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: 12,
+          multiplier: 1.08,
+          combined: 12
+        }
+      },
+      lumberjacks: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: 20,
+          multiplier: 1.001,
+          combined: 20
+        }
+      },
+      farmers: {
+        quantity: 0,
+        efficiency: 0.2,
+        cost: {
+          base: 1,
+          multiplier: 1.9,
+          combined: 1
+        }
+      }
+    }
+    expect(units(initialState, action)).toEqual(expectedState)
+  });
   it('should return an error when one occurs during fetch', () => {
     const action = {
       type: 'FETCH_FAIL',
