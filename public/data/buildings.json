@@ -1,0 +1,217 @@
+{
+  "buildingsQuant": 5,
+  "cottages": {
+    "name": "Cottage",
+    "quantity": 0,
+    "effects": [
+      {
+        "type": "INCREASE_UNIT_LIMIT",
+        "value": 5
+      }
+    ],
+    "cost": {
+      "gold": {
+        "base": null,
+        "multiplier": null,
+        "combined": null
+      },
+      "coal": {
+        "base": null,
+        "multiplier": null,
+        "combined": null
+      },
+      "iron": {
+        "base": null,
+        "multiplier": null,
+        "combined": null
+      },
+      "stone": {
+        "base": 10,
+        "multiplier": 1.15,
+        "combined": 10
+      },
+      "wood": {
+        "base": 10,
+        "multiplier": 1.15,
+        "combined": 10
+      },
+      "food": {
+        "base": null,
+        "multiplier": null,
+        "combined": null
+      }
+    }
+  },
+  "mines": {
+    "name": "Mine",
+    "quantity": 0,
+    "effects": [
+      {
+        "type": "INCREASE_WORKER_EFFICIENCY",
+        "worker": "miners",
+        "value": 0.2
+      }
+    ],
+    "cost": {
+      "gold": {
+        "base": 5,
+        "multiplier": 1.2,
+        "combined": 5
+      },
+      "coal": {
+        "base": null,
+        "multiplier": null,
+        "combined": null
+      },
+      "iron": {
+        "base": 10,
+        "multiplier": 1.15,
+        "combined": 10
+      },
+      "stone": {
+        "base": 10,
+        "multiplier": 1.15,
+        "combined": 10
+      },
+      "wood": {
+        "base": 10,
+        "multiplier": 1.2,
+        "combined": 10
+      },
+      "food": {
+        "base": null,
+        "multiplier": null,
+        "combined": null
+      }
+    }
+  },
+  "quarries": {
+    "name": "Quarry",
+    "quantity": 0,
+    "effects": [
+      {
+        "type": "INCREASE_WORKER_EFFICIENCY",
+        "worker": "quarriers",
+        "value": 0.2
+      }
+    ],
+    "cost": {
+      "gold": {
+        "base": 5,
+        "multiplier": 1.2,
+        "combined": 5
+      },
+      "coal": {
+        "base": null,
+        "multiplier": null,
+        "combined": null
+      },
+      "iron": {
+        "base": 10,
+        "multiplier": 1.15,
+        "combined": 10
+      },
+      "stone": {
+        "base": 10,
+        "multiplier": 1.15,
+        "combined": 10
+      },
+      "wood": {
+        "base": 10,
+        "multiplier": 1.2,
+        "combined": 10
+      },
+      "food": {
+        "base": null,
+        "multiplier": null,
+        "combined": null
+      }
+    }
+  },
+  "sawmills": {
+    "name": "Sawmill",
+    "quantity": 0,
+    "effects": [
+      {
+        "type": "INCREASE_WORKER_EFFICIENCY",
+        "worker": "lumberjacks",
+        "value": 0.2
+      }
+    ],
+    "cost": {
+      "gold": {
+        "base": 5,
+        "multiplier": 1.2,
+        "combined": 5
+      },
+      "coal": {
+        "base": null,
+        "multiplier": null,
+        "combined": null
+      },
+      "iron": {
+        "base": 10,
+        "multiplier": 1.15,
+        "combined": 10
+      },
+      "stone": {
+        "base": 10,
+        "multiplier": 1.15,
+        "combined": 10
+      },
+      "wood": {
+        "base": 10,
+        "multiplier": 1.2,
+        "combined": 10
+      },
+      "food": {
+        "base": null,
+        "multiplier": null,
+        "combined": null
+      }
+    }
+  },
+  "windmills": {
+    "name": "Windmill",
+    "quantity": 0,
+    "effects": [
+      {
+        "type": "INCREASE_WORKER_EFFICIENCY",
+        "worker": "farmers",
+        "value": 0.2
+      }
+    ],
+    "cost": {
+      "gold": {
+        "base": 5,
+        "multiplier": 1.2,
+        "combined": 5
+      },
+      "coal": {
+        "base": null,
+        "multiplier": null,
+        "combined": null
+      },
+      "iron": {
+        "base": 10,
+        "multiplier": 1.15,
+        "combined": 10
+      },
+      "stone": {
+        "base": 10,
+        "multiplier": 1.15,
+        "combined": 10
+      },
+      "wood": {
+        "base": 10,
+        "multiplier": 1.2,
+        "combined": 10
+      },
+      "food": {
+        "base": null,
+        "multiplier": null,
+        "combined": null
+      }
+    }
+  }
+}
