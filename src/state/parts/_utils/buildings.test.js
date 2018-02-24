@@ -175,44 +175,184 @@ describe('buildings', () => {
       type: 'SET_SETTINGS',
       data: {
         buildingsQuant: 5,
-          cottages: {
+        cottages: {
+          name: "Cottage",
           quantity: 0,
           cost: {
-            base: 10,
-            multiplier: 1.02,
-            combined: 10
+            gold: {
+              base: 10,
+              multiplier: 1.02,
+              combined: 10
+            },
+            coal: {
+              base: 10,
+              multiplier: 1.02,
+              combined: 10
+            },
+            iron: {
+              base: 10,
+              multiplier: 1.02,
+              combined: 10
+            },
+            stone: {
+              base: 10,
+              multiplier: 1.02,
+              combined: 10
+            },
+            wood: {
+              base: 10,
+              multiplier: 1.02,
+              combined: 10
+            },
+            food: {
+              base: 10,
+              multiplier: 1.02,
+              combined: 10
+            }
           }
         },
         mines: {
+          name: "Mine",
           quantity: 0,
           cost: {
-            base: 12,
-            multiplier: 1.08,
-            combined: 12
+            gold: {
+              base: 12,
+              multiplier: 1.08,
+              combined: 12
+            },
+            coal: {
+              base: 12,
+              multiplier: 1.08,
+              combined: 12
+            },
+            iron: {
+              base: 12,
+              multiplier: 1.08,
+              combined: 12
+            },
+            stone: {
+              base: 12,
+              multiplier: 1.08,
+              combined: 12
+            },
+            wood: {
+              base: 12,
+              multiplier: 1.08,
+              combined: 12
+            },
+            food: {
+              base: 12,
+              multiplier: 1.08,
+              combined: 12
+            }
           }
         },
         quarries: {
+          name: "Quarry",
           quantity: 0,
           cost: {
-            base: 20,
-            multiplier: 1.001,
-            combined: 20
+            gold: {
+              base: 20,
+              multiplier: 1.001,
+              combined: 20
+            },
+            coal: {
+              base: 20,
+              multiplier: 1.001,
+              combined: 20
+            },
+            iron: {
+              base: 20,
+              multiplier: 1.001,
+              combined: 20
+            },
+            stone: {
+              base: 20,
+              multiplier: 1.001,
+              combined: 20
+            },
+            wood: {
+              base: 20,
+              multiplier: 1.001,
+              combined: 20
+            },
+            food: {
+              base: 20,
+              multiplier: 1.001,
+              combined: 20
+            }
           }
         },
         sawmills: {
+          name: "Sawmill",
           quantity: 0,
           cost: {
-            base: 1,
-            multiplier: 1.9,
-            combined: 1
+            gold: {
+              base: 1,
+              multiplier: 1.9,
+              combined: 1
+            },
+            coal: {
+              base: 1,
+              multiplier: 1.9,
+              combined: 1
+            },
+            iron: {
+              base: 1,
+              multiplier: 1.9,
+              combined: 1
+            },
+            stone: {
+              base: 1,
+              multiplier: 1.9,
+              combined: 1
+            },
+            wood: {
+              base: 1,
+              multiplier: 1.9,
+              combined: 1
+            },
+            food: {
+              base: 1,
+              multiplier: 1.9,
+              combined: 1
+            }
           }
         },
         windmills: {
+          name: "Windmill",
           quantity: 0,
           cost: {
-            base: 1,
-            multiplier: 1.9,
-            combined: 1
+            gold: {
+              base: 1,
+              multiplier: 1.9,
+              combined: 1
+            },
+            coal: {
+              base: 1,
+              multiplier: 1.9,
+              combined: 1
+            },
+            iron: {
+              base: 1,
+              multiplier: 1.9,
+              combined: 1
+            },
+            stone: {
+              base: 1,
+              multiplier: 1.9,
+              combined: 1
+            },
+            wood: {
+              base: 1,
+              multiplier: 1.9,
+              combined: 1
+            },
+            food: {
+              base: 1,
+              multiplier: 1.9,
+              combined: 1
+            }
           }
         }
       }
@@ -226,41 +366,176 @@ describe('buildings', () => {
       cottages: {
         quantity: 0,
         cost: {
-          base: 10,
-          multiplier: 1.02,
-          combined: 10
+          gold: {
+            base: 10,
+            multiplier: 1.02,
+            combined: 10
+          },
+          coal: {
+            base: 10,
+            multiplier: 1.02,
+            combined: 10
+          },
+          iron: {
+            base: 10,
+            multiplier: 1.02,
+            combined: 10
+          },
+          stone: {
+            base: 10,
+            multiplier: 1.02,
+            combined: 10
+          },
+          wood: {
+            base: 10,
+            multiplier: 1.02,
+            combined: 10
+          },
+          food: {
+            base: 10,
+            multiplier: 1.02,
+            combined: 10
+          }
         }
       },
       mines: {
         quantity: 0,
         cost: {
-          base: 12,
-          multiplier: 1.08,
-          combined: 12
+          gold: {
+            base: 12,
+            multiplier: 1.08,
+            combined: 12
+          },
+          coal: {
+            base: 12,
+            multiplier: 1.08,
+            combined: 12
+          },
+          iron: {
+            base: 12,
+            multiplier: 1.08,
+            combined: 12
+          },
+          stone: {
+            base: 12,
+            multiplier: 1.08,
+            combined: 12
+          },
+          wood: {
+            base: 12,
+            multiplier: 1.08,
+            combined: 12
+          },
+          food: {
+            base: 12,
+            multiplier: 1.08,
+            combined: 12
+          }
         }
       },
       quarries: {
         quantity: 0,
         cost: {
-          base: 20,
-          multiplier: 1.001,
-          combined: 20
+          gold: {
+            base: 20,
+            multiplier: 1.001,
+            combined: 20
+          },
+          coal: {
+            base: 20,
+            multiplier: 1.001,
+            combined: 20
+          },
+          iron: {
+            base: 20,
+            multiplier: 1.001,
+            combined: 20
+          },
+          stone: {
+            base: 20,
+            multiplier: 1.001,
+            combined: 20
+          },
+          wood: {
+            base: 20,
+            multiplier: 1.001,
+            combined: 20
+          },
+          food: {
+            base: 20,
+            multiplier: 1.001,
+            combined: 20
+          }
         }
       },
       sawmills: {
         quantity: 0,
         cost: {
-          base: 1,
-          multiplier: 1.9,
-          combined: 1
+          gold: {
+            base: 1,
+            multiplier: 1.9,
+            combined: 1
+          },
+          coal: {
+            base: 1,
+            multiplier: 1.9,
+            combined: 1
+          },
+          iron: {
+            base: 1,
+            multiplier: 1.9,
+            combined: 1
+          },
+          stone: {
+            base: 1,
+            multiplier: 1.9,
+            combined: 1
+          },
+          wood: {
+            base: 1,
+            multiplier: 1.9,
+            combined: 1
+          },
+          food: {
+            base: 1,
+            multiplier: 1.9,
+            combined: 1
+          }
         }
       },
       windmills: {
         quantity: 0,
         cost: {
-          base: 1,
-          multiplier: 1.9,
-          combined: 1
+          gold: {
+            base: 1,
+            multiplier: 1.9,
+            combined: 1
+          },
+          coal: {
+            base: 1,
+            multiplier: 1.9,
+            combined: 1
+          },
+          iron: {
+            base: 1,
+            multiplier: 1.9,
+            combined: 1
+          },
+          stone: {
+            base: 1,
+            multiplier: 1.9,
+            combined: 1
+          },
+          wood: {
+            base: 1,
+            multiplier: 1.9,
+            combined: 1
+          },
+          food: {
+            base: 1,
+            multiplier: 1.9,
+            combined: 1
+          }
         }
       }
     }
