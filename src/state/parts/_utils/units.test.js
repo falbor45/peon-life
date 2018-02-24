@@ -56,7 +56,7 @@ describe('units', () => {
   });
   it('should set fetching to true when beginning fetch', () => {
     const action = {
-      type: 'FETCH_BEGIN'
+      type: 'units/FETCH_BEGIN'
     };
 
     const expectedState = {
@@ -67,7 +67,7 @@ describe('units', () => {
   });
   it('should put JSON to data when fetch succeeds', () => {
     const action = {
-      type: 'FETCH_SUCCESS',
+      type: 'units/FETCH_SUCCESS',
       data: {}
     };
 
@@ -86,7 +86,7 @@ describe('units', () => {
   });
   it('should set game settings', () => {
     const action = {
-      type: 'SET_SETTINGS',
+      type: 'units/SET_SETTINGS',
       data: {
         unitLimit: 20,
         units: 0,
@@ -246,6 +246,7 @@ describe('units', () => {
       unitLimit: 20,
       units: 0,
       miners: {
+        name: "Miner",
         quantity: 0,
         efficiency: 0.2,
         cost: {
@@ -282,6 +283,7 @@ describe('units', () => {
         }
       },
       quarriers: {
+        name: "Quarrier",
         quantity: 0,
         efficiency: 0.2,
         gold: {
@@ -316,6 +318,7 @@ describe('units', () => {
         }
       },
       lumberjacks: {
+        name: "Lumberjack",
         quantity: 0,
         efficiency: 0.2,
         cost: {
@@ -352,6 +355,7 @@ describe('units', () => {
         }
       },
       farmers: {
+        name: "Farmer",
         quantity: 0,
         efficiency: 0.2,
         cost: {
@@ -392,7 +396,7 @@ describe('units', () => {
   });
   it('should return an error when one occurs during fetch', () => {
     const action = {
-      type: 'FETCH_FAIL',
+      type: 'units/FETCH_FAIL',
       error: 'Malformed JSON!'
     };
 
@@ -411,7 +415,7 @@ describe('units', () => {
   });
   it('should add miner worker', () => {
     const action = {
-      type: 'ADD_WORKER',
+      type: 'units/ADD_WORKER',
       worker: 'miners'
     };
 
@@ -506,7 +510,7 @@ describe('units', () => {
   });
   it('should add quarrier worker', () => {
     const action = {
-      type: 'ADD_WORKER',
+      type: 'units/ADD_WORKER',
       worker: 'quarriers'
   };
 
@@ -601,7 +605,7 @@ describe('units', () => {
   });
   it('should add lumberjack worker', () => {
     const action = {
-      type: 'ADD_WORKER',
+      type: 'units/ADD_WORKER',
       worker: 'lumberjacks'
     };
 
@@ -696,7 +700,7 @@ describe('units', () => {
   });
   it('should add farmer worker', () => {
     const action = {
-      type: 'ADD_WORKER',
+      type: 'units/ADD_WORKER',
       worker: 'farmers'
     };
 
@@ -791,7 +795,7 @@ describe('units', () => {
   });
   it('should increase unit limit', () => {
     const action = {
-      type: 'INCREASE_UNIT_LIMIT',
+      type: 'units/INCREASE_UNIT_LIMIT',
       value: 10,
     };
 
@@ -803,7 +807,7 @@ describe('units', () => {
   });
   it('should not exceed unit limit', () => {
     const action = {
-      type: 'ADD_WORKER',
+      type: 'units/ADD_WORKER',
       worker: 'miners'
     };
 
@@ -854,7 +858,7 @@ describe('units', () => {
   });
   it('should increase miner efficiency', () => {
     const action = {
-      type: 'INCREASE_WORKER_EFFICIENCY',
+      type: 'units/INCREASE_WORKER_EFFICIENCY',
       worker: 'miners',
       value: 0.1
     };
@@ -950,7 +954,7 @@ describe('units', () => {
   });
   it('should increase quarrier efficiency', () => {
     const action = {
-      type: 'INCREASE_WORKER_EFFICIENCY',
+      type: 'units/INCREASE_WORKER_EFFICIENCY',
       worker: 'quarriers',
       value: 0.7
     };
@@ -1046,7 +1050,7 @@ describe('units', () => {
   });
   it('should increase lumberjack efficiency', () => {
     const action = {
-      type: 'INCREASE_WORKER_EFFICIENCY',
+      type: 'units/INCREASE_WORKER_EFFICIENCY',
       worker: 'lumberjacks',
       value: 0.01
     };
@@ -1142,7 +1146,7 @@ describe('units', () => {
   });
   it('should increase farmer efficiency', () => {
     const action = {
-      type: 'INCREASE_WORKER_EFFICIENCY',
+      type: 'units/INCREASE_WORKER_EFFICIENCY',
       worker: 'farmers',
       value: 1
     };

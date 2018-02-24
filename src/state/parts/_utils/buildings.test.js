@@ -59,7 +59,7 @@ describe('buildings', () => {
   });
   it('should set fetching to true when beginning fetch', () => {
     const action = {
-      type: 'FETCH_BEGIN'
+      type: 'buildings/FETCH_BEGIN'
     };
 
     const expectedState = {
@@ -112,7 +112,7 @@ describe('buildings', () => {
   });
   it('should put JSON to data when fetch succeeds', () => {
     const action = {
-      type: 'FETCH_SUCCESS',
+      type: 'buildings/FETCH_SUCCESS',
       data: {}
     };
 
@@ -172,7 +172,7 @@ describe('buildings', () => {
   it('should set game settings', () => {
 
     const action = {
-      type: 'SET_SETTINGS',
+      type: 'buildings/SET_SETTINGS',
       data: {
         buildingsQuant: 5,
         cottages: {
@@ -364,6 +364,7 @@ describe('buildings', () => {
       data: null,
       buildingsQuant: 5,
       cottages: {
+        name: "Cottage",
         quantity: 0,
         cost: {
           gold: {
@@ -399,6 +400,7 @@ describe('buildings', () => {
         }
       },
       mines: {
+        name: "Mine",
         quantity: 0,
         cost: {
           gold: {
@@ -434,6 +436,7 @@ describe('buildings', () => {
         }
       },
       quarries: {
+        name: "Quarry",
         quantity: 0,
         cost: {
           gold: {
@@ -469,6 +472,7 @@ describe('buildings', () => {
         }
       },
       sawmills: {
+        name: "Sawmill",
         quantity: 0,
         cost: {
           gold: {
@@ -504,6 +508,7 @@ describe('buildings', () => {
         }
       },
       windmills: {
+        name: "Windmill",
         quantity: 0,
         cost: {
           gold: {
@@ -544,7 +549,7 @@ describe('buildings', () => {
   })
   it('should return an error when one occurs during fetch', () => {
     const action = {
-      type: 'FETCH_FAIL',
+      type: 'buildings/FETCH_FAIL',
       error: 'Malformed JSON!'
     };
 
@@ -603,7 +608,7 @@ describe('buildings', () => {
   });
   it('should add cottage', () => {
     const action = {
-      type: 'ADD_BUILDING',
+      type: 'buildings/ADD_BUILDING',
       building: 'cottages'
     };
 
@@ -704,7 +709,7 @@ describe('buildings', () => {
   });
   it('should add mine', () => {
     const action = {
-      type: 'ADD_BUILDING',
+      type: 'buildings/ADD_BUILDING',
       building: 'mines'
     };
 
@@ -805,7 +810,7 @@ describe('buildings', () => {
   });
   it('should add quarry', () => {
     const action = {
-      type: 'ADD_BUILDING',
+      type: 'buildings/ADD_BUILDING',
       building: 'quarries'
     };
 
@@ -906,7 +911,7 @@ describe('buildings', () => {
   });
   it('should add sawmill', () => {
     const action = {
-      type: 'ADD_BUILDING',
+      type: 'buildings/ADD_BUILDING',
       building: 'sawmills'
     };
 
@@ -1007,7 +1012,7 @@ describe('buildings', () => {
   });
   it('should add windmill', () => {
     const action = {
-      type: 'ADD_BUILDING',
+      type: 'buildings/ADD_BUILDING',
       building: 'windmills'
     };
 
