@@ -49,27 +49,27 @@ const roundNum = (num, fixed) => {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case 'FETCH_BEGIN': {
+    case 'units/FETCH_BEGIN': {
       return {
         ...state,
         fetching: true
       }
     }
-    case 'FETCH_SUCCESS': {
+    case 'units/FETCH_SUCCESS': {
       return {
         ...state,
         fetching: false,
         data: action.data
       }
     }
-    case 'FETCH_FAIL': {
+    case 'units/FETCH_FAIL': {
       return {
         ...state,
         fetching: false,
         error: action.error
       }
     }
-    case 'SET_SETTINGS': {
+    case 'units/SET_SETTINGS': {
       return {
         ...state,
         unitLimit: action.data.unitLimit,
@@ -80,7 +80,7 @@ export default (state = initialState, action) => {
         farmers: action.data.farmers
       }
     }
-    case 'ADD_WORKER': {
+    case 'units/ADD_WORKER': {
       state[action.worker].quantity += 1;
       state[action.worker].cost.combined = roundNum(state[action.worker].cost.base * state[action.worker].cost.multiplier, 2);
       state[action.worker].cost.multiplier = Math.pow(state[action.worker].cost.multiplier, state[action.worker].quantity + 1);
@@ -89,13 +89,13 @@ export default (state = initialState, action) => {
         units: state.units !== state.unitLimit ? state.units + 1 : state.units
       }
     }
-    case 'INCREASE_WORKER_EFFICIENCY': {
+    case 'units/INCREASE_WORKER_EFFICIENCY': {
       state[action.worker].efficiency = roundNum((state[action.worker].efficiency + action.value), 2);
       return {
         ...state,
       }
     }
-    case 'INCREASE_UNIT_LIMIT': {
+    case 'units/INCREASE_UNIT_LIMIT': {
       return {
         ...state,
         unitLimit: state.unitLimit + action.value

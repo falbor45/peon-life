@@ -52,27 +52,27 @@ const roundNum = (num, fixed) => {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case 'FETCH_BEGIN': {
+    case 'buildings/FETCH_BEGIN': {
       return {
         ...state,
         fetching: true
       }
     }
-    case 'FETCH_SUCCESS': {
+    case 'buildings/FETCH_SUCCESS': {
       return {
         ...state,
         fetching: false,
         data: action.data
       }
     }
-    case 'FETCH_FAIL': {
+    case 'buildings/FETCH_FAIL': {
       return {
         ...state,
         fetching: false,
         error: action.error
       }
     }
-    case 'SET_SETTINGS': {
+    case 'buildings/SET_SETTINGS': {
       return {
         ...state,
         buildingsQuant: action.data.buildingsQuant,
@@ -83,7 +83,7 @@ export default (state = initialState, action) => {
         windmills: action.data.windmills
       }
     }
-    case 'ADD_BUILDING': {
+    case 'buildings/ADD_BUILDING': {
       state[action.building].quantity += 1;
       state[action.building].cost.combined = roundNum(state[action.building].cost.base * state[action.building].cost.multiplier, 2);
       state[action.building].cost.multiplier = Math.pow(state[action.building].cost.multiplier, state[action.building].quantity + 1);
