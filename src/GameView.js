@@ -99,7 +99,7 @@ class GameView extends Component {
   render() {
     return (
       <div>
-        {this.props.units.data !== null && false && this.props.buildings.data !== null ? (
+        {this.props.units.data !== null && this.props.buildings.data !== null ? (
           <div>
             <ResourcesBar/>
             <Swipe
