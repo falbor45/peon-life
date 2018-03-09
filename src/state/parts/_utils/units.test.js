@@ -6,42 +6,6 @@ const initialState = {
   data: null,
   unitLimit: 5,
   units: 0,
-  miners: {
-    quantity: 0,
-    efficiency: 0.2,
-    cost: {
-      base: null,
-      multiplier: null,
-      combined: null
-    }
-  },
-  quarriers: {
-    quantity: 0,
-    efficiency: 0.2,
-    cost: {
-      base: null,
-      multiplier: null,
-      combined: null
-    }
-  },
-  lumberjacks: {
-    quantity: 0,
-    efficiency: 0.2,
-    cost: {
-      base: null,
-      multiplier: null,
-      combined: null
-    }
-  },
-  farmers: {
-    quantity: 0,
-    efficiency: 0.2,
-    cost: {
-      base: null,
-      multiplier: null,
-      combined: null
-    }
-  }
 }
 
 describe('units', () => {
@@ -416,380 +380,168 @@ describe('units', () => {
   it('should add miner worker', () => {
     const action = {
       type: 'units/ADD_WORKER',
-      worker: 'miners'
+      worker: 'miners',
+      value: 1
     };
 
     const testState = {
       fetching: null,
       error: null,
-      data: null,
+      data: {
+        miners: {
+          quantity: 0,
+          cost: {
+            base: 10,
+            multiplier: 2,
+            combined: 10
+          }
+        }
+      },
       unitLimit: 5,
       units: 0,
-      miners: {
-        quantity: 0,
-        efficiency: 0.2,
-        cost: {
-          base: 2,
-          multiplier: 1.08,
-          combined: 2
-        }
-      },
-      quarriers: {
-        quantity: 0,
-        efficiency: 0.2,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      },
-      lumberjacks: {
-        quantity: 0,
-        efficiency: 0.2,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      },
-      farmers: {
-        quantity: 0,
-        efficiency: 0.2,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      }
     };
 
     const expectedState = {
       fetching: null,
       error: null,
-      data: null,
+      data: {
+        miners: {
+          quantity: 1,
+          cost: {
+            base: 10,
+            multiplier: 2,
+            combined: 20
+          }
+        }
+      },
       unitLimit: 5,
       units: 1,
-      miners: {
-        quantity: 1,
-        efficiency: 0.2,
-        cost: {
-          base: 2,
-          multiplier: 1.1664,
-          combined: 2.2
-        }
-      },
-      quarriers: {
-        quantity: 0,
-        efficiency: 0.2,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      },
-      lumberjacks: {
-        quantity: 0,
-        efficiency: 0.2,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      },
-      farmers: {
-        quantity: 0,
-        efficiency: 0.2,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      }
     };
     expect(units(testState, action)).toEqual(expectedState);
   });
   it('should add quarrier worker', () => {
     const action = {
       type: 'units/ADD_WORKER',
-      worker: 'quarriers'
+      worker: 'quarriers',
+      value: 1
   };
 
     const testState = {
       fetching: null,
       error: null,
-      data: null,
+      data: {
+        quarriers: {
+          quantity: 0,
+          cost: {
+            base: 10,
+            multiplier: 2,
+            combined: 10
+          }
+        }
+      },
       unitLimit: 5,
       units: 0,
-      miners: {
-        quantity: 0,
-        efficiency: 0.2,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      },
-      quarriers: {
-        quantity: 0,
-        efficiency: 0.2,
-        cost: {
-          base: 10,
-          multiplier: 2,
-          combined: 10
-        }
-      },
-      lumberjacks: {
-        quantity: 0,
-        efficiency: 0.2,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      },
-      farmers: {
-        quantity: 0,
-        efficiency: 0.2,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      }
     };
 
     const expectedState = {
       fetching: null,
       error: null,
-      data: null,
+      data: {
+        quarriers: {
+          quantity: 1,
+          cost: {
+            base: 10,
+            multiplier: 2,
+            combined: 20
+          }
+        }
+      },
       unitLimit: 5,
       units: 1,
-      miners: {
-        quantity: 0,
-        efficiency: 0.2,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      },
-      quarriers: {
-        quantity: 1,
-        efficiency: 0.2,
-        cost: {
-          base: 10,
-          multiplier: 4,
-          combined: 20
-        }
-      },
-      lumberjacks: {
-        quantity: 0,
-        efficiency: 0.2,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      },
-      farmers: {
-        quantity: 0,
-        efficiency: 0.2,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      }
     };
     expect(units(testState, action)).toEqual(expectedState);
   });
   it('should add lumberjack worker', () => {
     const action = {
       type: 'units/ADD_WORKER',
-      worker: 'lumberjacks'
+      worker: 'lumberjacks',
+      value: 1
     };
 
     const testState = {
       fetching: null,
       error: null,
-      data: null,
+      data: {
+        lumberjacks: {
+          quantity: 0,
+          cost: {
+            base: 10,
+            multiplier: 2,
+            combined: 10
+          }
+        }
+      },
       unitLimit: 5,
       units: 0,
-      miners: {
-        quantity: 0,
-        efficiency: 0.2,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      },
-      quarriers: {
-        quantity: 0,
-        efficiency: 0.2,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      },
-      lumberjacks: {
-        quantity: 0,
-        efficiency: 0.2,
-        cost: {
-          base: 1,
-          multiplier: 1.2,
-          combined: 1
-        }
-      },
-      farmers: {
-        quantity: 0,
-        efficiency: 0.2,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      }
     };
 
     const expectedState = {
       fetching: null,
       error: null,
-      data: null,
+      data: {
+        lumberjacks: {
+          quantity: 1,
+          cost: {
+            base: 10,
+            multiplier: 2,
+            combined: 20
+          }
+        }
+      },
       unitLimit: 5,
       units: 1,
-      miners: {
-        quantity: 0,
-        efficiency: 0.2,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      },
-      quarriers: {
-        quantity: 0,
-        efficiency: 0.2,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      },
-      lumberjacks: {
-        quantity: 1,
-        efficiency: 0.2,
-        cost: {
-          base: 1,
-          multiplier: 1.44,
-          combined: 1.2
-        }
-      },
-      farmers: {
-        quantity: 0,
-        efficiency: 0.2,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      }
     };
     expect(units(testState, action)).toEqual(expectedState);
   });
   it('should add farmer worker', () => {
     const action = {
       type: 'units/ADD_WORKER',
-      worker: 'farmers'
+      worker: 'farmers',
+      value: 1
     };
 
     const testState = {
       fetching: null,
       error: null,
-      data: null,
+      data: {
+        farmers: {
+          quantity: 0,
+          cost: {
+            base: 10,
+            multiplier: 2,
+            combined: 10
+          }
+        }
+      },
       unitLimit: 5,
       units: 0,
-      miners: {
-        quantity: 0,
-        efficiency: 0.2,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      },
-      quarriers: {
-        quantity: 0,
-        efficiency: 0.2,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      },
-      lumberjacks: {
-        quantity: 0,
-        efficiency: 0.2,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      },
-      farmers: {
-        quantity: 0,
-        efficiency: 0.2,
-        cost: {
-          base: 1000,
-          multiplier: 1.849,
-          combined: 1000
-        }
-      }
     };
 
     const expectedState = {
       fetching: null,
       error: null,
-      data: null,
+      data: {
+        farmers: {
+          quantity: 1,
+          cost: {
+            base: 10,
+            multiplier: 2,
+            combined: 20
+          }
+        }
+      },
       unitLimit: 5,
       units: 1,
-      miners: {
-        quantity: 0,
-        efficiency: 0.2,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      },
-      quarriers: {
-        quantity: 0,
-        efficiency: 0.2,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      },
-      lumberjacks: {
-        quantity: 0,
-        efficiency: 0.2,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      },
-      farmers: {
-        quantity: 1,
-        efficiency: 0.2,
-        cost: {
-          base: 1000,
-          multiplier: 3.4188009999999998,
-          combined: 1849
-        }
-      }
     };
     expect(units(testState, action)).toEqual(expectedState);
   });
@@ -808,51 +560,25 @@ describe('units', () => {
   it('should not exceed unit limit', () => {
     const action = {
       type: 'units/ADD_WORKER',
-      worker: 'miners'
+      worker: 'miners',
+      value: 1
     };
 
     const testState = {
       fetching: null,
       error: null,
-      data: null,
+      data: {
+        miners: {
+          quantity: 5,
+          cost: {
+            base: 10,
+            multiplier: 2,
+            combined: 10
+          }
+        }
+      },
       unitLimit: 5,
       units: 5,
-      miners: {
-        quantity: 0,
-        efficiency: 0.2,
-        cost: {
-          base: 10,
-          multiplier: 2.44832,
-          combined: 20.7
-        }
-      },
-      quarriers: {
-        quantity: 0,
-        efficiency: 0.2,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      },
-      lumberjacks: {
-        quantity: 0,
-        efficiency: 0.2,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      },
-      farmers: {
-        quantity: 0,
-        efficiency: 0.2,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      }
     };
     expect(units(testState, action)).toEqual(testState);
   });
