@@ -2,47 +2,7 @@ const initialState = {
   fetching: null,
   error: null,
   data: null,
-  buildingsQuant: 0,
-  cottages: {
-    quantity: 0,
-    cost: {
-      base: null,
-      multiplier: null,
-      combined: null
-    }
-  },
-  mines: {
-    quantity: 0,
-    cost: {
-      base: null,
-      multiplier: null,
-      combined: null
-    }
-  },
-  quarries: {
-    quantity: 0,
-    cost: {
-      base: null,
-      multiplier: null,
-      combined: null
-    }
-  },
-  sawmills: {
-    quantity: 0,
-    cost: {
-      base: null,
-      multiplier: null,
-      combined: null
-    }
-  },
-  windmills: {
-    quantity: 0,
-    cost: {
-      base: null,
-      multiplier: null,
-      combined: null
-    }
-  }
+  buildingsQuant: 0
 }
 
 const roundNum = (num, fixed) => {
@@ -75,12 +35,7 @@ export default (state = initialState, action) => {
     case 'buildings/SET_SETTINGS': {
       return {
         ...state,
-        buildingsQuant: action.data.buildingsQuant,
-        cottages: action.data.cottages,
-        mines: action.data.mines,
-        quarries: action.data.quarries,
-        sawmills: action.data.sawmills,
-        windmills: action.data.windmills
+        data: action.data
       }
     }
     case 'buildings/ADD_BUILDING': {

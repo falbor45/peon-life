@@ -36,12 +36,7 @@ export default (state = initialState, action) => {
     case 'units/SET_SETTINGS': {
       return {
         ...state,
-        unitLimit: action.data.unitLimit,
-        units: action.data.units,
-        miners: action.data.miners,
-        quarriers: action.data.quarriers,
-        lumberjacks: action.data.lumberjacks,
-        farmers: action.data.farmers
+        data: action.data
       }
     }
     case 'units/ADD_WORKER': {
