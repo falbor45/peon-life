@@ -52,152 +52,14 @@ describe('units', () => {
     const action = {
       type: 'units/SET_SETTINGS',
       data: {
-        unitLimit: 20,
-        units: 0,
         miners: {
           name: "Miner",
           quantity: 0,
           efficiency: 0.2,
           cost: {
-            gold: {
               base: 10,
               multiplier: 1.02,
               combined: 10
-            },
-            coal: {
-              base: 10,
-              multiplier: 1.02,
-              combined: 10
-            },
-            iron: {
-              base: 10,
-              multiplier: 1.02,
-              combined: 10
-            },
-            stone: {
-              base: 10,
-              multiplier: 1.02,
-              combined: 10
-            },
-            wood: {
-              base: 10,
-              multiplier: 1.02,
-              combined: 10
-            },
-            food: {
-              base: 10,
-              multiplier: 1.02,
-              combined: 10
-            }
-          }
-        },
-        quarriers: {
-          name: "Quarrier",
-          quantity: 0,
-          efficiency: 0.2,
-          gold: {
-            base: 12,
-            multiplier: 1.08,
-            combined: 12
-          },
-          coal: {
-            base: 12,
-            multiplier: 1.08,
-            combined: 12
-          },
-          iron: {
-            base: 12,
-            multiplier: 1.08,
-            combined: 12
-          },
-          stone: {
-            base: 12,
-            multiplier: 1.08,
-            combined: 12
-          },
-          wood: {
-            base: 12,
-            multiplier: 1.08,
-            combined: 12
-          },
-          food: {
-            base: 12,
-            multiplier: 1.08,
-            combined: 12
-          }
-        },
-        lumberjacks: {
-          name: "Lumberjack",
-          quantity: 0,
-          efficiency: 0.2,
-          cost: {
-            gold: {
-              base: 20,
-              multiplier: 1.001,
-              combined: 20
-            },
-            coal: {
-              base: 20,
-              multiplier: 1.001,
-              combined: 20
-            },
-            iron: {
-              base: 20,
-              multiplier: 1.001,
-              combined: 20
-            },
-            stone: {
-              base: 20,
-              multiplier: 1.001,
-              combined: 20
-            },
-            wood: {
-              base: 20,
-              multiplier: 1.001,
-              combined: 20
-            },
-            food: {
-              base: 20,
-              multiplier: 1.001,
-              combined: 20
-            }
-          }
-        },
-        farmers: {
-          name: "Farmer",
-          quantity: 0,
-          efficiency: 0.2,
-          cost: {
-            gold: {
-              base: 1,
-              multiplier: 1.9,
-              combined: 1
-            },
-            coal: {
-              base: 1,
-              multiplier: 1.9,
-              combined: 1
-            },
-            iron: {
-              base: 1,
-              multiplier: 1.9,
-              combined: 1
-            },
-            stone: {
-              base: 1,
-              multiplier: 1.9,
-              combined: 1
-            },
-            wood: {
-              base: 1,
-              multiplier: 1.9,
-              combined: 1
-            },
-            food: {
-              base: 1,
-              multiplier: 1.9,
-              combined: 1
-            }
           }
         }
       }
@@ -206,156 +68,21 @@ describe('units', () => {
     const expectedState = {
       fetching: null,
       error: null,
-      data: null,
-      unitLimit: 20,
-      units: 0,
-      miners: {
-        name: "Miner",
-        quantity: 0,
-        efficiency: 0.2,
-        cost: {
-          gold: {
-            base: 10,
-            multiplier: 1.02,
-            combined: 10
-          },
-          coal: {
-            base: 10,
-            multiplier: 1.02,
-            combined: 10
-          },
-          iron: {
-            base: 10,
-            multiplier: 1.02,
-            combined: 10
-          },
-          stone: {
-            base: 10,
-            multiplier: 1.02,
-            combined: 10
-          },
-          wood: {
-            base: 10,
-            multiplier: 1.02,
-            combined: 10
-          },
-          food: {
+      data: {
+        miners: {
+          name: "Miner",
+          quantity: 0,
+          efficiency: 0.2,
+          cost: {
             base: 10,
             multiplier: 1.02,
             combined: 10
           }
         }
       },
-      quarriers: {
-        name: "Quarrier",
-        quantity: 0,
-        efficiency: 0.2,
-        gold: {
-          base: 12,
-          multiplier: 1.08,
-          combined: 12
-        },
-        coal: {
-          base: 12,
-          multiplier: 1.08,
-          combined: 12
-        },
-        iron: {
-          base: 12,
-          multiplier: 1.08,
-          combined: 12
-        },
-        stone: {
-          base: 12,
-          multiplier: 1.08,
-          combined: 12
-        },
-        wood: {
-          base: 12,
-          multiplier: 1.08,
-          combined: 12
-        },
-        food: {
-          base: 12,
-          multiplier: 1.08,
-          combined: 12
-        }
-      },
-      lumberjacks: {
-        name: "Lumberjack",
-        quantity: 0,
-        efficiency: 0.2,
-        cost: {
-          gold: {
-            base: 20,
-            multiplier: 1.001,
-            combined: 20
-          },
-          coal: {
-            base: 20,
-            multiplier: 1.001,
-            combined: 20
-          },
-          iron: {
-            base: 20,
-            multiplier: 1.001,
-            combined: 20
-          },
-          stone: {
-            base: 20,
-            multiplier: 1.001,
-            combined: 20
-          },
-          wood: {
-            base: 20,
-            multiplier: 1.001,
-            combined: 20
-          },
-          food: {
-            base: 20,
-            multiplier: 1.001,
-            combined: 20
-          }
-        }
-      },
-      farmers: {
-        name: "Farmer",
-        quantity: 0,
-        efficiency: 0.2,
-        cost: {
-          gold: {
-            base: 1,
-            multiplier: 1.9,
-            combined: 1
-          },
-          coal: {
-            base: 1,
-            multiplier: 1.9,
-            combined: 1
-          },
-          iron: {
-            base: 1,
-            multiplier: 1.9,
-            combined: 1
-          },
-          stone: {
-            base: 1,
-            multiplier: 1.9,
-            combined: 1
-          },
-          wood: {
-            base: 1,
-            multiplier: 1.9,
-            combined: 1
-          },
-          food: {
-            base: 1,
-            multiplier: 1.9,
-            combined: 1
-          }
-        }
-      }
-    }
+      unitLimit: 5,
+      units: 0
+    };
     expect(units(initialState, action)).toEqual(expectedState)
   });
   it('should return an error when one occurs during fetch', () => {

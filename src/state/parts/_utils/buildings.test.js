@@ -4,47 +4,7 @@ const initialState = {
   fetching: null,
   error: null,
   data: null,
-  buildingsQuant: 0,
-  cottages: {
-    quantity: 0,
-    cost: {
-      base: null,
-      multiplier: null,
-      combined: null
-    }
-  },
-  mines: {
-    quantity: 0,
-    cost: {
-      base: null,
-      multiplier: null,
-      combined: null
-    }
-  },
-  quarries: {
-    quantity: 0,
-    cost: {
-      base: null,
-      multiplier: null,
-      combined: null
-    }
-  },
-  sawmills: {
-    quantity: 0,
-    cost: {
-      base: null,
-      multiplier: null,
-      combined: null
-    }
-  },
-  windmills: {
-    quantity: 0,
-    cost: {
-      base: null,
-      multiplier: null,
-      combined: null
-    }
-  }
+  buildingsQuant: 0
 };
 
 describe('buildings', () => {
@@ -66,47 +26,7 @@ describe('buildings', () => {
       fetching: true,
       error: null,
       data: null,
-      buildingsQuant: 0,
-      cottages: {
-        quantity: 0,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      },
-      mines: {
-        quantity: 0,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      },
-      quarries: {
-        quantity: 0,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      },
-      sawmills: {
-        quantity: 0,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      },
-      windmills: {
-        quantity: 0,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      }
+      buildingsQuant: 0
     };
     expect(buildings(initialState, action)).toEqual(expectedState);
   });
@@ -125,47 +45,7 @@ describe('buildings', () => {
       fetching: false,
       error: null,
       data: {},
-      buildingsQuant: 0,
-      cottages: {
-        quantity: 0,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      },
-      mines: {
-        quantity: 0,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      },
-      quarries: {
-        quantity: 0,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      },
-      sawmills: {
-        quantity: 0,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      },
-      windmills: {
-        quantity: 0,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      }
+      buildingsQuant: 0
     };
     expect(buildings(testState, action)).toEqual(expectedState);
   });
@@ -179,180 +59,9 @@ describe('buildings', () => {
           name: "Cottage",
           quantity: 0,
           cost: {
-            gold: {
-              base: 10,
-              multiplier: 1.02,
-              combined: 10
-            },
-            coal: {
-              base: 10,
-              multiplier: 1.02,
-              combined: 10
-            },
-            iron: {
-              base: 10,
-              multiplier: 1.02,
-              combined: 10
-            },
-            stone: {
-              base: 10,
-              multiplier: 1.02,
-              combined: 10
-            },
-            wood: {
-              base: 10,
-              multiplier: 1.02,
-              combined: 10
-            },
-            food: {
-              base: 10,
-              multiplier: 1.02,
-              combined: 10
-            }
-          }
-        },
-        mines: {
-          name: "Mine",
-          quantity: 0,
-          cost: {
-            gold: {
-              base: 12,
-              multiplier: 1.08,
-              combined: 12
-            },
-            coal: {
-              base: 12,
-              multiplier: 1.08,
-              combined: 12
-            },
-            iron: {
-              base: 12,
-              multiplier: 1.08,
-              combined: 12
-            },
-            stone: {
-              base: 12,
-              multiplier: 1.08,
-              combined: 12
-            },
-            wood: {
-              base: 12,
-              multiplier: 1.08,
-              combined: 12
-            },
-            food: {
-              base: 12,
-              multiplier: 1.08,
-              combined: 12
-            }
-          }
-        },
-        quarries: {
-          name: "Quarry",
-          quantity: 0,
-          cost: {
-            gold: {
-              base: 20,
-              multiplier: 1.001,
-              combined: 20
-            },
-            coal: {
-              base: 20,
-              multiplier: 1.001,
-              combined: 20
-            },
-            iron: {
-              base: 20,
-              multiplier: 1.001,
-              combined: 20
-            },
-            stone: {
-              base: 20,
-              multiplier: 1.001,
-              combined: 20
-            },
-            wood: {
-              base: 20,
-              multiplier: 1.001,
-              combined: 20
-            },
-            food: {
-              base: 20,
-              multiplier: 1.001,
-              combined: 20
-            }
-          }
-        },
-        sawmills: {
-          name: "Sawmill",
-          quantity: 0,
-          cost: {
-            gold: {
-              base: 1,
-              multiplier: 1.9,
-              combined: 1
-            },
-            coal: {
-              base: 1,
-              multiplier: 1.9,
-              combined: 1
-            },
-            iron: {
-              base: 1,
-              multiplier: 1.9,
-              combined: 1
-            },
-            stone: {
-              base: 1,
-              multiplier: 1.9,
-              combined: 1
-            },
-            wood: {
-              base: 1,
-              multiplier: 1.9,
-              combined: 1
-            },
-            food: {
-              base: 1,
-              multiplier: 1.9,
-              combined: 1
-            }
-          }
-        },
-        windmills: {
-          name: "Windmill",
-          quantity: 0,
-          cost: {
-            gold: {
-              base: 1,
-              multiplier: 1.9,
-              combined: 1
-            },
-            coal: {
-              base: 1,
-              multiplier: 1.9,
-              combined: 1
-            },
-            iron: {
-              base: 1,
-              multiplier: 1.9,
-              combined: 1
-            },
-            stone: {
-              base: 1,
-              multiplier: 1.9,
-              combined: 1
-            },
-            wood: {
-              base: 1,
-              multiplier: 1.9,
-              combined: 1
-            },
-            food: {
-              base: 1,
-              multiplier: 1.9,
-              combined: 1
-            }
+            base: 10,
+            multiplier: 1.02,
+            combined: 10
           }
         }
       }
@@ -361,188 +70,19 @@ describe('buildings', () => {
     const expectedState = {
       fetching: null,
       error: null,
-      data: null,
-      buildingsQuant: 5,
-      cottages: {
-        name: "Cottage",
-        quantity: 0,
-        cost: {
-          gold: {
-            base: 10,
-            multiplier: 1.02,
-            combined: 10
-          },
-          coal: {
-            base: 10,
-            multiplier: 1.02,
-            combined: 10
-          },
-          iron: {
-            base: 10,
-            multiplier: 1.02,
-            combined: 10
-          },
-          stone: {
-            base: 10,
-            multiplier: 1.02,
-            combined: 10
-          },
-          wood: {
-            base: 10,
-            multiplier: 1.02,
-            combined: 10
-          },
-          food: {
+      data: {
+        buildingsQuant: 5,
+        cottages: {
+          name: "Cottage",
+          quantity: 0,
+          cost: {
             base: 10,
             multiplier: 1.02,
             combined: 10
           }
         }
       },
-      mines: {
-        name: "Mine",
-        quantity: 0,
-        cost: {
-          gold: {
-            base: 12,
-            multiplier: 1.08,
-            combined: 12
-          },
-          coal: {
-            base: 12,
-            multiplier: 1.08,
-            combined: 12
-          },
-          iron: {
-            base: 12,
-            multiplier: 1.08,
-            combined: 12
-          },
-          stone: {
-            base: 12,
-            multiplier: 1.08,
-            combined: 12
-          },
-          wood: {
-            base: 12,
-            multiplier: 1.08,
-            combined: 12
-          },
-          food: {
-            base: 12,
-            multiplier: 1.08,
-            combined: 12
-          }
-        }
-      },
-      quarries: {
-        name: "Quarry",
-        quantity: 0,
-        cost: {
-          gold: {
-            base: 20,
-            multiplier: 1.001,
-            combined: 20
-          },
-          coal: {
-            base: 20,
-            multiplier: 1.001,
-            combined: 20
-          },
-          iron: {
-            base: 20,
-            multiplier: 1.001,
-            combined: 20
-          },
-          stone: {
-            base: 20,
-            multiplier: 1.001,
-            combined: 20
-          },
-          wood: {
-            base: 20,
-            multiplier: 1.001,
-            combined: 20
-          },
-          food: {
-            base: 20,
-            multiplier: 1.001,
-            combined: 20
-          }
-        }
-      },
-      sawmills: {
-        name: "Sawmill",
-        quantity: 0,
-        cost: {
-          gold: {
-            base: 1,
-            multiplier: 1.9,
-            combined: 1
-          },
-          coal: {
-            base: 1,
-            multiplier: 1.9,
-            combined: 1
-          },
-          iron: {
-            base: 1,
-            multiplier: 1.9,
-            combined: 1
-          },
-          stone: {
-            base: 1,
-            multiplier: 1.9,
-            combined: 1
-          },
-          wood: {
-            base: 1,
-            multiplier: 1.9,
-            combined: 1
-          },
-          food: {
-            base: 1,
-            multiplier: 1.9,
-            combined: 1
-          }
-        }
-      },
-      windmills: {
-        name: "Windmill",
-        quantity: 0,
-        cost: {
-          gold: {
-            base: 1,
-            multiplier: 1.9,
-            combined: 1
-          },
-          coal: {
-            base: 1,
-            multiplier: 1.9,
-            combined: 1
-          },
-          iron: {
-            base: 1,
-            multiplier: 1.9,
-            combined: 1
-          },
-          stone: {
-            base: 1,
-            multiplier: 1.9,
-            combined: 1
-          },
-          wood: {
-            base: 1,
-            multiplier: 1.9,
-            combined: 1
-          },
-          food: {
-            base: 1,
-            multiplier: 1.9,
-            combined: 1
-          }
-        }
-      }
+      buildingsQuant: 0
     }
 
     expect(buildings(initialState, action)).toEqual(expectedState)
@@ -562,47 +102,7 @@ describe('buildings', () => {
       fetching: false,
       error: 'Malformed JSON!',
       data: null,
-      buildingsQuant: 0,
-      cottages: {
-        quantity: 0,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      },
-      mines: {
-        quantity: 0,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      },
-      quarries: {
-        quantity: 0,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      },
-      sawmills: {
-        quantity: 0,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      },
-      windmills: {
-        quantity: 0,
-        cost: {
-          base: null,
-          multiplier: null,
-          combined: null
-        }
-      }
+      buildingsQuant: 0
     };
     expect(buildings(testState, action)).toEqual(expectedState);
   });
