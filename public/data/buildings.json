@@ -10,36 +10,9 @@
       }
     ],
     "cost": {
-      "gold": {
-        "base": null,
-        "multiplier": null,
-        "combined": null
-      },
-      "coal": {
-        "base": null,
-        "multiplier": null,
-        "combined": null
-      },
-      "iron": {
-        "base": null,
-        "multiplier": null,
-        "combined": null
-      },
-      "stone": {
-        "base": 10,
-        "multiplier": 1.15,
-        "combined": 10
-      },
-      "wood": {
-        "base": 10,
-        "multiplier": 1.15,
-        "combined": 10
-      },
-      "food": {
-        "base": null,
-        "multiplier": null,
-        "combined": null
-      }
+      "base": 5,
+      "multiplier": 1.2,
+      "combined": 5
     }
   },
   "mines": {
@@ -53,36 +26,9 @@
       }
     ],
     "cost": {
-      "gold": {
-        "base": 5,
-        "multiplier": 1.2,
-        "combined": 5
-      },
-      "coal": {
-        "base": null,
-        "multiplier": null,
-        "combined": null
-      },
-      "iron": {
-        "base": 10,
-        "multiplier": 1.15,
-        "combined": 10
-      },
-      "stone": {
-        "base": 10,
-        "multiplier": 1.15,
-        "combined": 10
-      },
-      "wood": {
-        "base": 10,
-        "multiplier": 1.2,
-        "combined": 10
-      },
-      "food": {
-        "base": null,
-        "multiplier": null,
-        "combined": null
-      }
+      "base": 5,
+      "multiplier": 1.2,
+      "combined": 5
     }
   },
   "quarries": {
@@ -96,36 +42,9 @@
       }
     ],
     "cost": {
-      "gold": {
-        "base": 5,
-        "multiplier": 1.2,
-        "combined": 5
-      },
-      "coal": {
-        "base": null,
-        "multiplier": null,
-        "combined": null
-      },
-      "iron": {
-        "base": 10,
-        "multiplier": 1.15,
-        "combined": 10
-      },
-      "stone": {
-        "base": 10,
-        "multiplier": 1.15,
-        "combined": 10
-      },
-      "wood": {
-        "base": 10,
-        "multiplier": 1.2,
-        "combined": 10
-      },
-      "food": {
-        "base": null,
-        "multiplier": null,
-        "combined": null
-      }
+      "base": 5,
+      "multiplier": 1.2,
+      "combined": 5
     }
   },
   "sawmills": {
@@ -139,36 +58,9 @@
       }
     ],
     "cost": {
-      "gold": {
-        "base": 5,
-        "multiplier": 1.2,
-        "combined": 5
-      },
-      "coal": {
-        "base": null,
-        "multiplier": null,
-        "combined": null
-      },
-      "iron": {
-        "base": 10,
-        "multiplier": 1.15,
-        "combined": 10
-      },
-      "stone": {
-        "base": 10,
-        "multiplier": 1.15,
-        "combined": 10
-      },
-      "wood": {
-        "base": 10,
-        "multiplier": 1.2,
-        "combined": 10
-      },
-      "food": {
-        "base": null,
-        "multiplier": null,
-        "combined": null
-      }
+      "base": 5,
+      "multiplier": 1.2,
+      "combined": 5
     }
   },
   "windmills": {
@@ -182,36 +74,9 @@
       }
     ],
     "cost": {
-      "gold": {
-        "base": 5,
-        "multiplier": 1.2,
-        "combined": 5
-      },
-      "coal": {
-        "base": null,
-        "multiplier": null,
-        "combined": null
-      },
-      "iron": {
-        "base": 10,
-        "multiplier": 1.15,
-        "combined": 10
-      },
-      "stone": {
-        "base": 10,
-        "multiplier": 1.15,
-        "combined": 10
-      },
-      "wood": {
-        "base": 10,
-        "multiplier": 1.2,
-        "combined": 10
-      },
-      "food": {
-        "base": null,
-        "multiplier": null,
-        "combined": null
-      }
+      "base": 5,
+      "multiplier": 1.2,
+      "combined": 5
     }
   }
 }
