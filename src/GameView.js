@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import Swipe from 'react-easy-swipe'
 import ResourcesBar from './ResourcesView'
 import Loader from './Loader'
+import Units from './Units'
 
 let mapStateToProps = state => {
   return {
@@ -107,6 +108,7 @@ class GameView extends Component {
               onSwipeMove={this.onSwipeMove.bind(this)}
               onSwipeEnd={this.onSwipeEnd.bind(this)}>
             </Swipe>
+            <Units/>
           </div>
         ) : <Loader/>
         }
