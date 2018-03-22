@@ -29,7 +29,8 @@
   position: relative;
   margin: 0;
   font-size: 1.5rem;
-  padding: 0.3rem 0; }
+  padding: 0.3rem 0;
+  cursor: default; }
 
 .unit__quantity {
   position: absolute;
@@ -37,9 +38,11 @@
   top: 50%;
   transform: translateY(-50%);
   right: 0.4rem;
-  font-size: 3rem; }
+  font-size: 3rem;
+  cursor: default; }
 
 .unit__cost {
-  margin: 0; }
+  margin: 0;
+  cursor: default; }
 
 /*# sourceMappingURL=Units.css.map */
