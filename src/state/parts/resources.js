@@ -12,13 +12,13 @@ const roundNum = (num, fixed) => {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case 'INCREMENT': {
+    case 'resources/INCREMENT': {
       return {
         gold: isNumber(action.gold) ? roundNum(state.gold + action.gold, 2) : state.gold,
 
       }
     }
-    case 'DECREMENT': {
+    case 'resources/DECREMENT': {
       return {
         gold: isNumber(action.gold) ? roundNum(state.gold - action.gold, 2) : state.gold,
       }
