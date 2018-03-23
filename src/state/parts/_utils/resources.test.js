@@ -16,7 +16,7 @@ describe('resources', () => {
   });
   it('should properly increment values of resources', () => {
     const action = {
-      type: 'INCREMENT',
+      type: 'resources/INCREMENT',
       gold: 1,
     };
 
@@ -28,7 +28,7 @@ describe('resources', () => {
   });
   it('should properly decrement values of resources', () => {
     const action = {
-      type: 'DECREMENT',
+      type: 'resources/DECREMENT',
       gold: 1,
     };
 

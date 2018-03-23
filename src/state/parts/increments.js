@@ -20,7 +20,7 @@ export default (state = initialState, action) => {
         goldBase: action.goldBase
       }
     }
-    case 'increments/SET_MULTIPLIER': {
+    case 'increments/SET_GOLD_MULTIPLIER': {
       return {
         ...state,
         goldMulti: action.goldMulti
