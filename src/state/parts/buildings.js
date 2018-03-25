@@ -39,9 +39,8 @@ export default (state = initialState, action) => {
       }
     }
     case 'buildings/ADD_BUILDING': {
-      state[action.building].quantity += 1;
-      state[action.building].cost.combined = roundNum(state[action.building].cost.base * state[action.building].cost.multiplier, 2);
-      state[action.building].cost.multiplier = Math.pow(state[action.building].cost.multiplier, state[action.building].quantity + 1);
+      state.data[action.building].quantity += 1;
+      state.data[action.building].cost.combined = roundNum((state.data[action.building].cost.base * (Math.pow(state.data[action.building].cost.multiplier, state.data[action.building].quantity))), 2);
       return {
         ...state,
         buildingsQuant: state.buildingsQuant + 1
