@@ -4,6 +4,7 @@ import Swipe from 'react-easy-swipe'
 import ResourcesBar from './ResourcesView'
 import Loader from './Loader'
 import Units from './Units'
+import Buildings from './Buildings'
 
 let mapStateToProps = state => {
   return {
@@ -109,6 +110,7 @@ class GameView extends Component {
               onSwipeEnd={this.onSwipeEnd.bind(this)}>
             </Swipe>
             <Units/>
+            <Buildings/>
           </div>
         ) : <Loader/>
         }
