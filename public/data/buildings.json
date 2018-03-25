@@ -1,9 +1,13 @@
 {
-  "buildingsQuant": 5,
   "cottages": {
     "name": "Cottage",
     "quantity": 0,
     "effects": [
+      {
+        "type": "buildings/ADD_BUILDING",
+        "building": "cottages",
+        "value": 1
+      },
       {
         "type": "INCREASE_UNIT_LIMIT",
         "value": 5
@@ -19,6 +23,11 @@
     "name": "Mine",
     "quantity": 0,
     "effects": [
+      {
+        "type": "buildings/ADD_BUILDING",
+        "building": "mines",
+        "value": 1
+      },
       {
         "type": "INCREASE_WORKER_EFFICIENCY",
         "worker": "miners",
@@ -36,6 +45,11 @@
     "quantity": 0,
     "effects": [
       {
+        "type": "buildings/ADD_BUILDING",
+        "building": "quarries",
+        "value": 1
+      },
+      {
         "type": "INCREASE_WORKER_EFFICIENCY",
         "worker": "quarriers",
         "value": 0.2
@@ -52,6 +66,11 @@
     "quantity": 0,
     "effects": [
       {
+        "type": "buildings/ADD_BUILDING",
+        "building": "sawmills",
+        "value": 1
+      },
+      {
         "type": "INCREASE_WORKER_EFFICIENCY",
         "worker": "lumberjacks",
         "value": 0.2
@@ -67,6 +86,11 @@
     "name": "Windmill",
     "quantity": 0,
     "effects": [
+      {
+        "type": "buildings/ADD_BUILDING",
+        "building": "windmills",
+        "value": 1
+      },
       {
         "type": "INCREASE_WORKER_EFFICIENCY",
         "worker": "farmers",
