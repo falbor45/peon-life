@@ -48,7 +48,7 @@ export default (state = initialState, action) => {
       }
     }
     case 'units/INCREASE_WORKER_EFFICIENCY': {
-      state[action.worker].efficiency = roundNum((state[action.worker].efficiency + action.value), 2);
+      state.data[action.worker].efficiency = roundNum((state.data[action.worker].efficiency + action.value), 2);
       return {
         ...state,
       }
