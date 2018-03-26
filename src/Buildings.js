@@ -11,10 +11,15 @@ let mapStateToProps = state => {
   }
 };
 
-let mapDipsatchToProps = dispatch => {
+let mapDispatchToProps = dispatch => {
   return {
     addBuilding: (building, value) => dispatch({type: "buildings/ADD_BUILDING", building, value}),
-    loseGold: gold => dispatch({type: "resources/DECREMENT", gold})
+    buildBuilding: building => {
+      for (let i = 0; i < building.effects.length; i++) {
+        dispatch(building.effects[i]);
+        dispatch({type: "resources/DECREMENT", gold: building.cost.combined});
+      }
+    }
   }
 };
 
@@ -41,7 +46,7 @@ class Buildings extends Component {
 
   mapBuilding = building => {
     return (
-      <div className="building" key={building.name} onClick={() => this.addBuilding(building, 1)}>
+      <div className="building" key={building.name} onClick={() => this.props.buildBuilding(building)}>
         <div className="building__background"> </div>
         <div className="building__icon"> </div>
         <p className="building__name">{building.name}</p>
@@ -66,4 +71,4 @@ class Buildings extends Component {
   }
 }
 
-export default connect(mapStateToProps, mapDipsatchToProps)(Buildings)
+export default connect(mapStateToProps, mapDispatchToProps)(Buildings)
