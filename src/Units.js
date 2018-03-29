@@ -58,10 +58,12 @@ class Units extends Component {
 
   render() {
     return (
-      <div className="units">
-        {
-          this.mapUnits()
-        }
+      <div className="units__wrapper">
+        <div className="units">
+          {
+            this.mapUnits()
+          }
+        </div>
       </div>
     )
   }

@@ -1,6 +1,11 @@
 .units {
-  width: 33.33%;
   display: inline-block; }
+
+.units__wrapper {
+  text-align: center; }
+  @media screen and (min-width: 768px) {
+    .units__wrapper {
+      width: 33.33%; } }
 
 .unit {
   color: white;
@@ -9,7 +14,8 @@
   height: 64px;
   box-sizing: border-box;
   margin: 0 auto;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+  text-align: left; }
 
 .unit__background {
   position: absolute;
