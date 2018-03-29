@@ -1,3 +1,7 @@
+.buildings {
+  width: 33.33%;
+  display: inline-block; }
+
 .building {
   color: white;
   position: relative;
