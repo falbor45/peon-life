@@ -4,6 +4,7 @@ import Swipe from 'react-easy-swipe'
 import ResourcesBar from './ResourcesView'
 import Loader from './Loader'
 import Units from './Units'
+import CenterArea from './CenterArea'
 import Buildings from './Buildings'
 
 let mapStateToProps = state => {
@@ -27,6 +28,16 @@ let mapDipsatchToProps = dispatch => {
 }
 
 class GameView extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      components: ['units', 'centerArea', 'buildings'],
+      viewedComponent: 1,
+      wasComponentSwiped: false
+    }
+  }
 
   componentWillMount() {
     this.props.unitsFetchBegin()
@@ -62,17 +73,6 @@ class GameView extends Component {
     )
   }
 
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      components: ['units', 'mainView', 'buildings'],
-      viewedComponent: 1,
-      wasComponentSwiped: false
-    }
-  }
-
   onSwipeStart(event) {
 
   }
@@ -104,13 +104,26 @@ class GameView extends Component {
         {this.props.units.data !== null && this.props.buildings.data !== null ? (
           <div>
             <ResourcesBar/>
-            <Swipe
-              onSwipeStart={this.onSwipeStart.bind(this)}
-              onSwipeMove={this.onSwipeMove.bind(this)}
-              onSwipeEnd={this.onSwipeEnd.bind(this)}>
-            </Swipe>
-            <Units/>
-            <Buildings/>
+            <div style={{maxWidth: '1200px', margin: '0 auto'}}>
+              <Swipe
+                style={{height: '100vh'}}
+                onSwipeStart={this.onSwipeStart.bind(this)}
+                onSwipeMove={this.onSwipeMove.bind(this)}
+                onSwipeEnd={this.onSwipeEnd.bind(this)}>
+                {
+                  this.state.components[this.state.viewedComponent] === 'units' ?
+                      <Units/> : null
+                }
+                {
+                  this.state.components[this.state.viewedComponent] === 'centerArea' ?
+                      <CenterArea/> : null
+                }
+                {
+                  this.state.components[this.state.viewedComponent] === 'buildings' ?
+                      <Buildings/> : null
+                }
+              </Swipe>
+            </div>
           </div>
         ) : <Loader/>
         }
