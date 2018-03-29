@@ -15,7 +15,7 @@ let mapDipsatchToProps = dispatch => {
   return {
     addWorker: (worker, value) => dispatch({type: "units/ADD_WORKER", worker, value}),
     loseGold: gold => dispatch({type: "resources/DECREMENT", gold}),
-    setGoldBase: goldBase => dispatch({type: "increments/INCREMENT", goldBase}),
+    setGoldBase: goldBase => dispatch({type: "increments/SET_GOLD_BASE", goldBase}),
   }
 };
 
