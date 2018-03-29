@@ -13,6 +13,7 @@ let mapStateToProps = state => {
 
 let mapDispatchToProps = dispatch => {
   return {
+    loseGold: gold => dispatch({type: "resources/DECREMENT", gold}),
     buildBuilding: building => {
       for (let i = 0; i < building.effects.length; i++) {
         dispatch(building.effects[i]);
