@@ -1,6 +1,11 @@
 .buildings {
-  width: 33.33%;
   display: inline-block; }
+
+.buildings__wrapper {
+  text-align: center; }
+  @media screen and (min-width: 768px) {
+    .buildings__wrapper {
+      width: 33.33%; } }
 
 .building {
   color: white;
@@ -9,7 +14,8 @@
   height: 64px;
   box-sizing: border-box;
   margin: 0 auto;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+  text-align: left; }
 
 .building__background {
   position: absolute;

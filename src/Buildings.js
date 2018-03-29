@@ -61,10 +61,12 @@ class Buildings extends Component {
 
   render() {
     return (
-      <div className="buildings">
-        {
-          this.mapBuildings()
-        }
+      <div className="buildings__wrapper">
+        <div className="buildings">
+          {
+            this.mapBuildings()
+          }
+        </div>
       </div>
     )
   }
