@@ -32,7 +32,7 @@ class Units extends Component {
   };
 
   addWorker = (worker, value) => {
-    if (this.props.resources.gold >= worker.cost.combined) {
+    if (this.props.resources.gold >= worker.cost.combined && this.props.units.unitLimit >= this.props.units.units + 1) {
       this.props.loseGold(worker.cost.combined);
       this.props.addWorker(worker.effects[0].worker, value);
     }
