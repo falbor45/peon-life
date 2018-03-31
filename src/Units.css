@@ -5,7 +5,9 @@
   text-align: center; }
   @media screen and (min-width: 768px) {
     .units__wrapper {
-      width: 33.33%; } }
+      width: 33.33%;
+      display: inline-block;
+      vertical-align: top; } }
 
 .unit {
   color: white;
