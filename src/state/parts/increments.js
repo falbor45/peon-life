@@ -1,7 +1,8 @@
 const initialState = {
   goldBase: 0,
   goldMulti: 1,
-  goldIncr: 0
+  goldIncr: 0,
+  ticksPerSec: 1
 }
 
 const isNumber = val => (!isNaN(val) && typeof val === 'number' && isFinite(val))
@@ -30,6 +31,12 @@ export default (state = initialState, action) => {
       return {
         ...state,
         goldIncr: Math.floor((state.goldBase * state.goldMulti) * 10) / 10,
+      }
+    }
+    case 'increments/INCREASE_TICKS': {
+      return {
+        ...state,
+        ticksPerSec: state.ticksPerSec + action.value
       }
     }
     default: {
