@@ -106,16 +106,16 @@ class GameView extends Component {
           <div>
             <ResourcesBar/>
             <div style={{maxWidth: '1200px', margin: '0 auto'}}>
+              <MediaQuery query="(min-device-width: 769px)">
+                <Units/>
+                <CenterArea/>
+                <Buildings/>
+              </MediaQuery>
               <Swipe
                 style={{height: '100vh'}}
                 onSwipeStart={this.onSwipeStart.bind(this)}
                 onSwipeMove={this.onSwipeMove.bind(this)}
                 onSwipeEnd={this.onSwipeEnd.bind(this)}>
-                <MediaQuery query="(min-device-width: 769px)">
-                  <Units/>
-                  <CenterArea/>
-                  <Buildings/>
-                </MediaQuery>
                 <MediaQuery query="(max-device-width: 768px)">
                   {
                     this.state.components[this.state.viewedComponent] === 'units' ?
