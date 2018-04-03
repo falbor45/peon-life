@@ -1,0 +1,12 @@
+.center-area {
+  text-align: center; }
+  @media screen and (min-width: 768px) {
+    .center-area {
+      width: 33.33%;
+      display: inline-block;
+      vertical-align: top; } }
+
+.center-area__info {
+  font-weight: bold; }
+
+/*# sourceMappingURL=CenterArea.css.map */
