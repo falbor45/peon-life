@@ -1,5 +1,6 @@
 body {
-  background: url("assets/bg.png"); }
+  background: url("assets/bg.png");
+  user-select: none; }
 
 .game-view__wrapper {
   max-width: 1200px;
