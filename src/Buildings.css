@@ -3,7 +3,7 @@
 
 .buildings__wrapper {
   text-align: center; }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 960px) {
     .buildings__wrapper {
       width: 33.33%;
       display: inline-block;
