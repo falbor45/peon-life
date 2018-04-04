@@ -21,24 +21,28 @@ let mapDipsatchToProps = dispatch => {
 
 class ResourcesView extends Component {
 
-  componentDidMount() {
-    this.setState({
-      setGoldBaseInt: setInterval(() => {
-        this.setGoldBase();
-        this.props.calcIncr();
-      }, 1000),
-
-      incrementGold: setInterval(() => {
-        this.props.incrementGold(this.props.increments.goldIncr)
-      }, 1000)
-    })
-  }
-
-
   constructor(props) {
     super(props);
 
-    this.state = {}
+    this.state = {
+      setGoldBaseInt: () => {
+        setTimeout(() => {
+          this.setGoldBase();
+          this.props.calcIncr();
+          this.state.setGoldBaseInt();
+        }, 1000 / this.props.increments.ticksPerSec)
+      },
+
+      incrementGold: () => {
+        setTimeout(() => {
+          this.props.incrementGold(this.props.increments.goldIncr);
+          this.state.incrementGold();
+        }, 1000 / this.props.increments.ticksPerSec)
+      }
+    }
+
+    this.state.setGoldBaseInt();
+    this.state.incrementGold();
   }
 
 
