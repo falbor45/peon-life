@@ -113,23 +113,23 @@ class GameView extends Component {
               </MediaQuery>
               <MediaQuery query="(max-device-width: 960px)">
                 <Swipe
-                  style={{height: '100vh'}}
+                  style={{height: '100vh', width: '100vw', position: 'absolute', top: '0', left: '0'}}
                   onSwipeStart={this.onSwipeStart.bind(this)}
                   onSwipeMove={this.onSwipeMove.bind(this)}
                   onSwipeEnd={this.onSwipeEnd.bind(this)}>
-                  {
-                    this.state.components[this.state.viewedComponent] === 'units' ?
-                      <Units/> : null
-                  }
-                  {
-                    this.state.components[this.state.viewedComponent] === 'centerArea' ?
-                      <CenterArea/> : null
-                  }
-                  {
-                    this.state.components[this.state.viewedComponent] === 'buildings' ?
-                      <Buildings/> : null
-                  }
                 </Swipe>
+                {
+                  this.state.components[this.state.viewedComponent] === 'units' ?
+                    <Units/> : null
+                }
+                {
+                  this.state.components[this.state.viewedComponent] === 'centerArea' ?
+                    <CenterArea/> : null
+                }
+                {
+                  this.state.components[this.state.viewedComponent] === 'buildings' ?
+                    <Buildings/> : null
+                }
               </MediaQuery>
             </div>
           </div>
