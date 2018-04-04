@@ -7,6 +7,7 @@ import Units from './Units'
 import CenterArea from './CenterArea'
 import Buildings from './Buildings'
 import MediaQuery from 'react-responsive'
+import './GameView.css'
 
 let mapStateToProps = state => {
   return {
@@ -105,7 +106,7 @@ class GameView extends Component {
         {this.props.units.data !== null && this.props.buildings.data !== null ? (
           <div>
             <ResourcesBar/>
-            <div style={{maxWidth: '1200px', margin: '0 auto'}}>
+            <div className='game-view__wrapper'>
               <MediaQuery query="(min-device-width: 961px)">
                 <Units/>
                 <CenterArea/>
@@ -113,7 +114,7 @@ class GameView extends Component {
               </MediaQuery>
               <MediaQuery query="(max-device-width: 960px)">
                 <Swipe
-                  style={{height: '100vh', width: '100vw', position: 'absolute', top: '0', left: '0'}}
+                  className='game-view__swipe-wrapper'
                   onSwipeStart={this.onSwipeStart.bind(this)}
                   onSwipeMove={this.onSwipeMove.bind(this)}
                   onSwipeEnd={this.onSwipeEnd.bind(this)}>
