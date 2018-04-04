@@ -111,12 +111,12 @@ class GameView extends Component {
                 <CenterArea/>
                 <Buildings/>
               </MediaQuery>
-              <Swipe
-                style={{height: '100vh'}}
-                onSwipeStart={this.onSwipeStart.bind(this)}
-                onSwipeMove={this.onSwipeMove.bind(this)}
-                onSwipeEnd={this.onSwipeEnd.bind(this)}>
-                <MediaQuery query="(max-device-width: 960px)">
+              <MediaQuery query="(max-device-width: 960px)">
+                <Swipe
+                  style={{height: '100vh'}}
+                  onSwipeStart={this.onSwipeStart.bind(this)}
+                  onSwipeMove={this.onSwipeMove.bind(this)}
+                  onSwipeEnd={this.onSwipeEnd.bind(this)}>
                   {
                     this.state.components[this.state.viewedComponent] === 'units' ?
                       <Units/> : null
@@ -129,8 +129,8 @@ class GameView extends Component {
                     this.state.components[this.state.viewedComponent] === 'buildings' ?
                       <Buildings/> : null
                   }
-                </MediaQuery>
-              </Swipe>
+                </Swipe>
+              </MediaQuery>
             </div>
           </div>
         ) : <Loader/>
