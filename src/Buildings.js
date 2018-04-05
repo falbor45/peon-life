@@ -46,7 +46,6 @@ class Buildings extends Component {
   mapBuilding = building => {
     return (
       <div className="building" key={building.name} onClick={() => this.addBuilding(building)}>
-        <div className="building__background"> </div>
         <div className="building__icon"> </div>
         <p className="building__name">{building.name}</p>
         <p className="building__quantity">{building.quantity}</p>

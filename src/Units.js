@@ -43,7 +43,6 @@ class Units extends Component {
   mapUnit = unit => {
     return (
       <div className="unit" key={unit.name} onClick={() => this.addWorker(unit, 1)}>
-        <div className="unit__background"> </div>
         <div className="unit__icon"> </div>
         <p className="unit__name">{unit.name}</p>
         <p className="unit__quantity">{unit.quantity}</p>
