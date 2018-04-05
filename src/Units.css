@@ -19,6 +19,7 @@
   box-sizing: border-box;
   margin: 0 auto;
   margin-bottom: 1rem;
+  transition: 0.25s;
   text-align: left;
   background: url("assets/button.png"); }
   .unit:active {
