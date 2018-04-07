@@ -1,4 +1,25 @@
 {
+  "townHalls": {
+    "name": "Town Hall",
+    "quantity": 0,
+    "effects": [
+      {
+        "type": "buildings/ADD_BUILDING",
+        "building": "townHalls",
+        "value": 1
+      },
+      {
+        "type": "units/INCREASE_WORKER_EFFICIENCY",
+        "worker": "peasants",
+        "value": 0.1
+      }
+    ],
+    "cost": {
+      "base": 100,
+      "multiplier": 5,
+      "combined": 100
+    }
+  },
   "cottages": {
     "name": "Cottage",
     "quantity": 0,
@@ -14,72 +35,9 @@
       }
     ],
     "cost": {
-      "base": 5,
-      "multiplier": 1.2,
-      "combined": 5
-    }
-  },
-  "mines": {
-    "name": "Mine",
-    "quantity": 0,
-    "effects": [
-      {
-        "type": "buildings/ADD_BUILDING",
-        "building": "mines",
-        "value": 1
-      },
-      {
-        "type": "units/INCREASE_WORKER_EFFICIENCY",
-        "worker": "miners",
-        "value": 0.2
-      }
-    ],
-    "cost": {
-      "base": 5,
-      "multiplier": 1.2,
-      "combined": 5
-    }
-  },
-  "quarries": {
-    "name": "Quarry",
-    "quantity": 0,
-    "effects": [
-      {
-        "type": "buildings/ADD_BUILDING",
-        "building": "quarries",
-        "value": 1
-      },
-      {
-        "type": "units/INCREASE_WORKER_EFFICIENCY",
-        "worker": "quarriers",
-        "value": 0.2
-      }
-    ],
-    "cost": {
-      "base": 5,
-      "multiplier": 1.2,
-      "combined": 5
-    }
-  },
-  "sawmills": {
-    "name": "Sawmill",
-    "quantity": 0,
-    "effects": [
-      {
-        "type": "buildings/ADD_BUILDING",
-        "building": "sawmills",
-        "value": 1
-      },
-      {
-        "type": "units/INCREASE_WORKER_EFFICIENCY",
-        "worker": "lumberjacks",
-        "value": 0.2
-      }
-    ],
-    "cost": {
-      "base": 5,
-      "multiplier": 1.2,
-      "combined": 5
+      "base": 50,
+      "multiplier": 1.25,
+      "combined": 50
     }
   },
   "windmills": {
@@ -94,34 +52,76 @@
       {
         "type": "units/INCREASE_WORKER_EFFICIENCY",
         "worker": "farmers",
-        "value": 0.2
+        "value": 0.6
       }
     ],
     "cost": {
-      "base": 5,
-      "multiplier": 1.2,
-      "combined": 5
+      "base": 150,
+      "multiplier": 1.25,
+      "combined": 150
     }
   },
-  "townHalls": {
-    "name": "Town Hall",
+  "quarries": {
+    "name": "Quarry",
     "quantity": 0,
     "effects": [
       {
         "type": "buildings/ADD_BUILDING",
-        "building": "townHalls",
+        "building": "quarries",
         "value": 1
       },
       {
         "type": "units/INCREASE_WORKER_EFFICIENCY",
-        "worker": "peasants",
-        "value": 0.2
+        "worker": "quarriers",
+        "value": 3
       }
     ],
     "cost": {
-      "base": 5,
-      "multiplier": 1.2,
-      "combined": 5
+      "base": 1900,
+      "multiplier": 1.25,
+      "combined": 1900
+    }
+  },
+  "sawmills": {
+    "name": "Sawmill",
+    "quantity": 0,
+    "effects": [
+      {
+        "type": "buildings/ADD_BUILDING",
+        "building": "sawmills",
+        "value": 1
+      },
+      {
+        "type": "units/INCREASE_WORKER_EFFICIENCY",
+        "worker": "lumberjacks",
+        "value": 8
+      }
+    ],
+    "cost": {
+      "base": 13000,
+      "multiplier": 1.25,
+      "combined": 13000
+    }
+  },
+  "mines": {
+    "name": "Mine",
+    "quantity": 0,
+    "effects": [
+      {
+        "type": "buildings/ADD_BUILDING",
+        "building": "mines",
+        "value": 1
+      },
+      {
+        "type": "units/INCREASE_WORKER_EFFICIENCY",
+        "worker": "miners",
+        "value": 40
+      }
+    ],
+    "cost": {
+      "base": 140000,
+      "multiplier": 1.25,
+      "combined": 140000
     }
   },
   "markets": {
@@ -136,13 +136,13 @@
       {
         "type": "units/INCREASE_WORKER_EFFICIENCY",
         "worker": "merchants",
-        "value": 0.2
+        "value": 100
       }
     ],
     "cost": {
-      "base": 5,
-      "multiplier": 1.2,
-      "combined": 5
+      "base": 250000,
+      "multiplier": 1.25,
+      "combined": 250000
     }
   },
   "parks": {
@@ -157,13 +157,13 @@
       {
         "type": "units/INCREASE_WORKER_EFFICIENCY",
         "worker": "bards",
-        "value": 0.2
+        "value": 250
       }
     ],
     "cost": {
-      "base": 5,
-      "multiplier": 1.2,
-      "combined": 5
+      "base": 450000,
+      "multiplier": 1.25,
+      "combined": 450000
     }
   },
   "theaters": {
@@ -178,13 +178,13 @@
       {
         "type": "units/INCREASE_WORKER_EFFICIENCY",
         "worker": "bards",
-        "value": 0.2
+        "value": 250
       }
     ],
     "cost": {
-      "base": 5,
-      "multiplier": 1.2,
-      "combined": 5
+      "base": 450000,
+      "multiplier": 1.25,
+      "combined": 450000
     }
   },
   "barracks": {
@@ -199,13 +199,13 @@
       {
         "type": "units/INCREASE_WORKER_EFFICIENCY",
         "worker": "knights",
-        "value": 0.2
+        "value": 600
       }
     ],
     "cost": {
-      "base": 5,
-      "multiplier": 1.2,
-      "combined": 5
+      "base": 1500000,
+      "multiplier": 1.25,
+      "combined": 1500000
     }
   }
 }
