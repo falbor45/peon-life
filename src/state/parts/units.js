@@ -6,11 +6,6 @@ const initialState = {
   units: 0,
 }
 
-const roundNum = (num, fixed) => {
-  let re = new RegExp('^-?\\d+(?:\.\\d{0,' + (fixed || -1) + '})?');
-  return Math.round(parseFloat(num.toString().match(re)[0]) * 10) / 10
-}
-
 export default (state = initialState, action) => {
   switch (action.type) {
     case 'units/FETCH_BEGIN': {
@@ -41,14 +36,14 @@ export default (state = initialState, action) => {
     }
     case 'units/ADD_WORKER': {
       state.data[action.worker].quantity += action.value;
-      state.data[action.worker].cost.combined = roundNum((state.data[action.worker].cost.base * (Math.pow(state.data[action.worker].cost.multiplier, state.data[action.worker].quantity))), 2);
+      state.data[action.worker].cost.combined = Math.floor(state.data[action.worker].cost.base * (Math.pow(state.data[action.worker].cost.multiplier, state.data[action.worker].quantity)));
       return {
         ...state,
         units: state.units !== state.unitLimit ? state.units + action.value : state.units
       }
     }
     case 'units/INCREASE_WORKER_EFFICIENCY': {
-      state.data[action.worker].efficiency = roundNum((state.data[action.worker].efficiency + action.value), 2);
+      state.data[action.worker].efficiency = Math.floor(state.data[action.worker].efficiency + action.value);
       return {
         ...state,
       }

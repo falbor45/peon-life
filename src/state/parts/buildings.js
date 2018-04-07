@@ -5,11 +5,6 @@ const initialState = {
   buildingsQuant: 0
 }
 
-const roundNum = (num, fixed) => {
-  let re = new RegExp('^-?\\d+(?:\.\\d{0,' + (fixed || -1) + '})?');
-  return Math.round(parseFloat(num.toString().match(re)[0]) * 10) / 10
-}
-
 export default (state = initialState, action) => {
   switch (action.type) {
     case 'buildings/FETCH_BEGIN': {
@@ -40,7 +35,7 @@ export default (state = initialState, action) => {
     }
     case 'buildings/ADD_BUILDING': {
       state.data[action.building].quantity += 1;
-      state.data[action.building].cost.combined = roundNum((state.data[action.building].cost.base * (Math.pow(state.data[action.building].cost.multiplier, state.data[action.building].quantity))), 2);
+      state.data[action.building].cost.combined = Math.floor(state.data[action.building].cost.base * (Math.pow(state.data[action.building].cost.multiplier, state.data[action.building].quantity)));
       return {
         ...state,
         buildingsQuant: state.buildingsQuant + 1

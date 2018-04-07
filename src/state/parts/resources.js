@@ -1,26 +1,25 @@
 const initialState = {
-  gold: 0
+  gold: 0,
+  trueGold: 0
 }
 
 const isNumber = val => (!isNaN(val) && typeof val === 'number' && isFinite(val))
-
-const roundNum = (num, fixed) => {
-  let re = new RegExp('^-?\\d+(?:\.\\d{0,' + (fixed || -1) + '})?');
-  return Math.round(parseFloat(num.toString().match(re)[0]) * 10) / 10
-}
 
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case 'resources/INCREMENT': {
+      let trueGold =  isNumber(action.gold) ? state.trueGold + action.gold : state.trueGold
       return {
-        gold: isNumber(action.gold) ? roundNum(state.gold + action.gold, 2) : state.gold,
-
+        gold: Math.floor(trueGold),
+        trueGold: trueGold
       }
     }
     case 'resources/DECREMENT': {
+      let trueGold =  isNumber(action.gold) ? state.trueGold - action.gold : state.trueGold
       return {
-        gold: isNumber(action.gold) ? roundNum(state.gold - action.gold, 2) : state.gold,
+        gold: Math.floor(trueGold),
+        trueGold: trueGold
       }
     }
     default:
