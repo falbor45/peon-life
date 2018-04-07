@@ -1,72 +1,4 @@
 {
-  "miners": {
-    "name": "Miner",
-    "quantity": 0,
-    "efficiency": 0.2,
-    "effects": [
-      {
-        "type": "ADD_WORKER",
-        "worker": "miners",
-        "value": 1
-      }
-    ],
-    "cost": {
-      "base": 10,
-      "multiplier": 1.02,
-      "combined": 10
-    }
-  },
-  "quarriers": {
-    "name": "Quarrier",
-    "quantity": 0,
-    "efficiency": 0.2,
-    "effects": [
-      {
-        "type": "ADD_WORKER",
-        "worker": "quarriers",
-        "value": 1
-      }
-    ],
-    "cost": {
-      "base": 10,
-      "multiplier": 1.02,
-      "combined": 10
-    }
-  },
-  "lumberjacks": {
-    "name": "Lumberjack",
-    "quantity": 0,
-    "efficiency": 0.2,
-    "effects": [
-      {
-        "type": "ADD_WORKER",
-        "worker": "lumberjacks",
-        "value": 1
-      }
-    ],
-    "cost": {
-      "base": 10,
-      "multiplier": 1.02,
-      "combined": 10
-    }
-  },
-  "farmers": {
-    "name": "Farmer",
-    "quantity": 0,
-    "efficiency": 0.2,
-    "effects": [
-      {
-        "type": "ADD_WORKER",
-        "worker": "farmers",
-        "value": 1
-      }
-    ],
-    "cost": {
-      "base": 10,
-      "multiplier": 1.02,
-      "combined": 10
-    }
-  },
   "peasants": {
     "name": "Peasant",
     "quantity": 0,
@@ -80,14 +12,82 @@
     ],
     "cost": {
       "base": 10,
-      "multiplier": 1.02,
+      "multiplier": 1.2,
       "combined": 10
+    }
+  },
+  "farmers": {
+    "name": "Farmer",
+    "quantity": 0,
+    "efficiency": 1,
+    "effects": [
+      {
+        "type": "ADD_WORKER",
+        "worker": "farmers",
+        "value": 1
+      }
+    ],
+    "cost": {
+      "base": 100,
+      "multiplier": 1.2,
+      "combined": 100
+    }
+  },
+  "quarriers": {
+    "name": "Quarrier",
+    "quantity": 0,
+    "efficiency": 6,
+    "effects": [
+      {
+        "type": "ADD_WORKER",
+        "worker": "quarriers",
+        "value": 1
+      }
+    ],
+    "cost": {
+      "base": 1300,
+      "multiplier": 1.2,
+      "combined": 1300
+    }
+  },
+  "lumberjacks": {
+    "name": "Lumberjack",
+    "quantity": 0,
+    "efficiency": 16,
+    "effects": [
+      {
+        "type": "ADD_WORKER",
+        "worker": "lumberjacks",
+        "value": 1
+      }
+    ],
+    "cost": {
+      "base": 8900,
+      "multiplier": 1.2,
+      "combined": 8900
+    }
+  },
+  "miners": {
+    "name": "Miner",
+    "quantity": 0,
+    "efficiency": 80,
+    "effects": [
+      {
+        "type": "ADD_WORKER",
+        "worker": "miners",
+        "value": 1
+      }
+    ],
+    "cost": {
+      "base": 97000,
+      "multiplier": 1.2,
+      "combined": 97000
     }
   },
   "merchants": {
     "name": "Merchant",
     "quantity": 0,
-    "efficiency": 0.2,
+    "efficiency": 200,
     "effects": [
       {
         "type": "ADD_WORKER",
@@ -96,15 +96,15 @@
       }
     ],
     "cost": {
-      "base": 10,
-      "multiplier": 1.02,
-      "combined": 10
+      "base": 170000,
+      "multiplier": 1.2,
+      "combined": 170000
     }
   },
   "bards": {
     "name": "Bard",
     "quantity": 0,
-    "efficiency": 0.2,
+    "efficiency": 500,
     "effects": [
       {
         "type": "ADD_WORKER",
@@ -113,15 +113,15 @@
       }
     ],
     "cost": {
-      "base": 10,
-      "multiplier": 1.02,
-      "combined": 10
+      "base": 300000,
+      "multiplier": 1.2,
+      "combined": 300000
     }
   },
   "knights": {
     "name": "Knight",
     "quantity": 0,
-    "efficiency": 0.2,
+    "efficiency": 1200,
     "effects": [
       {
         "type": "ADD_WORKER",
@@ -130,9 +130,9 @@
       }
     ],
     "cost": {
-      "base": 10,
-      "multiplier": 1.02,
-      "combined": 10
+      "base": 1000000,
+      "multiplier": 1.2,
+      "combined": 1000000
     }
   },
   "sailors": {
@@ -147,9 +147,9 @@
       }
     ],
     "cost": {
-      "base": 10,
-      "multiplier": 1.02,
-      "combined": 10
+      "base": 9999999,
+      "multiplier": 1.2,
+      "combined": 9999999
     }
   }
 }
