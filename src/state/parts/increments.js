@@ -1,7 +1,7 @@
 const initialState = {
-  goldBase: 0,
+  goldBase: 1,
   goldMulti: 1,
-  goldIncr: 0,
+  goldIncr: 1,
   ticksPerSec: 1
 }
 
@@ -18,7 +18,7 @@ export default (state = initialState, action) => {
     case 'increments/SET_GOLD_BASE': {
       return {
         ...state,
-        goldBase: action.goldBase
+        goldBase: 1 + action.goldBase
       }
     }
     case 'increments/SET_GOLD_MULTIPLIER': {
