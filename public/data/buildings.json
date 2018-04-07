@@ -102,5 +102,110 @@
       "multiplier": 1.2,
       "combined": 5
     }
+  },
+  "townHalls": {
+    "name": "Town Hall",
+    "quantity": 0,
+    "effects": [
+      {
+        "type": "buildings/ADD_BUILDING",
+        "building": "townHalls",
+        "value": 1
+      },
+      {
+        "type": "units/INCREASE_WORKER_EFFICIENCY",
+        "worker": "peasants",
+        "value": 0.2
+      }
+    ],
+    "cost": {
+      "base": 5,
+      "multiplier": 1.2,
+      "combined": 5
+    }
+  },
+  "markets": {
+    "name": "Market",
+    "quantity": 0,
+    "effects": [
+      {
+        "type": "buildings/ADD_BUILDING",
+        "building": "markets",
+        "value": 1
+      },
+      {
+        "type": "units/INCREASE_WORKER_EFFICIENCY",
+        "worker": "merchants",
+        "value": 0.2
+      }
+    ],
+    "cost": {
+      "base": 5,
+      "multiplier": 1.2,
+      "combined": 5
+    }
+  },
+  "parks": {
+    "name": "Park",
+    "quantity": 0,
+    "effects": [
+      {
+        "type": "buildings/ADD_BUILDING",
+        "building": "parks",
+        "value": 1
+      },
+      {
+        "type": "units/INCREASE_WORKER_EFFICIENCY",
+        "worker": "bards",
+        "value": 0.2
+      }
+    ],
+    "cost": {
+      "base": 5,
+      "multiplier": 1.2,
+      "combined": 5
+    }
+  },
+  "theaters": {
+    "name": "Theatre",
+    "quantity": 0,
+    "effects": [
+      {
+        "type": "buildings/ADD_BUILDING",
+        "building": "theaters",
+        "value": 1
+      },
+      {
+        "type": "units/INCREASE_WORKER_EFFICIENCY",
+        "worker": "bards",
+        "value": 0.2
+      }
+    ],
+    "cost": {
+      "base": 5,
+      "multiplier": 1.2,
+      "combined": 5
+    }
+  },
+  "barracks": {
+    "name": "Barracks",
+    "quantity": 0,
+    "effects": [
+      {
+        "type": "buildings/ADD_BUILDING",
+        "building": "barracks",
+        "value": 1
+      },
+      {
+        "type": "units/INCREASE_WORKER_EFFICIENCY",
+        "worker": "knights",
+        "value": 0.2
+      }
+    ],
+    "cost": {
+      "base": 5,
+      "multiplier": 1.2,
+      "combined": 5
+    }
   }
 }
