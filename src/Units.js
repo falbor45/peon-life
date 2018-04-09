@@ -51,8 +51,10 @@ class Units extends Component {
     )
   };
 
-  mapUnits = () => {
-    return this.objToArr(this.props.units.data).map(e => this.mapUnit(e))
+  filterUnit = unit => unit.unlocked;
+
+  filterAndMapUnits = () => {
+    return this.objToArr(this.props.units.data).filter(e => this.filterUnit(e)).map(e => this.mapUnit(e))
   };
 
   render() {
@@ -60,7 +62,7 @@ class Units extends Component {
       <div className="units__wrapper">
         <div className="units">
           {
-            this.mapUnits()
+            this.filterAndMapUnits()
           }
         </div>
       </div>
