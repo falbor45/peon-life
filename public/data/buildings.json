@@ -12,6 +12,10 @@
         "type": "units/INCREASE_WORKER_EFFICIENCY",
         "worker": "peasants",
         "value": 0.1
+      },
+      {
+        "type": "units/UNLOCK_UNIT",
+        "worker": "peasants"
       }
     ],
     "cost": {
@@ -53,6 +57,10 @@
         "type": "units/INCREASE_WORKER_EFFICIENCY",
         "worker": "farmers",
         "value": 0.6
+      },
+      {
+        "type": "units/UNLOCK_UNIT",
+        "worker": "farmers"
       }
     ],
     "cost": {
@@ -74,6 +82,10 @@
         "type": "units/INCREASE_WORKER_EFFICIENCY",
         "worker": "quarriers",
         "value": 3
+      },
+      {
+        "type": "units/UNLOCK_UNIT",
+        "worker": "quarriers"
       }
     ],
     "cost": {
@@ -95,6 +107,10 @@
         "type": "units/INCREASE_WORKER_EFFICIENCY",
         "worker": "lumberjacks",
         "value": 8
+      },
+      {
+        "type": "units/UNLOCK_UNIT",
+        "worker": "lumberjacks"
       }
     ],
     "cost": {
@@ -116,6 +132,10 @@
         "type": "units/INCREASE_WORKER_EFFICIENCY",
         "worker": "miners",
         "value": 40
+      },
+      {
+        "type": "units/UNLOCK_UNIT",
+        "worker": "miners"
       }
     ],
     "cost": {
@@ -137,6 +157,10 @@
         "type": "units/INCREASE_WORKER_EFFICIENCY",
         "worker": "merchants",
         "value": 100
+      },
+      {
+        "type": "units/UNLOCK_UNIT",
+        "worker": "merchants"
       }
     ],
     "cost": {
@@ -158,6 +182,10 @@
         "type": "units/INCREASE_WORKER_EFFICIENCY",
         "worker": "bards",
         "value": 250
+      },
+      {
+        "type": "units/UNLOCK_UNIT",
+        "worker": "bards"
       }
     ],
     "cost": {
@@ -179,6 +207,10 @@
         "type": "units/INCREASE_WORKER_EFFICIENCY",
         "worker": "bards",
         "value": 250
+      },
+      {
+        "type": "units/UNLOCK_UNIT",
+        "worker": "bards"
       }
     ],
     "cost": {
@@ -200,6 +232,10 @@
         "type": "units/INCREASE_WORKER_EFFICIENCY",
         "worker": "knights",
         "value": 600
+      },
+      {
+        "type": "units/UNLOCK_UNIT",
+        "worker": "knights"
       }
     ],
     "cost": {
