@@ -14,7 +14,8 @@
       "base": 10,
       "multiplier": 1.2,
       "combined": 10
-    }
+    },
+    "unlocked": false
   },
   "farmers": {
     "name": "Farmer",
@@ -31,7 +32,8 @@
       "base": 100,
       "multiplier": 1.2,
       "combined": 100
-    }
+    },
+    "unlocked": false
   },
   "quarriers": {
     "name": "Quarrier",
@@ -48,7 +50,8 @@
       "base": 1300,
       "multiplier": 1.2,
       "combined": 1300
-    }
+    },
+    "unlocked": false
   },
   "lumberjacks": {
     "name": "Lumberjack",
@@ -65,7 +68,8 @@
       "base": 8900,
       "multiplier": 1.2,
       "combined": 8900
-    }
+    },
+    "unlocked": false
   },
   "miners": {
     "name": "Miner",
@@ -82,7 +86,8 @@
       "base": 97000,
       "multiplier": 1.2,
       "combined": 97000
-    }
+    },
+    "unlocked": false
   },
   "merchants": {
     "name": "Merchant",
@@ -99,7 +104,8 @@
       "base": 170000,
       "multiplier": 1.2,
       "combined": 170000
-    }
+    },
+    "unlocked": false
   },
   "bards": {
     "name": "Bard",
@@ -116,7 +122,8 @@
       "base": 300000,
       "multiplier": 1.2,
       "combined": 300000
-    }
+    },
+    "unlocked": false
   },
   "knights": {
     "name": "Knight",
@@ -133,7 +140,8 @@
       "base": 1000000,
       "multiplier": 1.2,
       "combined": 1000000
-    }
+    },
+    "unlocked": false
   },
   "sailors": {
     "name": "Sailor",
@@ -150,6 +158,7 @@
       "base": 9999999,
       "multiplier": 1.2,
       "combined": 9999999
-    }
+    },
+    "unlocked": false
   }
 }
