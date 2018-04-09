@@ -45,13 +45,19 @@ export default (state = initialState, action) => {
     case 'units/INCREASE_WORKER_EFFICIENCY': {
       state.data[action.worker].efficiency = Math.floor(state.data[action.worker].efficiency + action.value);
       return {
-        ...state,
+        ...state
       }
     }
     case 'units/INCREASE_UNIT_LIMIT': {
       return {
         ...state,
         unitLimit: state.unitLimit + action.value
+      }
+    }
+    case 'units/UNLOCK_UNIT': {
+      state.data[action.worker].unlocked = true;
+      return {
+        ...state
       }
     }
     default:
