@@ -56,7 +56,7 @@ class Buildings extends Component {
 
   filterBuilding = building => 0.5 * building.cost.base <= this.props.resources.gold;
 
-  mapBuildings = () => {
+  filterAndMapBuildings = () => {
     return this.objToArr(this.props.buildings.data).filter(e => this.filterBuilding(e)).map(e => this.mapBuilding(e))
   };
 
@@ -65,7 +65,7 @@ class Buildings extends Component {
       <div className="buildings__wrapper">
         <div className="buildings">
           {
-            this.mapBuildings()
+            this.filterAndMapBuildings()
           }
         </div>
       </div>
