@@ -39,7 +39,7 @@ export default (state = initialState, action) => {
       state.data[action.worker].cost.combined = Math.floor(state.data[action.worker].cost.base * (Math.pow(state.data[action.worker].cost.multiplier, state.data[action.worker].quantity)));
       return {
         ...state,
-        units: state.units !== state.unitLimit ? state.units + action.value : state.units
+        units: state.units + action.value <= state.unitLimit ? state.units + action.value : state.units
       }
     }
     case 'units/INCREASE_WORKER_EFFICIENCY': {
