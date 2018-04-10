@@ -7,13 +7,15 @@ let mapStateToProps = state => {
   return {
     buildings: state.buildings,
     resources: state.resources,
-    increments: state.increments
+    increments: state.increments,
+    errors: state.errors
   }
 };
 
 let mapDispatchToProps = dispatch => {
   return {
     loseGold: gold => dispatch({type: "resources/DECREMENT", gold}),
+    throwError: error => dispatch({type: "errors/SET_ERROR", error}),
     buildBuilding: building => {
       for (let i = 0; i < building.effects.length; i++) {
         dispatch(building.effects[i]);
@@ -37,7 +39,11 @@ class Buildings extends Component {
   addBuilding = building => {
     if (this.props.resources.gold >= building.cost.combined) {
       this.props.loseGold(building.cost.combined);
-      this.props.buildBuilding(building)
+      this.props.buildBuilding(building);
+      return null;
+    }
+    if (this.props.resources.gold < building.cost.combined) {
+      this.props.throwError('Error: You do not have enough money for this purchase!');
     }
     return null;
   };
