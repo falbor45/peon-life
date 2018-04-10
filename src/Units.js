@@ -7,7 +7,8 @@ let mapStateToProps = state => {
   return {
     units: state.units,
     resources: state.resources,
-    increments: state.increments
+    increments: state.increments,
+    errors: state.errors
   }
 };
 
@@ -16,6 +17,7 @@ let mapDipsatchToProps = dispatch => {
     addWorker: (worker, value) => dispatch({type: "units/ADD_WORKER", worker, value}),
     loseGold: gold => dispatch({type: "resources/DECREMENT", gold}),
     setGoldBase: goldBase => dispatch({type: "increments/SET_GOLD_BASE", goldBase}),
+    throwError: error => dispatch({type: "errors/SET_ERROR", error})
   }
 };
 
@@ -32,9 +34,16 @@ class Units extends Component {
   };
 
   addWorker = (worker, value) => {
-    if (this.props.resources.gold >= worker.cost.combined && this.props.units.unitLimit >= this.props.units.units + 1) {
+    if (this.props.resources.gold >= worker.cost.combined && this.props.units.unitLimit >= this.props.units.units + value) {
       this.props.loseGold(worker.cost.combined);
       this.props.addWorker(worker.effects[0].worker, value);
+      return null;
+    }
+    if (this.props.resources.gold < worker.cost.combined) {
+      this.props.throwError('Error: You do not have enough money for this purchase!');
+    }
+    if (this.props.units.unitLimit < this.props.units.units + value) {
+      this.props.throwError('Error: Such purchase would exceed your unit limit! Consider buying more cottages.');
     }
     return null;
   };
