@@ -1,7 +1,7 @@
 const initialState = {
-  gold: 0,
-  trueGold: 0,
-  totalGold: 0
+  gold: 100,
+  trueGold: 100,
+  totalGold: 100
 }
 
 const isNumber = val => (!isNaN(val) && typeof val === 'number' && isFinite(val))
