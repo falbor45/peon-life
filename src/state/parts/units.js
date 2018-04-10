@@ -43,7 +43,7 @@ export default (state = initialState, action) => {
       }
     }
     case 'units/INCREASE_WORKER_EFFICIENCY': {
-      state.data[action.worker].efficiency = Math.floor(state.data[action.worker].efficiency + action.value);
+      state.data[action.worker].efficiency = state.data[action.worker].efficiency + action.value;
       return {
         ...state
       }
