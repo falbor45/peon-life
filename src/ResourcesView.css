@@ -1,10 +1,15 @@
 .gold-counter, .village-name {
   background: rgba(0, 0, 0, 0.6);
   margin: 0.5rem 0;
+  padding-bottom: 0.25rem;
   text-align: center;
   color: white;
   font-size: 2rem;
   font-weight: bold; }
+
+.gold-counter span {
+  display: block;
+  font-size: 0.9rem; }
 
 .village-name {
   margin: 0 auto;

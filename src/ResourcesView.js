@@ -64,7 +64,10 @@ class ResourcesView extends Component {
     return (
       <div>
         <p className="village-name">Peon's village</p>
-        <p className="gold-counter">{this.props.resources.gold} gold</p>
+        <p className="gold-counter">
+          {this.props.resources.gold} gold
+        <span>per second: {this.props.increments.goldIncr}</span>
+        </p>
       </div>
     )
   }

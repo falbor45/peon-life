@@ -25,10 +25,6 @@ class CenterArea extends Component {
           <span>{this.props.units.units}</span>
         </p>
         <p>
-          <span className="center-area__info">Gold per second: </span>
-          <span>{this.props.increments.goldIncr}</span>
-        </p>
-        <p>
           <span className="center-area__info">Ticks per second: </span>
           <span>{this.props.increments.ticksPerSec}</span>
         </p>
