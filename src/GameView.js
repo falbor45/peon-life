@@ -6,6 +6,7 @@ import Loader from './Loader'
 import Units from './Units'
 import CenterArea from './CenterArea'
 import Buildings from './Buildings'
+import Errors from './Errors'
 import MediaQuery from 'react-responsive'
 import './GameView.css'
 
@@ -106,6 +107,7 @@ class GameView extends Component {
         {this.props.units.data !== null && this.props.buildings.data !== null ? (
           <div>
             <ResourcesBar/>
+            <Errors/>
             <div className='game-view__wrapper'>
               <MediaQuery query="(min-device-width: 961px)">
                 <Units/>

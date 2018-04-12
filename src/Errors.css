@@ -1,0 +1,24 @@
+.errors {
+  display: table;
+  background: rgba(0, 0, 0, 0.6);
+  height: 2rem;
+  width: 100vw;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  color: #ff0000;
+  margin: 0.5rem 0;
+  opacity: 0;
+  transition: 0.5s;
+  z-index: 999; }
+  .errors span {
+    display: table-cell;
+    vertical-align: middle; }
+
+.errors-touch {
+  position: absolute;
+  height: 2rem;
+  width: 100vw;
+  z-index: 999; }
+
+/*# sourceMappingURL=Errors.css.map */
