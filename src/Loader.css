@@ -11,7 +11,6 @@
     opacity: 0; } }
 .loader__circle {
   animation: pulse 1.35s infinite;
-  background-color: white;
   border-radius: 50%;
   display: inline-block;
   border-color: #BAA378;
