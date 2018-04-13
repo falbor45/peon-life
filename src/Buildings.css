@@ -1,16 +1,41 @@
+::-webkit-scrollbar {
+  width: 0; }
+
 .buildings {
-  display: inline-block; }
+  display: inline-block;
+  overflow: scroll;
+  overflow-x: hidden;
+  max-height: 50vh; }
+  @media screen and (min-width: 960px) {
+    .buildings {
+      max-height: 65vh; } }
+  @media screen and (max-width: 720px) {
+    .buildings {
+      max-height: 40vh; } }
 
 .buildings__wrapper {
-  text-align: center; }
-  @media screen and (min-width: 960px) {
+  width: 90%;
+  margin: 0 auto;
+  color: white;
+  height: 73vh;
+  text-align: center;
+  box-sizing: border-box;
+  background-color: #A0A6C7;
+  border-radius: 5px;
+  padding: 1rem 0;
+  box-shadow: 7px 7px #999999;
+  margin-bottom: 2rem; }
+  @media screen and (min-height: 960px) {
     .buildings__wrapper {
-      width: 33.33%;
+      width: 30%;
       display: inline-block;
-      vertical-align: top; } }
+      vertical-align: top;
+      height: 80vh; } }
+  @media screen and (max-height: 720px) {
+    .buildings__wrapper {
+      height: 60vh; } }
 
 .building {
-  color: white;
   position: relative;
   width: 256px;
   height: 64px;
@@ -21,7 +46,7 @@
   margin-bottom: 1rem;
   transition: 0.25s;
   text-align: left;
-  background: url("assets/button.png"); }
+  background-color: #737AA8; }
   .building:active {
     box-shadow: 0 5px #999999;
     transform: translateY(5px); }

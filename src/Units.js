@@ -69,6 +69,7 @@ class Units extends Component {
   render() {
     return (
       <div className="units__wrapper">
+        <h1>Units</h1>
         <div className="units">
           {
             this.filterAndMapUnits()

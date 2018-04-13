@@ -69,6 +69,7 @@ class Buildings extends Component {
   render() {
     return (
       <div className="buildings__wrapper">
+        <h1>Buildings</h1>
         <div className="buildings">
           {
             this.filterAndMapBuildings()
