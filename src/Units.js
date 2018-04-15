@@ -47,6 +47,9 @@ class Units extends Component {
     if (this.props.resources.gold < unit.cost.combined) {
       this.props.throwError('Error: You do not have enough money for this purchase!');
     }
+    if (this.props.units.unitLimit < this.props.units.units + unit.effects[0].value) {
+      this.props.throwError('Error: Such purchase would exceed your unit limit! Consider buying more cottages.');
+    }
     return null;
   };
 
