@@ -7,14 +7,15 @@ let mapStateToProps = state => {
   return {
     resources: state.resources,
     increments: state.increments,
-    units: state.units
+    units: state.units,
+    happiness: state.happiness
   }
 };
 
 let mapDipsatchToProps = dispatch => {
   return {
     setGoldBase: goldBase => dispatch({type: "increments/SET_GOLD_BASE", goldBase}),
-    calcIncr: () => dispatch({type: "increments/CALCULATE_INCREMENTS"}),
+    calcIncr: productionBonus => dispatch({type: "increments/CALCULATE_INCREMENTS", productionBonus}),
     incrementGold: gold => dispatch({type: "resources/INCREMENT", gold})
   }
 }
@@ -28,7 +29,7 @@ class ResourcesView extends Component {
       setGoldBaseInt: () => {
         setTimeout(() => {
           this.setGoldBase();
-          this.props.calcIncr();
+          this.props.calcIncr(this.props.happiness.productionBonus);
           this.state.setGoldBaseInt();
         }, 1000 / this.props.increments.ticksPerSec)
       },

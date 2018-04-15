@@ -23,7 +23,7 @@ export default (state = initialState, action) => {
     case 'increments/CALCULATE_INCREMENTS': {
       return {
         ...state,
-        goldIncr: Math.floor((state.goldBase * state.goldMulti) * 10) / 10,
+        goldIncr: Math.floor(((state.goldBase * state.goldMulti) * 10) * action.productionBonus) / 10,
       }
     }
     case 'increments/INCREASE_TICKS': {
