@@ -14,10 +14,15 @@ let mapStateToProps = state => {
 
 let mapDipsatchToProps = dispatch => {
   return {
-    addWorker: (worker, value) => dispatch({type: "units/ADD_WORKER", worker, value}),
     loseGold: gold => dispatch({type: "resources/DECREMENT", gold}),
     setGoldBase: goldBase => dispatch({type: "increments/SET_GOLD_BASE", goldBase}),
-    throwError: error => dispatch({type: "errors/SET_ERROR", error})
+    throwError: error => dispatch({type: "errors/SET_ERROR", error}),
+    addUnit: unit => {
+      for (let i = 0; i < unit.effects.length; i++) {
+        dispatch(unit.effects[i]);
+        dispatch({type: "happiness/CALCULATE_VALUE"});
+      }
+    }
   }
 };
 
@@ -33,17 +38,14 @@ class Units extends Component {
     return result
   };
 
-  addWorker = (worker, value) => {
-    if (this.props.resources.gold >= worker.cost.combined && this.props.units.unitLimit >= this.props.units.units + value) {
-      this.props.loseGold(worker.cost.combined);
-      this.props.addWorker(worker.effects[0].worker, value);
+  addUnit = unit => {
+    if (this.props.resources.gold >= unit.cost.combined && this.props.units.unitLimit >= this.props.units.units + unit.effects[0].value) {
+      this.props.loseGold(unit.cost.combined);
+      this.props.addUnit(unit);
       return null;
     }
-    if (this.props.resources.gold < worker.cost.combined) {
+    if (this.props.resources.gold < unit.cost.combined) {
       this.props.throwError('Error: You do not have enough money for this purchase!');
-    }
-    if (this.props.units.unitLimit < this.props.units.units + value) {
-      this.props.throwError('Error: Such purchase would exceed your unit limit! Consider buying more cottages.');
     }
     return null;
   };
@@ -51,7 +53,7 @@ class Units extends Component {
 
   mapUnit = unit => {
     return (
-      <div className="unit" key={unit.name} onClick={() => this.addWorker(unit, 1)}>
+      <div className="unit" key={unit.name} onClick={() => this.addUnit(unit)}>
         <div className="unit__icon"> </div>
         <p className="unit__name">{unit.name}</p>
         <p className="unit__quantity">{unit.quantity}</p>
