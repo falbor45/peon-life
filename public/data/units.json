@@ -5,9 +5,13 @@
     "efficiency": 0.2,
     "effects": [
       {
-        "type": "ADD_WORKER",
+        "type": "units/ADD_WORKER",
         "worker": "peasants",
         "value": 1
+      },
+      {
+        "type": "happiness/INCREASE_UNHAPPINESS",
+        "value": 0.002
       }
     ],
     "cost": {
@@ -23,9 +27,13 @@
     "efficiency": 1,
     "effects": [
       {
-        "type": "ADD_WORKER",
+        "type": "units/ADD_WORKER",
         "worker": "farmers",
         "value": 1
+      },
+      {
+        "type": "happiness/INCREASE_UNHAPPINESS",
+        "value": 0.002
       }
     ],
     "cost": {
@@ -41,9 +49,13 @@
     "efficiency": 6,
     "effects": [
       {
-        "type": "ADD_WORKER",
+        "type": "units/ADD_WORKER",
         "worker": "quarriers",
         "value": 1
+      },
+      {
+        "type": "happiness/INCREASE_UNHAPPINESS",
+        "value": 0.002
       }
     ],
     "cost": {
@@ -59,9 +71,13 @@
     "efficiency": 16,
     "effects": [
       {
-        "type": "ADD_WORKER",
+        "type": "units/ADD_WORKER",
         "worker": "lumberjacks",
         "value": 1
+      },
+      {
+        "type": "happiness/INCREASE_UNHAPPINESS",
+        "value": 0.002
       }
     ],
     "cost": {
@@ -77,9 +93,13 @@
     "efficiency": 80,
     "effects": [
       {
-        "type": "ADD_WORKER",
+        "type": "units/ADD_WORKER",
         "worker": "miners",
         "value": 1
+      },
+      {
+        "type": "happiness/INCREASE_UNHAPPINESS",
+        "value": 0.002
       }
     ],
     "cost": {
@@ -95,9 +115,13 @@
     "efficiency": 200,
     "effects": [
       {
-        "type": "ADD_WORKER",
+        "type": "units/ADD_WORKER",
         "worker": "merchants",
         "value": 1
+      },
+      {
+        "type": "happiness/INCREASE_UNHAPPINESS",
+        "value": 0.002
       }
     ],
     "cost": {
@@ -113,9 +137,13 @@
     "efficiency": 500,
     "effects": [
       {
-        "type": "ADD_WORKER",
+        "type": "units/ADD_WORKER",
         "worker": "bards",
         "value": 1
+      },
+      {
+        "type": "happiness/INCREASE_HAPPINESS",
+        "value": 0.02
       }
     ],
     "cost": {
@@ -131,9 +159,13 @@
     "efficiency": 1200,
     "effects": [
       {
-        "type": "ADD_WORKER",
+        "type": "units/ADD_WORKER",
         "worker": "knights",
         "value": 1
+      },
+      {
+        "type": "happiness/INCREASE_UNHAPPINESS",
+        "value": 0.002
       }
     ],
     "cost": {
@@ -149,9 +181,13 @@
     "efficiency": 0.2,
     "effects": [
       {
-        "type": "ADD_WORKER",
+        "type": "units/ADD_WORKER",
         "worker": "sailors",
         "value": 1
+      },
+      {
+        "type": "happiness/INCREASE_UNHAPPINESS",
+        "value": 0.002
       }
     ],
     "cost": {
