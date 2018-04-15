@@ -7,7 +7,8 @@ let mapStateToProps = state => {
   return {
     resources: state.resources,
     units: state.units,
-    increments: state.increments
+    increments: state.increments,
+    happiness: state.happiness
   }
 };
 
@@ -27,6 +28,10 @@ class CenterArea extends Component {
         <p>
           <span className="center-area__info">Ticks per second: </span>
           <span>{this.props.increments.ticksPerSec}</span>
+        </p>
+        <p>
+          <span className="center-area__info">Happiness: </span>
+          <span>{this.props.happiness.value}</span>
         </p>
       </div>
     )
