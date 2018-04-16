@@ -56,11 +56,12 @@ class Units extends Component {
 
   mapUnit = unit => {
     return (
-      <div className={`unit ${this.props.resources.gold < unit.cost.combined ? 'disabled' : 'enabled'}`} key={unit.name} onClick={() => this.addUnit(unit)}>
+      <div className={`unit ${this.props.resources.gold < unit.cost.combined || this.props.units.unitLimit < this.props.units.units + unit.effects[0].value ? 'disabled' : 'enabled'}`} key={unit.name} onClick={() => this.addUnit(unit)}>
         <div className="unit__icon"> </div>
         <p className="unit__name">{unit.name}</p>
         <p className="unit__quantity">{unit.quantity}</p>
         <p className="unit__cost">{unit.cost.combined}</p>
+        <div className={`${this.props.resources.gold < unit.cost.combined || this.props.units.unitLimit < this.props.units.units + unit.effects[0].value ? 'unit__overlay--disabled' : null}`}> </div>
       </div>
     )
   };
