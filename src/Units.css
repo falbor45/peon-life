@@ -1,3 +1,11 @@
+::-webkit-scrollbar {
+  width: 0; }
+
+@keyframes vibrate {
+  25% {
+    transform: translateX(5px); }
+  75% {
+    transform: translateX(-10px); } }
 .units {
   display: inline-block;
   overflow: scroll;
@@ -44,9 +52,13 @@
   transition: 0.25s;
   text-align: left;
   background-color: #737AA8; }
-  .unit:active {
-    box-shadow: 0 5px #999999;
-    transform: translateY(5px); }
+
+.enabled:active {
+  box-shadow: 0 5px #999999;
+  transform: translateY(5px); }
+
+.disabled:active {
+  animation: 0.2s vibrate; }
 
 .unit__icon {
   background: url("https://lorempizza.com/64/64");

@@ -56,7 +56,7 @@ class Units extends Component {
 
   mapUnit = unit => {
     return (
-      <div className="unit" key={unit.name} onClick={() => this.addUnit(unit)}>
+      <div className={`unit ${this.props.resources.gold < unit.cost.combined ? 'disabled' : 'enabled'}`} key={unit.name} onClick={() => this.addUnit(unit)}>
         <div className="unit__icon"> </div>
         <p className="unit__name">{unit.name}</p>
         <p className="unit__quantity">{unit.quantity}</p>
