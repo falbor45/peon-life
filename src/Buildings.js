@@ -56,6 +56,7 @@ class Buildings extends Component {
         <p className="building__name">{building.name}</p>
         <p className="building__quantity">{building.quantity}</p>
         <p className="building__cost">{building.cost.combined}</p>
+        <div className={`${this.props.resources.gold < building.cost.combined ? 'unit__overlay--disabled' : null}`}> </div>
       </div>
     )
   };
