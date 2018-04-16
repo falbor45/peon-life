@@ -31,6 +31,8 @@
   padding: 1rem 0;
   box-shadow: 7px 7px #999999;
   margin-bottom: 2rem; }
+  .units__wrapper h1 {
+    color: #f3d970; }
   @media screen and (min-width: 960px) {
     .units__wrapper {
       width: 30%;
