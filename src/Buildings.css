@@ -1,11 +1,17 @@
 ::-webkit-scrollbar {
   width: 0; }
 
+@keyframes vibrate {
+  25% {
+    transform: translateX(5px); }
+  75% {
+    transform: translateX(-10px); } }
 .buildings {
   display: inline-block;
   overflow: scroll;
   overflow-x: hidden;
-  max-height: 50vh; }
+  max-height: 50vh;
+  padding: 0 0.5rem; }
   @media screen and (min-width: 960px) {
     .buildings {
       max-height: 65vh; } }
@@ -35,6 +41,13 @@
     .buildings__wrapper {
       height: 60vh; } }
 
+.building__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%; }
+
 .building {
   position: relative;
   width: 256px;
@@ -47,9 +60,13 @@
   transition: 0.25s;
   text-align: left;
   background-color: #737AA8; }
-  .building:active {
-    box-shadow: 0 5px #999999;
-    transform: translateY(5px); }
+
+.enabled:active {
+  box-shadow: 0 5px #999999;
+  transform: translateY(5px); }
+
+.disabled:active {
+  animation: 0.2s vibrate; }
 
 .building__icon {
   background: url("https://lorempizza.com/64/64");
