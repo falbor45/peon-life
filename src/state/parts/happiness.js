@@ -3,7 +3,10 @@ const initialState = {
   realValue: 0.4,
   happiness: 0.4,
   unhappiness: 0,
-  productionBonus: 1
+  productionBonus: 1,
+  zeroHappiness: 0.4,
+  happinessPenaltyPercent: 0.02,
+  happinessBonusPercent: 0.01
 };
 
 export default (state = initialState, action) => {
@@ -12,7 +15,9 @@ export default (state = initialState, action) => {
       let happiness = state.happiness;
       let unhappiness = state.unhappiness;
       let realValue = happiness - unhappiness;
-      let productionBonus = realValue >= 0.4 ? 1 + ((realValue - 0.4) / 0.01) / 100 : 1 - ((0.4 - realValue) / 0.005) / 100;
+      let productionBonus = realValue >= 0.4 ?
+        1 + ((realValue - state.zeroHappiness) / 0.01) * state.happinessBonusPercent :
+        1 - ((state.zeroHappiness - realValue) / 0.01) * state.happinessPenaltyPercent;
       if (realValue > 1) {
         realValue = 1
       }
@@ -38,6 +43,22 @@ export default (state = initialState, action) => {
       return {
         ...state,
         happiness: state.happiness + action.value
+      }
+    }
+    case 'happiness/CHANGE_HAPPINESS_PENALTY': {
+      return {
+        ...state,
+        happinessPenaltyPercent: action.direction === 'increase' ?
+          state.happinessPenaltyPercent + action.value :
+          state.happinessPenaltyPercent - action.value
+      }
+    }
+    case 'happiness/CHANGE_HAPPINESS_BONUS': {
+      return {
+        ...state,
+        happinessBonusPercent: action.direction === 'increase' ?
+          state.happinessBonusPercent + action.value :
+          state.happinessBonusPercent - action.value
       }
     }
     default:
