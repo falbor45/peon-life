@@ -179,13 +179,12 @@
         "value": 1
       },
       {
-        "type": "units/INCREASE_WORKER_EFFICIENCY",
-        "worker": "bards",
-        "value": 250
+        "type": "happiness/CHANGE_HAPPINESS_PENALTY",
+        "change": "decrease",
+        "value": 0.0001
       },
       {
-        "type": "units/UNLOCK_UNIT",
-        "worker": "bards"
+        "type": "happiness/CALCULATE_VALUE"
       }
     ],
     "cost": {
