@@ -63,11 +63,15 @@ class Units extends Component {
                       'disabled' : 'enabled'}`}
            key={unit.name}
            onClick={() => this.addUnit(unit)}>
-        <div className="unit__icon"> </div>
-        <p className="unit__name">{unit.name}</p>
+          <img src="https://lorempizza.com/64/64" alt="unit icon"/>
+          <div className="unit__info">
+            <p className="unit__name">{unit.name}</p>
+            <p className="unit__cost">{unit.cost.combined}</p>
+          </div>
         <p className="unit__quantity">{unit.quantity}</p>
-        <p className="unit__cost">{unit.cost.combined}</p>
-        <div className={`${this.props.resources.gold < unit.cost.combined || this.props.units.unitLimit < this.props.units.units + unit.effects[0].value ? 'unit__overlay--disabled' : null}`}> </div>
+        <div className={`${this.props.resources.gold < unit.cost.combined ||
+          this.props.units.unitLimit < this.props.units.units + unit.effects[0].value ?
+            'unit__overlay--disabled' : null}`}> </div>
         <ReactTooltip effect="solid" id={`${unit.name}-tooltip`}>
           <div className="unit-tooltip">
             <div className="unit-tooltip__icon">
