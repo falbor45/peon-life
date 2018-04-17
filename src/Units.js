@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import ReactTooltip from 'react-tooltip'
+import pluralize from 'pluralize'
 import 'normalize.css'
 import './Units.css'
 
@@ -87,7 +88,7 @@ class Units extends Component {
           </div>
           <ul className="unit-tooltip__data">
           <li>Each {unit.name.toLowerCase()} produces {unit.efficiency * this.props.increments.ticksPerSec} gold per second</li>
-          <li>{unit.quantity} {unit.quantity === 1 ? unit.name.toLowerCase() : `${unit.name.toLowerCase()}s`} producing {(unit.quantity * unit.efficiency) * this.props.increments.ticksPerSec} gold per second</li>
+          <li>You currently own {unit.quantity} {unit.quantity === 1 ? unit.name.toLowerCase() : pluralize(unit.name.toLowerCase())} producing {(unit.quantity * unit.efficiency) * this.props.increments.ticksPerSec} gold per second</li>
           </ul>
         </ReactTooltip>
       </div>

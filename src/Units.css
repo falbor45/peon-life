@@ -91,6 +91,7 @@
   padding-right: 0.5rem; }
 
 .unit-tooltip {
+  min-width: 384px;
   display: flex; }
   .unit-tooltip p {
     margin: 0; }
