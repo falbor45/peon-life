@@ -22,7 +22,10 @@
       "base": 100,
       "multiplier": 5,
       "combined": 100
-    }
+    },
+    "description": [
+      "Each town hall increases peasants' efficiency by 0.1 gold per game tick"
+    ]
   },
   "cottages": {
     "name": "Cottage",
@@ -42,7 +45,10 @@
       "base": 50,
       "multiplier": 1.25,
       "combined": 50
-    }
+    },
+    "description": [
+      "Each cottage increases maximum unit limit by five."
+    ]
   },
   "windmills": {
     "name": "Windmill",
@@ -67,7 +73,11 @@
       "base": 150,
       "multiplier": 1.25,
       "combined": 150
-    }
+    },
+    "description": [
+      "Upon first purchase, windmill unlocks farmer unit.",
+      "Each windmill increases farmers' efficiency by 0.6 gold per game tick"
+    ]
   },
   "quarries": {
     "name": "Quarry",
@@ -92,7 +102,11 @@
       "base": 1900,
       "multiplier": 1.25,
       "combined": 1900
-    }
+    },
+    "description": [
+      "Upon first purchase, quarry unlocks quarrier unit.",
+      "Each quarry increases farmers' efficiency by 3 gold per game tick"
+    ]
   },
   "sawmills": {
     "name": "Sawmill",
@@ -117,7 +131,11 @@
       "base": 13000,
       "multiplier": 1.25,
       "combined": 13000
-    }
+    },
+    "description": [
+      "Upon first purchase, sawmill unlocks lumberjack unit.",
+      "Each sawmill increases lumberjacks' efficiency by 8 gold per game tick"
+    ]
   },
   "mines": {
     "name": "Mine",
@@ -142,7 +160,11 @@
       "base": 140000,
       "multiplier": 1.25,
       "combined": 140000
-    }
+    },
+    "description": [
+      "Upon first purchase, mine unlocks miner unit.",
+      "Each mine increases miners' efficiency by 40 gold per game tick"
+    ]
   },
   "markets": {
     "name": "Market",
@@ -167,7 +189,11 @@
       "base": 250000,
       "multiplier": 1.25,
       "combined": 250000
-    }
+    },
+    "description": [
+      "Upon first purchase, market unlocks merchant unit.",
+      "Each market increases merchants' efficiency by 100 gold per game tick"
+    ]
   },
   "parks": {
     "name": "Park",
@@ -191,7 +217,10 @@
       "base": 450000,
       "multiplier": 1.25,
       "combined": 450000
-    }
+    },
+    "description": [
+      "Each park reduces happiness penalty received from each unit by 0.0001"
+    ]
   },
   "theaters": {
     "name": "Theatre",
@@ -216,7 +245,11 @@
       "base": 450000,
       "multiplier": 1.25,
       "combined": 450000
-    }
+    },
+    "description": [
+      "Upon first purchase, theater unlocks bard unit.",
+      "Each theater increases bards' efficiency by 250 gold per game tick"
+    ]
   },
   "barracks": {
     "name": "Barracks",
@@ -241,6 +274,10 @@
       "base": 1500000,
       "multiplier": 1.25,
       "combined": 1500000
-    }
+    },
+    "description": [
+      "Upon first purchase, barracks unlocks knight unit.",
+      "Each barracks increases knights' efficiency by 600 gold per game tick"
+    ]
   }
 }
