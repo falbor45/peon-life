@@ -51,11 +51,16 @@ class Buildings extends Component {
 
   mapBuilding = building => {
     return (
-      <div className={`building ${this.props.resources.gold < building.cost.combined ? 'disabled' : 'enabled'}`} key={building.name} onClick={() => this.addBuilding(building)}>
-        <div className="building__icon"> </div>
-        <p className="building__name">{building.name}</p>
+      <div className={`building ${this.props.resources.gold < building.cost.combined ?
+                      'disabled' : 'enabled'}`}
+           key={building.name}
+           onClick={() => this.addBuilding(building)}>
+        <img src="https://lorempizza.com/64/64" alt="building icon"/>
+        <div className="building__info">
+          <p className="building__name">{building.name}</p>
+          <p className="building__cost">{building.cost.combined}</p>
+        </div>
         <p className="building__quantity">{building.quantity}</p>
-        <p className="building__cost">{building.cost.combined}</p>
         <div className={`${this.props.resources.gold < building.cost.combined ? 'unit__overlay--disabled' : null}`}> </div>
       </div>
     )

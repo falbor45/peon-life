@@ -11,7 +11,8 @@
   overflow: scroll;
   overflow-x: hidden;
   max-height: 50vh;
-  padding: 0 0.5rem; }
+  padding: 0 0.5rem;
+  width: 80%; }
   @media screen and (min-width: 960px) {
     .buildings {
       max-height: 65vh; } }
@@ -52,16 +53,22 @@
 
 .building {
   position: relative;
-  width: 256px;
-  height: 64px;
   border-radius: 0 6px 15px 6px;
   box-shadow: 0 9px #999999;
   box-sizing: border-box;
-  margin: 0 auto;
   margin-bottom: 1rem;
   transition: 0.25s;
   text-align: left;
-  background-color: #737AA8; }
+  background-color: #737AA8;
+  display: flex;
+  height: 64px; }
+
+.building__info {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0.5rem; }
+  .building__info p {
+    margin: 0; }
 
 .building__overlay--disabled {
   position: absolute;
@@ -81,30 +88,13 @@
 .disabled:active {
   animation: 0.2s vibrate; }
 
-.building__icon {
-  background: url("https://lorempizza.com/64/64");
-  height: 64px;
-  width: 64px;
-  float: left; }
-
 .building__name {
-  position: relative;
-  margin: 0;
-  font-size: 1.5rem;
-  padding: 0.3rem 0;
-  cursor: default; }
+  font-size: 2rem; }
 
 .building__quantity {
-  position: absolute;
   margin: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  right: 0.4rem;
   font-size: 3rem;
-  cursor: default; }
-
-.building__cost {
-  margin: 0;
-  cursor: default; }
+  margin-left: auto;
+  padding-right: 0.5rem; }
 
 /*# sourceMappingURL=Buildings.css.map */
