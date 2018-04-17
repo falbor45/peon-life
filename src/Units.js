@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import ReactTooltip from 'react-tooltip'
 import 'normalize.css'
 import './Units.css'
 
@@ -56,12 +57,35 @@ class Units extends Component {
 
   mapUnit = unit => {
     return (
-      <div className={`unit ${this.props.resources.gold < unit.cost.combined || this.props.units.unitLimit < this.props.units.units + unit.effects[0].value ? 'disabled' : 'enabled'}`} key={unit.name} onClick={() => this.addUnit(unit)}>
+      <div data-tip data-for={`${unit.name}-tooltip`}
+           className={`unit ${this.props.resources.gold < unit.cost.combined ||
+                      this.props.units.unitLimit < this.props.units.units + unit.effects[0].value ?
+                      'disabled' : 'enabled'}`}
+           key={unit.name}
+           onClick={() => this.addUnit(unit)}>
         <div className="unit__icon"> </div>
         <p className="unit__name">{unit.name}</p>
         <p className="unit__quantity">{unit.quantity}</p>
         <p className="unit__cost">{unit.cost.combined}</p>
         <div className={`${this.props.resources.gold < unit.cost.combined || this.props.units.unitLimit < this.props.units.units + unit.effects[0].value ? 'unit__overlay--disabled' : null}`}> </div>
+        <ReactTooltip effect="solid" id={`${unit.name}-tooltip`}>
+          <div className="unit-tooltip">
+            <div className="unit-tooltip__icon">
+              <img src='https://lorempizza.com/64/64'/>
+            </div>
+            <div className="unit-tooltip__info">
+              <p className="unit-tooltip__name">{unit.name}</p>
+              <p className="unit-tooltip__owned">(Owned: {unit.quantity})</p>
+            </div>
+            <div className="unit-tooltip__cost">
+              <p>Cost: {unit.cost.combined}</p>
+            </div>
+          </div>
+          <ul className="unit-tooltip__data">
+          <li>Each {unit.name.toLowerCase()} produces {unit.efficiency * this.props.increments.ticksPerSec} gold per second</li>
+          <li>{unit.quantity} {unit.quantity === 1 ? unit.name.toLowerCase() : `${unit.name.toLowerCase()}s`} producing {(unit.quantity * unit.efficiency) * this.props.increments.ticksPerSec} gold per second</li>
+          </ul>
+        </ReactTooltip>
       </div>
     )
   };
