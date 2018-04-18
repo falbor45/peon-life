@@ -79,9 +79,9 @@ class Buildings extends Component {
             </div>
           </div>
           <ul className="building-tooltip__data">
-            <li>{building.description.map(e =>
+            {building.description.map(e =>
               <li>{e}</li>
-            )}</li>
+            )}
             <li>You currently own {building.quantity} {building.quantity === 1 ? building.name.toLowerCase() : pluralize(building.name.toLowerCase())}.</li>
           </ul>
         </ReactTooltip>
