@@ -19,7 +19,7 @@
       "multiplier": 1.2,
       "combined": 10
     },
-    "unlocked": false
+    "unlocked": true
   },
   "farmers": {
     "name": "Farmer",
