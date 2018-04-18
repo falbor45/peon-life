@@ -14,8 +14,11 @@
         "value": 0.1
       },
       {
-        "type": "units/UNLOCK_UNIT",
-        "worker": "peasants"
+        "type": "happiness/INCREASE_HAPPINESS",
+        "value": 0.05
+      },
+      {
+        "type": "happiness/CALCULATE_VALUE"
       }
     ],
     "cost": {
@@ -24,7 +27,8 @@
       "combined": 100
     },
     "description": [
-      "Each town hall increases peasants' efficiency by 0.1 gold per game tick"
+      "Each town hall increases peasants' efficiency by 0.1 gold per game tick",
+      "Each town hall increases happiness by 0.05"
     ]
   },
   "cottages": {
