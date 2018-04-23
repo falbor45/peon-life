@@ -4,6 +4,7 @@
   "description": "An incremental web game",
   "private": true,
   "dependencies": {
+    "bignumber.js": "^6.0.0",
     "normalize.css": "^8.0.0",
     "pluralize": "^7.0.0",
     "react": "^16.2.0",

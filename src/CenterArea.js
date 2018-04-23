@@ -27,11 +27,11 @@ class CenterArea extends Component {
         </p>
         <p>
           <span className="center-area__info">Ticks per second: </span>
-          <span>{this.props.increments.ticksPerSec}</span>
+          <span>{this.props.increments.ticksPerSec.toNumber()}</span>
         </p>
         <p>
           <span className="center-area__info">Happiness: </span>
-          <span>{this.props.happiness.value}</span>
+          <span>{this.props.happiness.value.toNumber()}</span>
         </p>
       </div>
     )

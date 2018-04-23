@@ -29,14 +29,14 @@ class ResourcesView extends Component {
       setGoldBaseInt: () => {
         setTimeout(() => {
           this.setGoldBase();
-          this.props.calcIncr(this.props.happiness.productionBonus);
+          this.props.calcIncr(this.props.happiness.productionBonus.toNumber());
           this.state.setGoldBaseInt();
         }, 1000 / this.props.increments.ticksPerSec)
       },
 
       incrementGold: () => {
         setTimeout(() => {
-          this.props.incrementGold(this.props.increments.goldIncr);
+          this.props.incrementGold(this.props.increments.goldIncr.toNumber());
           this.state.incrementGold();
         }, 1000 / this.props.increments.ticksPerSec)
       }
@@ -66,8 +66,8 @@ class ResourcesView extends Component {
       <div>
         <p className="village-name">Peon's village</p>
         <p className="gold-counter">
-          {this.props.resources.gold} gold
-        <span>per second: {this.props.increments.goldIncr}</span>
+          {this.props.resources.gold.toNumber()} gold
+        <span>per second: {this.props.increments.goldIncr.toNumber()}</span>
         </p>
       </div>
     )
