@@ -6,14 +6,11 @@ const initialState = {
   totalGold: new BigNumber(100)
 }
 
-const isNumber = val => (!isNaN(val) && typeof val === 'number' && isFinite(val))
-
-
 export default (state = initialState, action) => {
   switch (action.type) {
     case 'resources/INCREMENT': {
-      let trueGold =  isNumber(action.gold) ? state.trueGold.plus(action.gold) : state.trueGold;
-      let totalGold = isNumber(action.gold) ? state.totalGold.plus(action.gold) : state.totalGold;
+      let trueGold = state.trueGold.plus(action.gold);
+      let totalGold = state.totalGold.plus(action.gold);
       return {
         ...state,
         gold: trueGold.decimalPlaces(0),
@@ -22,7 +19,7 @@ export default (state = initialState, action) => {
       }
     }
     case 'resources/DECREMENT': {
-      let trueGold = isNumber(action.gold) ? state.trueGold.minus(action.gold) : state.trueGold
+      let trueGold = state.trueGold.minus(action.gold);
       return {
         ...state,
         gold: trueGold,
