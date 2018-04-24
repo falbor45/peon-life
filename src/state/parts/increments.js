@@ -25,7 +25,6 @@ export default (state = initialState, action) => {
     case 'increments/CALCULATE_INCREMENTS': {
       return {
         ...state,
-        // goldIncr: Math.floor(((state.goldBase.multipliedBy(state.goldMulti)).multipliedBy(new BigNumber(10))).multipliedBy(productionBonus)).dividedBy(new BigNumber(10)),
         goldIncr: state.goldBase.multipliedBy(state.goldMulti).multipliedBy(action.productionBonus.toString()).decimalPlaces(2)
       }
     }
