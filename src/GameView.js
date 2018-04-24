@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
+import JSONBigNumber from 'json-bignumber'
 import Swipe from 'react-easy-swipe'
 import ResourcesBar from './ResourcesView'
 import Loader from './Loader'
@@ -46,18 +47,30 @@ class GameView extends Component {
     this.props.unitsFetchBegin()
     fetch(
       `${process.env.PUBLIC_URL}/data/units.json`
-    ).then(
-      response => response.json().then(
-        data => {
-          this.props.unitsFetchSuccess(data);
-          this.props.unitsSetSettings(data);
-        }
-      ).catch(
-        error => this.props.unitsFetchFail('Malformed JSON!')
-      )
-    ).catch(
-      error => this.props.unitsFetchFail('Connection error!')
-    )
+    ).then(response => response.json()
+    ).then(json => JSON.stringify(json)
+    ).then(string => JSONBigNumber.parse(string)
+    ).then(data => {
+      this.props.unitsFetchSuccess(data);
+      this.props.unitsSetSettings(data);
+    });
+
+    // this.props.unitsFetchBegin()
+    // fetch(
+    //   `${process.env.PUBLIC_URL}/data/units.json`
+    // ).then(
+    //   response => response.json()
+    //     .then(
+    //     data => {
+    //       this.props.unitsFetchSuccess(data);
+    //       this.props.unitsSetSettings(data);
+    //     }
+    //   ).catch(
+    //     error => this.props.unitsFetchFail('Malformed JSON!')
+    //   )
+    // ).catch(
+    //   error => this.props.unitsFetchFail('Connection error!')
+    // )
 
     this.props.buildingsFetchBegin()
     fetch(

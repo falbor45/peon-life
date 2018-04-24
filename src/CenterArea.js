@@ -23,15 +23,15 @@ class CenterArea extends Component {
       <div className="center-area">
         <p>
           <span className="center-area__info">Total units: </span>
-          <span>{this.props.units.units} / {this.props.units.unitLimit}</span>
+          <span>{this.props.units.units.toString()} / {this.props.units.unitLimit.toString()}</span>
         </p>
         <p>
           <span className="center-area__info">Ticks per second: </span>
-          <span>{this.props.increments.ticksPerSec.toNumber()}</span>
+          <span>{this.props.increments.ticksPerSec.toString()}</span>
         </p>
         <p>
           <span className="center-area__info">Happiness: </span>
-          <span>{this.props.happiness.value.toNumber()}</span>
+          <span>{this.props.happiness.value.toString()}</span>
         </p>
       </div>
     )

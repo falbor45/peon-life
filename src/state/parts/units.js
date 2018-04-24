@@ -1,9 +1,11 @@
+import { BigNumber } from 'bignumber.js'
+
 const initialState = {
   fetching: null,
   error: null,
   data: null,
-  unitLimit: 5,
-  units: 0,
+  unitLimit: new BigNumber(5),
+  units: new BigNumber(0),
 }
 
 export default (state = initialState, action) => {
@@ -35,15 +37,16 @@ export default (state = initialState, action) => {
       }
     }
     case 'units/ADD_WORKER': {
-      state.data[action.worker].quantity += action.value;
-      state.data[action.worker].cost.combined = Math.floor(state.data[action.worker].cost.base * (Math.pow(state.data[action.worker].cost.multiplier, state.data[action.worker].quantity)));
+      let value = new BigNumber(action.value);
+      state.data[action.worker].quantity = state.data[action.worker].quantity.plus(value);
+      state.data[action.worker].cost.combined = state.data[action.worker].cost.combined.multipliedBy(state.data[action.worker].cost.multiplier);
       return {
         ...state,
-        units: state.units + action.value <= state.unitLimit ? state.units + action.value : state.units
+        units: state.units.plus(value).isLessThanOrEqualTo(state.unitLimit) ? state.units.plus(value) : state.units
       }
     }
     case 'units/INCREASE_WORKER_EFFICIENCY': {
-      state.data[action.worker].efficiency = state.data[action.worker].efficiency + action.value;
+      state.data[action.worker].efficiency = state.data[action.worker].efficiency.plus(action.value);
       return {
         ...state
       }
@@ -51,7 +54,7 @@ export default (state = initialState, action) => {
     case 'units/INCREASE_UNIT_LIMIT': {
       return {
         ...state,
-        unitLimit: state.unitLimit + action.value
+        unitLimit: state.unitLimit.plus(action.value)
       }
     }
     case 'units/UNLOCK_UNIT': {

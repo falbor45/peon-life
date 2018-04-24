@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import { BigNumber } from 'bignumber.js'
 import ReactTooltip from 'react-tooltip'
 import pluralize from 'pluralize'
 import 'normalize.css'
@@ -41,15 +42,15 @@ class Units extends Component {
   };
 
   addUnit = unit => {
-    if (this.props.resources.gold >= unit.cost.combined && this.props.units.unitLimit >= this.props.units.units + unit.effects[0].value) {
+    if (this.props.resources.gold.isGreaterThanOrEqualTo(unit.cost.combined) && this.props.units.unitLimit.isGreaterThanOrEqualTo(this.props.units.units.plus(unit.effects[0].value))) {
       this.props.loseGold(unit.cost.combined);
       this.props.addUnit(unit);
       return null;
     }
-    if (this.props.resources.gold < unit.cost.combined) {
+    if (this.props.resources.gold.isLessThan(unit.cost.combined)) {
       this.props.throwError('Error: You do not have enough money for this purchase!');
     }
-    if (this.props.units.unitLimit < this.props.units.units + unit.effects[0].value) {
+    if (this.props.units.unitLimit.isLessThan(this.props.units.units.plus(unit.effects[0].value))) {
       this.props.throwError('Error: Such purchase would exceed your unit limit! Consider buying more cottages.');
     }
     return null;
@@ -59,19 +60,19 @@ class Units extends Component {
   mapUnit = unit => {
     return (
       <div data-tip data-for={`${unit.name}-tooltip`}
-           className={`unit ${this.props.resources.gold < unit.cost.combined ||
-                      this.props.units.unitLimit < this.props.units.units + unit.effects[0].value ?
+           className={`unit ${this.props.resources.gold.isLessThan(unit.cost.combined) ||
+                      this.props.units.unitLimit.isLessThan(this.props.units.units.plus(unit.effects[0].value)) ?
                       'disabled' : 'enabled'}`}
            key={unit.name}
            onClick={() => this.addUnit(unit)}>
           <img src="https://lorempizza.com/64/64" alt="unit icon"/>
           <div className="unit__info">
             <p className="unit__name">{unit.name}</p>
-            <p className="unit__cost">{unit.cost.combined}</p>
+            <p className="unit__cost">{unit.cost.combined.toString()}</p>
           </div>
-        <p className="unit__quantity">{unit.quantity}</p>
-        <div className={`${this.props.resources.gold < unit.cost.combined ||
-          this.props.units.unitLimit < this.props.units.units + unit.effects[0].value ?
+        <p className="unit__quantity">{unit.quantity.toString()}</p>
+        <div className={`${this.props.resources.gold.isLessThan(unit.cost.combined) ||
+          this.props.units.unitLimit.isLessThan(this.props.units.units.plus(unit.effects[0].value)) ?
             'unit__overlay--disabled' : null}`}> </div>
         <ReactTooltip effect="solid" id={`${unit.name}-tooltip`}>
           <div className="unit-tooltip">
@@ -80,15 +81,15 @@ class Units extends Component {
             </div>
             <div className="unit-tooltip__info">
               <p className="unit-tooltip__name">{unit.name}</p>
-              <p className="unit-tooltip__owned">(Owned: {unit.quantity})</p>
+              <p className="unit-tooltip__owned">(Owned: {unit.quantity.toString()})</p>
             </div>
             <div className="unit-tooltip__cost">
-              <p>Cost: {unit.cost.combined}</p>
+              <p>Cost: {unit.cost.combined.toString()}</p>
             </div>
           </div>
           <ul className="unit-tooltip__data">
-          <li>Each {unit.name.toLowerCase()} produces {unit.efficiency * this.props.increments.ticksPerSec} gold per second</li>
-          <li>You currently own {unit.quantity} {unit.quantity === 1 ? unit.name.toLowerCase() : pluralize(unit.name.toLowerCase())} producing {(unit.quantity * unit.efficiency) * this.props.increments.ticksPerSec} gold per second</li>
+          <li>Each {unit.name.toLowerCase()} produces {unit.efficiency.multipliedBy(this.props.increments.ticksPerSec).toString()} gold per second</li>
+          <li>You currently own {unit.quantity.toString()} {unit.quantity === 1 ? unit.name.toLowerCase() : pluralize(unit.name.toLowerCase())} producing {unit.quantity.multipliedBy(unit.efficiency).multipliedBy(this.props.increments.ticksPerSec).toString()} gold per second</li>
           </ul>
         </ReactTooltip>
       </div>
