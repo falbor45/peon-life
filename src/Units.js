@@ -69,7 +69,7 @@ class Units extends Component {
           <img src="https://lorempizza.com/64/64" alt="unit icon"/>
           <div className="unit__info">
             <p className="unit__name">{unit.name}</p>
-            <p className="unit__cost">{unit.cost.combined.toString()}</p>
+            <p className="unit__cost">{unit.cost.combined.decimalPlaces(0).toString()}</p>
           </div>
         <p className="unit__quantity">{unit.quantity.toString()}</p>
         <div className={`${this.canBuyUnit(unit) ? null : 'unit__overlay--disabled'}`}> </div>
@@ -83,7 +83,7 @@ class Units extends Component {
               <p className="unit-tooltip__owned">(Owned: {unit.quantity.toString()})</p>
             </div>
             <div className="unit-tooltip__cost">
-              <p>Cost: {unit.cost.combined.toString()}</p>
+              <p>Cost: {unit.cost.combined.decimalPlaces(0).toString()}</p>
             </div>
           </div>
           <ul className="unit-tooltip__data">
