@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
+import { BigNumber } from 'bignumber.js'
 import 'normalize.css'
 import './ResourcesView.css'
 
@@ -49,11 +50,11 @@ class ResourcesView extends Component {
 
 
   setGoldBase = () => {
-    let result = 0;
+    let result = new BigNumber(0);
 
     for (let unit in this.props.units.data) {
       if (this.props.units.data.hasOwnProperty(unit)) {
-        result += this.props.units.data[unit].quantity * this.props.units.data[unit].efficiency;
+        result = result.plus(this.props.units.data[unit].quantity.multipliedBy(this.props.units.data[unit].efficiency));
       }
     }
 
