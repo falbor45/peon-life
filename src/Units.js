@@ -56,13 +56,14 @@ class Units extends Component {
     return null;
   };
 
+  canBuyUnit = unit => this.props.resources.gold.isGreaterThan(unit.cost.combined) &&
+    this.props.units.unitLimit.isGreaterThan(this.props.units.units.plus(unit.effects[0].value))
+
 
   mapUnit = unit => {
     return (
       <div data-tip data-for={`${unit.name}-tooltip`}
-           className={`unit ${this.props.resources.gold.isLessThan(unit.cost.combined) ||
-                      this.props.units.unitLimit.isLessThan(this.props.units.units.plus(unit.effects[0].value)) ?
-                      'disabled' : 'enabled'}`}
+           className={`unit ${this.canBuyUnit(unit) ? 'enabled' : 'disabled'}`}
            key={unit.name}
            onClick={() => this.addUnit(unit)}>
           <img src="https://lorempizza.com/64/64" alt="unit icon"/>
@@ -71,9 +72,7 @@ class Units extends Component {
             <p className="unit__cost">{unit.cost.combined.toString()}</p>
           </div>
         <p className="unit__quantity">{unit.quantity.toString()}</p>
-        <div className={`${this.props.resources.gold.isLessThan(unit.cost.combined) ||
-          this.props.units.unitLimit.isLessThan(this.props.units.units.plus(unit.effects[0].value)) ?
-            'unit__overlay--disabled' : null}`}> </div>
+        <div className={`${this.canBuyUnit(unit) ? null : 'unit__overlay--disabled'}`}> </div>
         <ReactTooltip effect="solid" id={`${unit.name}-tooltip`}>
           <div className="unit-tooltip">
             <div className="unit-tooltip__icon">
