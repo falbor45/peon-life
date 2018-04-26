@@ -55,38 +55,16 @@ class GameView extends Component {
       this.props.unitsSetSettings(data);
     });
 
-    // this.props.unitsFetchBegin()
-    // fetch(
-    //   `${process.env.PUBLIC_URL}/data/units.json`
-    // ).then(
-    //   response => response.json()
-    //     .then(
-    //     data => {
-    //       this.props.unitsFetchSuccess(data);
-    //       this.props.unitsSetSettings(data);
-    //     }
-    //   ).catch(
-    //     error => this.props.unitsFetchFail('Malformed JSON!')
-    //   )
-    // ).catch(
-    //   error => this.props.unitsFetchFail('Connection error!')
-    // )
-
     this.props.buildingsFetchBegin()
     fetch(
       `${process.env.PUBLIC_URL}/data/buildings.json`
-    ).then(
-      response => response.json().then(
-        data => {
-          this.props.buildingsFetchSuccess(data);
-          this.props.buildingsSetSettings(data);
-        }
-      ).catch(
-        error => this.props.buildingsFetchFail('Malformed JSON!')
-      )
-    ).catch(
-      error => this.props.buildingsFetchFail('Connection error!')
-    )
+    ).then(response => response.json()
+    ).then(json => JSON.stringify(json)
+    ).then(string => JSONBigNumber.parse(string)
+    ).then(data => {
+      this.props.buildingsFetchSuccess(data);
+      this.props.buildingsSetSettings(data);
+    });
   }
 
   onSwipeStart(event) {

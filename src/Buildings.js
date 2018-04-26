@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import { BigNumber } from 'bignumber.js'
 import ReactTooltip from 'react-tooltip'
 import pluralize from 'pluralize'
 import 'normalize.css'
@@ -39,12 +40,12 @@ class Buildings extends Component {
   };
 
   addBuilding = building => {
-    if (this.props.resources.gold >= building.cost.combined) {
+    if (this.props.resources.gold.isGreaterThanOrEqualTo(building.cost.combined)) {
       this.props.loseGold(building.cost.combined);
       this.props.buildBuilding(building);
       return null;
     }
-    if (this.props.resources.gold < building.cost.combined) {
+    if (this.props.resources.gold.isLessThan(building.cost.combined)) {
       this.props.throwError('Error: You do not have enough money for this purchase!');
     }
     return null;
@@ -54,17 +55,17 @@ class Buildings extends Component {
   mapBuilding = building => {
     return (
       <div data-tip data-for={`${building.name}-tooltip`}
-           className={`building ${this.props.resources.gold < building.cost.combined ?
+           className={`building ${this.props.resources.gold.isLessThan(building.cost.combined) ?
                       'disabled' : 'enabled'}`}
            key={building.name}
            onClick={() => this.addBuilding(building)}>
         <img src="https://lorempizza.com/64/64" alt="building icon"/>
         <div className="building__info">
           <p className="building__name">{building.name}</p>
-          <p className="building__cost">{building.cost.combined}</p>
+          <p className="building__cost">{building.cost.combined.toString()}</p>
         </div>
-        <p className="building__quantity">{building.quantity}</p>
-        <div className={`${this.props.resources.gold < building.cost.combined ? 'building__overlay--disabled' : null}`}> </div>
+        <p className="building__quantity">{building.quantity.toString()}</p>
+        <div className={`${this.props.resources.gold.isLessThan(building.cost.combined) ? 'building__overlay--disabled' : null}`}> </div>
         <ReactTooltip effect="solid" id={`${building.name}-tooltip`}>
           <div className="building-tooltip">
             <div className="building-tooltip__icon">
@@ -72,17 +73,17 @@ class Buildings extends Component {
             </div>
             <div className="building-tooltip__info">
               <p className="building-tooltip__name">{building.name}</p>
-              <p className="building-tooltip__owned">(Owned: {building.quantity})</p>
+              <p className="building-tooltip__owned">(Owned: {building.quantity.toString()})</p>
             </div>
             <div className="building-tooltip__cost">
-              <p>Cost: {building.cost.combined}</p>
+              <p>Cost: {building.cost.combined.toString()}</p>
             </div>
           </div>
           <ul className="building-tooltip__data">
             {building.description.map(e =>
               <li>{e}</li>
             )}
-            <li>You currently own {building.quantity} {building.quantity === 1 ? building.name.toLowerCase() : pluralize(building.name.toLowerCase())}.</li>
+            <li>You currently own {building.quantity.toString()} {building.quantity === 1 ? building.name.toLowerCase() : pluralize(building.name.toLowerCase())}.</li>
           </ul>
         </ReactTooltip>
       </div>

@@ -1,8 +1,10 @@
+import { BigNumber } from 'bignumber.js'
+
 const initialState = {
   fetching: null,
   error: null,
   data: null,
-  buildingsQuant: 0
+  buildingsQuant: new BigNumber(0)
 }
 
 export default (state = initialState, action) => {
@@ -34,11 +36,12 @@ export default (state = initialState, action) => {
       }
     }
     case 'buildings/ADD_BUILDING': {
-      state.data[action.building].quantity += 1;
-      state.data[action.building].cost.combined = Math.floor(state.data[action.building].cost.base * (Math.pow(state.data[action.building].cost.multiplier, state.data[action.building].quantity)));
+      let value = new BigNumber(action.value);
+      state.data[action.building].quantity = state.data[action.building].quantity.plus(value);
+      state.data[action.building].cost.combined = state.data[action.building].cost.combined.multipliedBy(state.data[action.building].cost.multiplier);
       return {
         ...state,
-        buildingsQuant: state.buildingsQuant + 1
+        buildingsQuant: state.buildingsQuant.plus(value)
       }
     }
     default:
