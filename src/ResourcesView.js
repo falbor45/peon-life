@@ -67,8 +67,8 @@ class ResourcesView extends Component {
       <div>
         <p className="village-name">Peon's village</p>
         <p className="gold-counter">
-          {this.props.resources.gold.toNumber()} gold
-        <span>per second: {this.props.increments.goldIncr.toNumber()}</span>
+          {this.props.resources.gold.decimalPlaces(0).toString()} gold
+        <span>per second: {this.props.increments.goldIncr.toString()}</span>
         </p>
       </div>
     )
