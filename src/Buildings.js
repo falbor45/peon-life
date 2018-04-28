@@ -62,7 +62,7 @@ class Buildings extends Component {
         <img src="https://lorempizza.com/64/64" alt="building icon"/>
         <div className="building__info">
           <p className="building__name">{building.name}</p>
-          <p className="building__cost">{building.cost.combined.toString()}</p>
+          <p className="building__cost">{building.cost.combined.decimalPlaces(0).toString()}</p>
         </div>
         <p className="building__quantity">{building.quantity.toString()}</p>
         <div className={`${this.props.resources.gold.isLessThan(building.cost.combined) ? 'building__overlay--disabled' : null}`}> </div>
@@ -76,7 +76,7 @@ class Buildings extends Component {
               <p className="building-tooltip__owned">(Owned: {building.quantity.toString()})</p>
             </div>
             <div className="building-tooltip__cost">
-              <p>Cost: {building.cost.combined.toString()}</p>
+              <p>Cost: {building.cost.combined.decimalPlaces(0).toString()}</p>
             </div>
           </div>
           <ul className="building-tooltip__data">
