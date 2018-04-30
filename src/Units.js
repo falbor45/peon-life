@@ -5,6 +5,7 @@ import ReactTooltip from 'react-tooltip'
 import pluralize from 'pluralize'
 import 'normalize.css'
 import './Units.css'
+import Info from './assets/iconmonstr-info-5-64.png'
 
 let mapStateToProps = state => {
   return {
@@ -62,8 +63,8 @@ class Units extends Component {
 
   mapUnit = unit => {
     return (
-      <div data-tip data-for={`${unit.name}-tooltip`}
-           className={`unit ${this.canBuyUnit(unit) ? 'enabled' : 'disabled'}`}
+      <div className="unit-wrapper">
+      <div className={`unit ${this.canBuyUnit(unit) ? 'enabled' : 'disabled'}`}
            key={unit.name}
            onClick={() => this.addUnit(unit)}>
           <img src="https://lorempizza.com/64/64" alt="unit icon"/>
@@ -73,24 +74,34 @@ class Units extends Component {
           </div>
         <p className="unit__quantity">{unit.quantity.toString()}</p>
         <div className={`${this.canBuyUnit(unit) ? null : 'unit__overlay--disabled'}`}> </div>
-        <ReactTooltip effect="solid" id={`${unit.name}-tooltip`}>
-          <div className="unit-tooltip">
-            <div className="unit-tooltip__icon">
-              <img src='https://lorempizza.com/64/64'/>
+      </div>
+        {
+          this.props.device === 'mobile' ? null :
+            <div>
+              <div data-tip data-for={`${unit.name}-tooltip`}
+                   className="unit__info-icon">
+                <img src={Info} alt="info"/>
+              </div>
+              <ReactTooltip effect="solid" id={`${unit.name}-tooltip`}>
+                <div className="unit-tooltip">
+                  <div className="unit-tooltip__icon">
+                    <img src='https://lorempizza.com/64/64' alt="unit icon"/>
+                  </div>
+                  <div className="unit-tooltip__info">
+                    <p className="unit-tooltip__name">{unit.name}</p>
+                    <p className="unit-tooltip__owned">(Owned: {unit.quantity.toString()})</p>
+                  </div>
+                  <div className="unit-tooltip__cost">
+                    <p>Cost: {unit.cost.combined.decimalPlaces(0).toString()}</p>
+                  </div>
+                </div>
+                <ul className="unit-tooltip__data">
+                  <li>Each {unit.name.toLowerCase()} produces {unit.efficiency.multipliedBy(this.props.increments.ticksPerSec).toString()} gold per second</li>
+                  <li>You currently own {unit.quantity.toString()} {unit.quantity === 1 ? unit.name.toLowerCase() : pluralize(unit.name.toLowerCase())} producing {unit.quantity.multipliedBy(unit.efficiency).multipliedBy(this.props.increments.ticksPerSec).toString()} gold per second</li>
+                </ul>
+              </ReactTooltip>
             </div>
-            <div className="unit-tooltip__info">
-              <p className="unit-tooltip__name">{unit.name}</p>
-              <p className="unit-tooltip__owned">(Owned: {unit.quantity.toString()})</p>
-            </div>
-            <div className="unit-tooltip__cost">
-              <p>Cost: {unit.cost.combined.decimalPlaces(0).toString()}</p>
-            </div>
-          </div>
-          <ul className="unit-tooltip__data">
-          <li>Each {unit.name.toLowerCase()} produces {unit.efficiency.multipliedBy(this.props.increments.ticksPerSec).toString()} gold per second</li>
-          <li>You currently own {unit.quantity.toString()} {unit.quantity === 1 ? unit.name.toLowerCase() : pluralize(unit.name.toLowerCase())} producing {unit.quantity.multipliedBy(unit.efficiency).multipliedBy(this.props.increments.ticksPerSec).toString()} gold per second</li>
-          </ul>
-        </ReactTooltip>
+        }
       </div>
     )
   };

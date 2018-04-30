@@ -101,7 +101,7 @@ class GameView extends Component {
             <Errors/>
             <div className='game-view__wrapper'>
               <MediaQuery query="(min-device-width: 961px)">
-                <Units/>
+                <Units device="desktop"/>
                 <CenterArea/>
                 <Buildings/>
               </MediaQuery>
@@ -114,7 +114,7 @@ class GameView extends Component {
                 </Swipe>
                 {
                   this.state.components[this.state.viewedComponent] === 'units' ?
-                    <Units/> : null
+                    <Units device="mobile"/> : null
                 }
                 {
                   this.state.components[this.state.viewedComponent] === 'centerArea' ?
