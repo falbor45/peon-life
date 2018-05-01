@@ -22,32 +22,16 @@ let mapDipsatchToProps = dispatch => {
 }
 
 class ResourcesView extends Component {
+  componentDidMount() {
+    this.setGoldBaseInt = setInterval(() => {
+      this.setGoldBase();
+      this.props.calcIncr(this.props.happiness.productionBonus.toString());
+    }, 1000 / this.props.increments.ticksPerSec);
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      setGoldBaseInt: () => {
-        setTimeout(() => {
-          this.setGoldBase();
-          this.props.calcIncr(this.props.happiness.productionBonus.toNumber());
-          this.state.setGoldBaseInt();
-        }, 1000 / this.props.increments.ticksPerSec)
-      },
-
-      incrementGold: () => {
-        setTimeout(() => {
-          this.props.incrementGold(this.props.increments.goldIncr.toNumber());
-          this.state.incrementGold();
-        }, 1000 / this.props.increments.ticksPerSec)
-      }
-    }
-
-    this.state.setGoldBaseInt();
-    this.state.incrementGold();
+    this.incrementGold = setInterval(() => {
+      this.props.incrementGold(this.props.increments.goldIncr.toString());
+    }, 1000 / this.props.increments.ticksPerSec);
   }
-
-
 
   setGoldBase = () => {
     let result = new BigNumber(0);
