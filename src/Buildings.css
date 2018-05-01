@@ -102,12 +102,12 @@
   height: 32px;
   margin-top: 16px;
   margin-left: 0.2rem;
-  justify-content: center; }
+  justify-content: center;
+  z-index: 999; }
   .building__info-icon img {
     width: 100%; }
 
 .building-tooltip {
-  max-width: 384px;
   display: flex;
   text-align: left; }
   .building-tooltip p {

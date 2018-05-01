@@ -56,8 +56,7 @@ class Buildings extends Component {
   mapBuilding = building => {
     return (
       <div className="building-wrapper">
-      <div data-tip data-for={`${building.name}-tooltip`}
-           className={`building ${this.props.resources.gold.isLessThan(building.cost.combined) ?
+      <div className={`building ${this.props.resources.gold.isLessThan(building.cost.combined) ?
                       'disabled' : 'enabled'}`}
            key={building.name}
            onClick={() => this.addBuilding(building)}>
@@ -69,35 +68,30 @@ class Buildings extends Component {
         <p className="building__quantity">{building.quantity.toString()}</p>
         <div className={`${this.props.resources.gold.isLessThan(building.cost.combined) ? 'building__overlay--disabled' : null}`}> </div>
       </div>
-        {
-          this.props.device === 'mobile' ? null :
-            <div>
-              <div data-tip data-for={`${building.name}-tooltip`}
-                   className="building__info-icon">
-                <img src={Info} alt="info"/>
+        <div data-tip data-for={`${building.name}-tooltip`}
+             className="building__info-icon">
+          <img src={Info} alt="info"/>
+          <ReactTooltip effect="solid" id={`${building.name}-tooltip`}>
+            <div className="building-tooltip">
+              <div className="building-tooltip__icon">
+                <img src='https://lorempizza.com/64/64' alt='building icon'/>
               </div>
-              <ReactTooltip effect="solid" id={`${building.name}-tooltip`}>
-                <div className="building-tooltip">
-                  <div className="building-tooltip__icon">
-                    <img src='https://lorempizza.com/64/64'/>
-                  </div>
-                  <div className="building-tooltip__info">
-                    <p className="building-tooltip__name">{building.name}</p>
-                    <p className="building-tooltip__owned">(Owned: {building.quantity.toString()})</p>
-                  </div>
-                  <div className="building-tooltip__cost">
-                    <p>Cost: {building.cost.combined.decimalPlaces(0).toString()}</p>
-                  </div>
-                </div>
-                <ul className="building-tooltip__data">
-                  {building.description.map(e =>
-                    <li>{e}</li>
-                  )}
-                  <li>You currently own {building.quantity.toString()} {building.quantity === 1 ? building.name.toLowerCase() : pluralize(building.name.toLowerCase())}.</li>
-                </ul>
-              </ReactTooltip>
+              <div className="building-tooltip__info">
+                <p className="building-tooltip__name">{building.name}</p>
+                <p className="building-tooltip__owned">(Owned: {building.quantity.toString()})</p>
+              </div>
+              <div className="building-tooltip__cost">
+                <p>Cost: {building.cost.combined.decimalPlaces(0).toString()}</p>
+              </div>
             </div>
-        }
+            <ul className="building-tooltip__data">
+              {building.description.map(e =>
+                <li>{e}</li>
+              )}
+              <li>You currently own {building.quantity.toString()} {building.quantity === 1 ? building.name.toLowerCase() : pluralize(building.name.toLowerCase())}.</li>
+            </ul>
+          </ReactTooltip>
+        </div>
       </div>
     )
   };
