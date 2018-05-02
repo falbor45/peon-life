@@ -5,7 +5,7 @@ import ReactTooltip from 'react-tooltip'
 import pluralize from 'pluralize'
 import 'normalize.css'
 import './Buildings.css'
-import Info from './assets/iconmonstr-info-5-64.png'
+import Info from './assets/info-icon.png'
 
 let mapStateToProps = state => {
   return {
