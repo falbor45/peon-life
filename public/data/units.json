@@ -6,8 +6,7 @@
     "effects": [
       {
         "type": "units/ADD_WORKER",
-        "worker": "peasants",
-        "value": 1
+        "worker": "peasants"
       },
       {
         "type": "happiness/INCREASE_UNHAPPINESS",
@@ -28,8 +27,7 @@
     "effects": [
       {
         "type": "units/ADD_WORKER",
-        "worker": "farmers",
-        "value": 1
+        "worker": "farmers"
       },
       {
         "type": "happiness/INCREASE_UNHAPPINESS",
@@ -50,8 +48,7 @@
     "effects": [
       {
         "type": "units/ADD_WORKER",
-        "worker": "quarriers",
-        "value": 1
+        "worker": "quarriers"
       },
       {
         "type": "happiness/INCREASE_UNHAPPINESS",
@@ -72,8 +69,7 @@
     "effects": [
       {
         "type": "units/ADD_WORKER",
-        "worker": "lumberjacks",
-        "value": 1
+        "worker": "lumberjacks"
       },
       {
         "type": "happiness/INCREASE_UNHAPPINESS",
@@ -94,8 +90,7 @@
     "effects": [
       {
         "type": "units/ADD_WORKER",
-        "worker": "miners",
-        "value": 1
+        "worker": "miners"
       },
       {
         "type": "happiness/INCREASE_UNHAPPINESS",
@@ -116,8 +111,7 @@
     "effects": [
       {
         "type": "units/ADD_WORKER",
-        "worker": "merchants",
-        "value": 1
+        "worker": "merchants"
       },
       {
         "type": "happiness/INCREASE_UNHAPPINESS",
@@ -138,8 +132,7 @@
     "effects": [
       {
         "type": "units/ADD_WORKER",
-        "worker": "bards",
-        "value": 1
+        "worker": "bards"
       },
       {
         "type": "happiness/INCREASE_HAPPINESS",
@@ -160,8 +153,7 @@
     "effects": [
       {
         "type": "units/ADD_WORKER",
-        "worker": "knights",
-        "value": 1
+        "worker": "knights"
       },
       {
         "type": "happiness/INCREASE_UNHAPPINESS",
@@ -182,8 +174,7 @@
     "effects": [
       {
         "type": "units/ADD_WORKER",
-        "worker": "sailors",
-        "value": 1
+        "worker": "sailors"
       },
       {
         "type": "happiness/INCREASE_UNHAPPINESS",
