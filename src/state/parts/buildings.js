@@ -4,7 +4,8 @@ const initialState = {
   fetching: null,
   error: null,
   data: null,
-  buildingsQuant: new BigNumber(0)
+  buildingsQuant: new BigNumber(0),
+  buyQuant: new BigNumber(1)
 };
 
 let pow = (n, m) => {
