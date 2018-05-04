@@ -20,6 +20,7 @@ let mapDispatchToProps = dispatch => {
   return {
     loseGold: gold => dispatch({type: "resources/DECREMENT", gold}),
     throwError: error => dispatch({type: "errors/SET_ERROR", error}),
+    changeBuyQuant: value => dispatch({type: "buildings/CHANGE_BUY_QUANT", value}),
     buildBuilding: building => {
       for (let i = 0; i < building.effects.length; i++) {
         dispatch(building.effects[i]);
@@ -106,6 +107,12 @@ class Buildings extends Component {
     return (
       <div className="buildings__wrapper">
         <h1>Buildings</h1>
+        <div className="buildings__quantity-select">
+          <span>BUY</span>
+          <button className={this.props.buildings.buyQuant.toString() === '1' ? "buildings__quantity-button--active" : null} onClick={() => this.props.changeBuyQuant(1)}>x1</button>
+          <button className={this.props.buildings.buyQuant.toString() === '10' ? "buildings__quantity-button--active" : null} onClick={() => this.props.changeBuyQuant(10)}>x10</button>
+          <button className={this.props.buildings.buyQuant.toString() === '100' ? "buildings__quantity-button--active" : null} onClick={() => this.props.changeBuyQuant(100)}>x100</button>
+        </div>
         <div className="buildings">
           {
             this.filterAndMapBuildings()

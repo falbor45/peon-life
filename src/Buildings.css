@@ -33,7 +33,8 @@
   box-shadow: 7px 7px #999999;
   margin-bottom: 2rem; }
   .buildings__wrapper h1 {
-    color: #f3d970; }
+    color: #f3d970;
+    margin-bottom: 0.75rem; }
   @media screen and (min-width: 960px) {
     .buildings__wrapper {
       width: 30%;
@@ -43,6 +44,31 @@
   @media screen and (max-height: 720px) {
     .buildings__wrapper {
       height: 60vh; } }
+
+.buildings__quantity-select {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+  background: rgba(0, 0, 0, 0.6);
+  height: 2rem; }
+  .buildings__quantity-select button {
+    border: none;
+    color: white;
+    background: none;
+    margin-left: 0.2rem;
+    outline: none;
+    transition: 0.125s; }
+    .buildings__quantity-select button:hover {
+      font-weight: bold; }
+  .buildings__quantity-select span {
+    font-size: 0.75rem;
+    font-weight: bold;
+    line-height: 2rem;
+    vertical-align: middle; }
+
+.buildings__quantity-button--active {
+  font-weight: bold; }
 
 .building-wrapper {
   display: flex; }
@@ -102,8 +128,7 @@
   height: 32px;
   margin-top: 16px;
   margin-left: 0.2rem;
-  justify-content: center;
-  z-index: 999; }
+  justify-content: center; }
   .building__info-icon img {
     width: 100%; }
 
