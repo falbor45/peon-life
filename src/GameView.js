@@ -96,6 +96,11 @@ class GameView extends Component {
     return (
       <div>
         {this.props.units.data !== null && this.props.buildings.data !== null ? (
+          <Swipe
+            className='game-view__swipe-wrapper'
+            onSwipeStart={this.onSwipeStart.bind(this)}
+            onSwipeMove={this.onSwipeMove.bind(this)}
+            onSwipeEnd={this.onSwipeEnd.bind(this)}>
           <div>
             <ResourcesBar/>
             <Errors/>
@@ -106,27 +111,22 @@ class GameView extends Component {
                 <Buildings/>
               </MediaQuery>
               <MediaQuery query="(max-device-width: 960px)">
-                <Swipe
-                  className='game-view__swipe-wrapper'
-                  onSwipeStart={this.onSwipeStart.bind(this)}
-                  onSwipeMove={this.onSwipeMove.bind(this)}
-                  onSwipeEnd={this.onSwipeEnd.bind(this)}>
-                </Swipe>
-                {
-                  this.state.components[this.state.viewedComponent] === 'units' ?
-                    <Units/> : null
-                }
-                {
-                  this.state.components[this.state.viewedComponent] === 'centerArea' ?
-                    <CenterArea/> : null
-                }
-                {
-                  this.state.components[this.state.viewedComponent] === 'buildings' ?
-                    <Buildings/> : null
-                }
+                  {
+                    this.state.components[this.state.viewedComponent] === 'units' ?
+                      <Units/> : null
+                  }
+                  {
+                    this.state.components[this.state.viewedComponent] === 'centerArea' ?
+                      <CenterArea/> : null
+                  }
+                  {
+                    this.state.components[this.state.viewedComponent] === 'buildings' ?
+                      <Buildings/> : null
+                  }
               </MediaQuery>
             </div>
           </div>
+          </Swipe>
         ) : <Loader/>
         }
       </div>
