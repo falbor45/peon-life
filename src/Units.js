@@ -21,6 +21,7 @@ let mapDipsatchToProps = dispatch => {
     loseGold: gold => dispatch({type: "resources/DECREMENT", gold}),
     setGoldBase: goldBase => dispatch({type: "increments/SET_GOLD_BASE", goldBase}),
     throwError: error => dispatch({type: "errors/SET_ERROR", error}),
+    changeBuyQuant: value => dispatch({type: "units/CHANGE_BUY_QUANT", value}),
     addUnit: unit => {
       for (let i = 0; i < unit.effects.length; i++) {
         dispatch(unit.effects[i]);
@@ -43,7 +44,7 @@ class Units extends Component {
   };
 
   addUnit = unit => {
-    if (this.props.resources.gold.isGreaterThanOrEqualTo(unit.cost.combined) && this.props.units.unitLimit.isGreaterThanOrEqualTo(this.props.units.units.plus(unit.effects[0].value))) {
+    if (this.props.resources.gold.isGreaterThanOrEqualTo(unit.cost.combined) && this.props.units.unitLimit.isGreaterThanOrEqualTo(this.props.units.units.plus(this.props.units.buyQuant))) {
       this.props.loseGold(unit.cost.combined);
       this.props.addUnit(unit);
       return null;
@@ -51,14 +52,14 @@ class Units extends Component {
     if (this.props.resources.gold.isLessThan(unit.cost.combined)) {
       this.props.throwError('Error: You do not have enough money for this purchase!');
     }
-    if (this.props.units.unitLimit.isLessThan(this.props.units.units.plus(unit.effects[0].value))) {
+    if (this.props.units.unitLimit.isLessThan(this.props.units.units.plus(this.props.units.buyQuant))) {
       this.props.throwError('Error: Such purchase would exceed your unit limit! Consider buying more cottages.');
     }
     return null;
   };
 
   canBuyUnit = unit => this.props.resources.gold.isGreaterThan(unit.cost.combined) &&
-    this.props.units.unitLimit.isGreaterThanOrEqualTo(this.props.units.units.plus(unit.effects[0].value))
+    this.props.units.unitLimit.isGreaterThanOrEqualTo(this.props.units.units.plus(this.props.units.buyQuant))
 
 
   mapUnit = unit => {
@@ -112,6 +113,12 @@ class Units extends Component {
     return (
       <div className="units__wrapper">
         <h1>Units</h1>
+        <div className="units__quantity-select">
+          <span>BUY</span>
+          <button className={this.props.units.buyQuant.toString() === '1' ? "units__quantity-button--active" : null} onClick={() => this.props.changeBuyQuant(1)}>x1</button>
+          <button className={this.props.units.buyQuant.toString() === '10' ? "units__quantity-button--active" : null} onClick={() => this.props.changeBuyQuant(10)}>x10</button>
+          <button className={this.props.units.buyQuant.toString() === '100' ? "units__quantity-button--active" : null} onClick={() => this.props.changeBuyQuant(100)}>x100</button>
+        </div>
         <div className="units">
           {
             this.filterAndMapUnits()
