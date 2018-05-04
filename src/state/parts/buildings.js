@@ -5,6 +5,21 @@ const initialState = {
   error: null,
   data: null,
   buildingsQuant: new BigNumber(0)
+};
+
+let pow = (n, m) => {
+  let result = new BigNumber(1);
+  for (let i = 0; i < m; i++) {
+    result = result.multipliedBy(n);
+  }
+  return result;
+};
+
+let calculatePurchaseCost = (costBase, costMultiplier, owned, toBuy) => {
+  if (toBuy === 1) {
+    return costBase.multipliedBy(pow(costMultiplier, owned))
+  }
+  return costBase.multipliedBy((pow(costMultiplier, owned).multipliedBy(pow(costMultiplier, toBuy).minus('1'))).dividedBy(costMultiplier.minus('1')))
 }
 
 export default (state = initialState, action) => {
@@ -36,12 +51,21 @@ export default (state = initialState, action) => {
       }
     }
     case 'buildings/ADD_BUILDING': {
-      let value = new BigNumber(action.value);
-      state.data[action.building].quantity = state.data[action.building].quantity.plus(value);
-      state.data[action.building].cost.combined = state.data[action.building].cost.combined.multipliedBy(state.data[action.building].cost.multiplier);
+      state.data[action.building].quantity = state.data[action.building].quantity.plus(state.buyQuant);
+      state.data[action.building].cost.combined = calculatePurchaseCost(state.data[action.building].cost.base, state.data[action.building].cost.multiplier, state.data[action.building].quantity, state.buyQuant)
       return {
         ...state,
-        buildingsQuant: state.buildingsQuant.plus(value)
+        buildingsQuant: state.buildingsQuant.plus(state.buyQuant)
+      }
+    }
+    case 'buildings/CHANGE_BUY_QUANT': {
+      let value = new BigNumber(action.value);
+      Object.keys(state.data).forEach(building => {
+        state.data[building].cost.combined = calculatePurchaseCost(state.data[building].cost.base, state.data[building].cost.multiplier, state.data[building].quantity, value);
+      });
+      return {
+        ...state,
+        buyQuant: value
       }
     }
     default:

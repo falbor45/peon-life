@@ -5,8 +5,7 @@
     "effects": [
       {
         "type": "buildings/ADD_BUILDING",
-        "building": "townHalls",
-        "value": 1
+        "building": "townHalls"
       },
       {
         "type": "units/INCREASE_WORKER_EFFICIENCY",
@@ -37,8 +36,7 @@
     "effects": [
       {
         "type": "buildings/ADD_BUILDING",
-        "building": "cottages",
-        "value": 1
+        "building": "cottages"
       },
       {
         "type": "units/INCREASE_UNIT_LIMIT",
@@ -60,8 +58,7 @@
     "effects": [
       {
         "type": "buildings/ADD_BUILDING",
-        "building": "windmills",
-        "value": 1
+        "building": "windmills"
       },
       {
         "type": "units/INCREASE_WORKER_EFFICIENCY",
@@ -89,8 +86,7 @@
     "effects": [
       {
         "type": "buildings/ADD_BUILDING",
-        "building": "quarries",
-        "value": 1
+        "building": "quarries"
       },
       {
         "type": "units/INCREASE_WORKER_EFFICIENCY",
@@ -118,8 +114,7 @@
     "effects": [
       {
         "type": "buildings/ADD_BUILDING",
-        "building": "sawmills",
-        "value": 1
+        "building": "sawmills"
       },
       {
         "type": "units/INCREASE_WORKER_EFFICIENCY",
@@ -147,8 +142,7 @@
     "effects": [
       {
         "type": "buildings/ADD_BUILDING",
-        "building": "mines",
-        "value": 1
+        "building": "mines"
       },
       {
         "type": "units/INCREASE_WORKER_EFFICIENCY",
@@ -176,8 +170,7 @@
     "effects": [
       {
         "type": "buildings/ADD_BUILDING",
-        "building": "markets",
-        "value": 1
+        "building": "markets"
       },
       {
         "type": "units/INCREASE_WORKER_EFFICIENCY",
@@ -205,8 +198,7 @@
     "effects": [
       {
         "type": "buildings/ADD_BUILDING",
-        "building": "parks",
-        "value": 1
+        "building": "parks"
       },
       {
         "type": "happiness/CHANGE_HAPPINESS_PENALTY",
@@ -232,8 +224,7 @@
     "effects": [
       {
         "type": "buildings/ADD_BUILDING",
-        "building": "theaters",
-        "value": 1
+        "building": "theaters"
       },
       {
         "type": "units/INCREASE_WORKER_EFFICIENCY",
@@ -261,8 +252,7 @@
     "effects": [
       {
         "type": "buildings/ADD_BUILDING",
-        "building": "barracks",
-        "value": 1
+        "building": "barracks"
       },
       {
         "type": "units/INCREASE_WORKER_EFFICIENCY",
