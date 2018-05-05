@@ -1,4 +1,26 @@
 {
+  "roads": {
+    "name": "Road",
+    "quantity": 0,
+    "effects": [
+      {
+        "type": "buildings/ADD_BUILDING",
+        "building": "roads"
+      },
+      {
+        "type": "time/DECREASE_HOUR_DURATION",
+        "value": 10
+      }
+    ],
+    "cost": {
+      "base": 20,
+      "multiplier": 12,
+      "combined": 20
+    },
+    "description": [
+      "Each road decreases hour duration by 0.01s"
+    ]
+  },
   "townHalls": {
     "name": "Town Hall",
     "quantity": 0,
