@@ -12,7 +12,8 @@ let mapStateToProps = state => {
     units: state.units,
     resources: state.resources,
     increments: state.increments,
-    errors: state.errors
+    errors: state.errors,
+    time: state.time
   }
 };
 
@@ -63,6 +64,12 @@ class Units extends Component {
 
 
   mapUnit = unit => {
+    let calculateUnitYield = (unit, single) => {
+      if (single) {
+        return unit.efficiency.multipliedBy(new BigNumber(1000).dividedBy(this.props.time.hourDuration)).toString()
+      }
+      return unit.quantity.multipliedBy(unit.efficiency).multipliedBy(new BigNumber(1000).dividedBy(this.props.time.hourDuration)).toString()
+    }
     return (
       <div className="unit-wrapper">
       <div className={`unit ${this.canBuyUnit(unit) ? 'enabled' : 'disabled'}`}
@@ -93,9 +100,9 @@ class Units extends Component {
               </div>
             </div>
             <ul className="unit-tooltip__data">
-              <li>Each {unit.name.toLowerCase()} produces {unit.efficiency.multipliedBy(this.props.increments.ticksPerSec).toString()} gold per second</li>
+              <li>Each {unit.name.toLowerCase()} produces {calculateUnitYield(unit, true)} gold per second</li>
               <li>You currently own {unit.quantity.toString()} {unit.quantity === 1 ? unit.name.toLowerCase() : pluralize(unit.name.toLowerCase())}.</li>
-              <li>Your {unit.quantity === 1 ? unit.name.toLowerCase() : pluralize(unit.name.toLowerCase())} are producing {unit.quantity.multipliedBy(unit.efficiency).multipliedBy(this.props.increments.ticksPerSec).toString()} gold per second.</li>
+              <li>Your {unit.quantity === 1 ? unit.name.toLowerCase() : pluralize(unit.name.toLowerCase())} are producing {calculateUnitYield(unit, false)} gold per second.</li>
             </ul>
           </ReactTooltip>
         </div>
