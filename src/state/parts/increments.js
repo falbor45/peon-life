@@ -3,8 +3,7 @@ import { BigNumber } from 'bignumber.js'
 const initialState = {
   goldBase: new BigNumber(1),
   goldMulti: new BigNumber(1),
-  goldIncr: new BigNumber(1),
-  ticksPerSec: new BigNumber(1)
+  goldIncr: new BigNumber(1)
 }
 
 
@@ -26,12 +25,6 @@ export default (state = initialState, action) => {
       return {
         ...state,
         goldIncr: state.goldBase.multipliedBy(state.goldMulti).multipliedBy(action.productionBonus).decimalPlaces(2)
-      }
-    }
-    case 'increments/INCREASE_TICKS': {
-      return {
-        ...state,
-        ticksPerSec: state.ticksPerSec.plus(action.value)
       }
     }
     default: {
