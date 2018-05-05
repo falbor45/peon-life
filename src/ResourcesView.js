@@ -9,7 +9,8 @@ let mapStateToProps = state => {
     resources: state.resources,
     increments: state.increments,
     units: state.units,
-    happiness: state.happiness
+    happiness: state.happiness,
+    time: state.time
   }
 };
 
@@ -17,20 +18,25 @@ let mapDipsatchToProps = dispatch => {
   return {
     setGoldBase: goldBase => dispatch({type: "increments/SET_GOLD_BASE", goldBase}),
     calcIncr: productionBonus => dispatch({type: "increments/CALCULATE_INCREMENTS", productionBonus}),
-    incrementGold: gold => dispatch({type: "resources/INCREMENT", gold})
+    incrementGold: gold => dispatch({type: "resources/INCREMENT", gold}),
+    timeTick: () => dispatch({type: "time/TIME_TICK"})
   }
 }
 
 class ResourcesView extends Component {
   componentDidMount() {
+    this.timeTick = setInterval(() => {
+      this.props.timeTick();
+    }, this.props.time.hourDuration);
+
     this.setGoldBaseInt = setInterval(() => {
       this.setGoldBase();
       this.props.calcIncr(this.props.happiness.productionBonus.toString());
-    }, 1000 / this.props.increments.ticksPerSec);
+    }, this.props.time.hourDuration);
 
     this.incrementGold = setInterval(() => {
       this.props.incrementGold(this.props.increments.goldIncr.toString());
-    }, 1000 / this.props.increments.ticksPerSec);
+    }, this.props.time.hourDuration);
   }
 
   setGoldBase = () => {
