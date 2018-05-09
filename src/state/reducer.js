@@ -5,6 +5,7 @@ import increments from './parts/increments'
 import errors from './parts/errors'
 import happiness from './parts/happiness'
 import time from './parts/time'
+import experience from './parts/experience'
 
 export default (state = {}, action) => {
   return {
@@ -14,6 +15,7 @@ export default (state = {}, action) => {
     buildings: buildings(state.buildings, action),
     errors: errors(state.errors, action),
     happiness: happiness(state.happiness, action),
-    time: time(state.time, action)
+    time: time(state.time, action),
+    experience: experience(state.experience, action)
   }
 }
