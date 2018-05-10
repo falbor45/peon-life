@@ -23,8 +23,8 @@ export default (state = initialState, action) => {
         experience: didLevelUp ? newExperience.minus(state.nextLevelExp) : newExperience,
         nextLevelExp: didLevelUp ? state.nextLevelExp.multipliedBy(state.nextLevelExpMulti).decimalPlaces(0) : state.nextLevelExp,
         attributePoints: {
-          unspent: didLevelUp ? state.unspent.plus(1) : state.nextLevelExp,
-          spent: state.spent
+          unspent: didLevelUp ? state.attributePoints.unspent.plus(1) : state.nextLevelExp,
+          spent: state.attributePoints.spent
         }
       }
     }
@@ -33,8 +33,8 @@ export default (state = initialState, action) => {
       return {
         ...state,
         attributePoints: {
-          unspent: state.unspent.minus(value).isLessThan(0) ? state.unspent : state.unspent.minus(value),
-          spent: state.unspent.plus(value)
+          unspent: state.attributePoints.unspent.minus(value).isLessThan(0) ? state.attributePoints.unspent : state.attributePoints.unspent.minus(value),
+          spent: state.attributePoints.unspent.plus(value)
         }
       }
     }
