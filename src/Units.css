@@ -21,6 +21,7 @@
       max-height: 40vh; } }
 
 .units__wrapper {
+  border: 2px solid #7079ab;
   width: 90%;
   margin: 0 auto;
   color: white;
