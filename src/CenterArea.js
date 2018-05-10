@@ -20,24 +20,24 @@ let mapDispatchToProps = dispatch => {
 }
 
 class CenterArea extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      viewedComponent: null
+    }
+  }
   render() {
     return (
       <div className="center-area">
-        <p className="center-area__info">
-          <span>Year {this.props.time.date.year.toString()} Month {this.props.time.date.month.toString()} Day {this.props.time.date.day.toString()}</span>
-        </p>
-        <p>
-          <span className="center-area__info">Total units: </span>
-          <span>{this.props.units.units.toString()} / {this.props.units.unitLimit.toString()}</span>
-        </p>
-        <p>
-          <span className="center-area__info">Hour duration: </span>
-          <span>{this.props.time.hourDuration.dividedBy(1000).decimalPlaces(2).toString()}s</span>
-        </p>
-        <p>
-          <span className="center-area__info">Happiness: </span>
-          <span>{this.props.happiness.value.toString()}</span>
-        </p>
+        <div className="view-select">
+          <button className={`view-select__button ${this.state.viewedComponent === 'Stats' ? 'view-select__button--active' : null}`}
+                  onClick={() => this.setState({viewedComponent: 'Stats'})}>Stats</button>
+          <button className={`view-select__button ${this.state.viewedComponent === 'Policies' ? 'view-select__button--active' : null}`}
+                  onClick={() => this.setState({viewedComponent: 'Policies'})}>Policies</button>
+        </div>
+        <div className="view-select__view">
+        </div>
       </div>
     )
   }

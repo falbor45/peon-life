@@ -1,5 +1,8 @@
 .center-area {
-  text-align: center; }
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  margin-bottom: 2rem; }
   @media screen and (min-width: 960px) {
     .center-area {
       width: 33.33%;
@@ -7,5 +10,37 @@
 
 .center-area__info {
   font-weight: bold; }
+
+.view-select {
+  display: flex;
+  flex-direction: column;
+  background-color: #A0A6C7;
+  border-radius: 3px 3px 0 0;
+  border-left: 2px solid #7079ab;
+  border-right: 2px solid #7079ab;
+  border-top: 2px solid #7079ab; }
+
+.view-select__button {
+  width: 25%;
+  font-size: 1.2rem;
+  margin: 0.2rem 0 0.2rem 0.2rem;
+  border-radius: 4px;
+  height: 2rem;
+  color: white;
+  background-color: #737AA8;
+  border: none;
+  outline: none; }
+  .view-select__button:hover {
+    background-color: #5C6392; }
+
+.view-select__button--active {
+  background-color: #5C6392;
+  font-weight: bold; }
+
+.view-select__view {
+  flex-grow: 1;
+  border: 2px solid #7079ab;
+  background: url("assets/dark-noise.jpg");
+  color: white; }
 
 /*# sourceMappingURL=CenterArea.css.map */
