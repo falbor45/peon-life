@@ -12,7 +12,8 @@ let mapStateToProps = state => {
     buildings: state.buildings,
     resources: state.resources,
     increments: state.increments,
-    errors: state.errors
+    errors: state.errors,
+    units: state.units
   }
 };
 
@@ -41,14 +42,20 @@ class Buildings extends Component {
     return result
   };
 
+  canBuyBuilding = building => this.props.resources.gold.isGreaterThan(building.cost.combined) && (building.unitBuilding ?
+      this.props.units.unitLimit.isGreaterThanOrEqualTo(this.props.units.units.plus(1)) : true);
+
   addBuilding = building => {
-    if (this.props.resources.gold.isGreaterThanOrEqualTo(building.cost.combined)) {
+    if (this.canBuyBuilding(building)) {
       this.props.loseGold(building.cost.combined);
       this.props.buildBuilding(building);
       return null;
     }
     if (this.props.resources.gold.isLessThan(building.cost.combined)) {
       this.props.throwError('Error: You do not have enough money for this purchase!');
+    }
+    if (this.props.units.units.plus(1).isGreaterThan(this.props.units.unitLimit)) {
+      this.props.throwError('Error: Such purchase would exceed your unit limit! Consider buying more cottages.')
     }
     return null;
   };
@@ -57,8 +64,8 @@ class Buildings extends Component {
   mapBuilding = building => {
     return (
       <div className="building-wrapper">
-      <div className={`building ${this.props.resources.gold.isLessThan(building.cost.combined) ?
-                      'disabled' : 'enabled'}`}
+      <div className={`building ${this.canBuyBuilding(building) ?
+                      'enabled' : 'disabled'}`}
            key={building.name}
            onClick={() => this.addBuilding(building)}>
         <img src="https://lorempizza.com/64/64" alt="building icon"/>
@@ -70,7 +77,7 @@ class Buildings extends Component {
           </p>
         </div>
         <p className="building__quantity">{building.quantity.toString()}</p>
-        <div className={`${this.props.resources.gold.isLessThan(building.cost.combined) ? 'building__overlay--disabled' : null}`}> </div>
+        <div className={`${this.canBuyBuilding(building) ? null : 'building__overlay--disabled'}`}> </div>
       </div>
         <div data-tip data-for={`${building.name}-tooltip`}
              className="building__info-icon">
