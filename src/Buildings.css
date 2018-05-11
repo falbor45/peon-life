@@ -129,7 +129,7 @@
   margin-top: 16px;
   margin-left: 0.2rem;
   justify-content: center; }
-  .building__info-icon img {
+  .building__info-icon > img {
     width: 100%; }
 
 .building-tooltip {
@@ -163,6 +163,10 @@
   flex-direction: column;
   font-size: 1rem;
   margin: 0; }
+
+.building-cost__image {
+  width: 1rem;
+  vertical-align: middle; }
 
 .building-tooltip__data {
   padding-left: 1rem;

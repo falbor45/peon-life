@@ -129,7 +129,7 @@
   margin-top: 16px;
   margin-left: 0.2rem;
   justify-content: center; }
-  .unit__info-icon img {
+  .unit__info-icon > img {
     width: 100%; }
 
 .unit-tooltip {
@@ -163,6 +163,10 @@
   flex-direction: column;
   font-size: 1rem;
   margin: 0; }
+
+.unit-cost__image {
+  width: 1rem;
+  vertical-align: middle; }
 
 .unit-tooltip__data {
   padding-left: 1rem;
