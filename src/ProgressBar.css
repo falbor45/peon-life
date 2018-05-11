@@ -3,17 +3,18 @@
   height: 1.5rem;
   border-radius: 0.5rem;
   background-color: rgba(0, 0, 0, 0.7);
-  border: 2px solid rgba(0, 0, 0, 0.7);
+  border: 1px solid #7079ab;
   position: relative; }
 
 .progress-bar__fill {
   height: 100%;
   background-color: #737AA8;
-  border-radius: 0.4rem;
+  border-radius: 0.2rem;
   transition: 0.5s; }
 
 .progress-bar__text {
   position: absolute;
+  text-align: center;
   left: 0;
   right: 0;
   top: 50%;
