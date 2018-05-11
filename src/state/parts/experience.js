@@ -23,7 +23,7 @@ export default (state = initialState, action) => {
         experience: didLevelUp ? newExperience.minus(state.nextLevelExp) : newExperience,
         nextLevelExp: didLevelUp ? state.nextLevelExp.multipliedBy(state.nextLevelExpMulti).decimalPlaces(0) : state.nextLevelExp,
         attributePoints: {
-          unspent: didLevelUp ? state.attributePoints.unspent.plus(1) : state.nextLevelExp,
+          unspent: didLevelUp ? state.attributePoints.unspent.plus(1) : state.attributePoints.unspent,
           spent: state.attributePoints.spent
         }
       }
