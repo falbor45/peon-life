@@ -53,11 +53,14 @@ export default (state = initialState, action) => {
       }
     }
     case 'units/ADD_WORKER': {
-      state.data[action.worker].quantity = state.data[action.worker].quantity.plus(state.buyQuant);
+      let buildingUnit = action.buildingUnit;
+      let value = buildingUnit ? new BigNumber(1) : state.buyQuant;
+      state.data[action.worker].quantity = state.data[action.worker].quantity.plus(value);
       state.data[action.worker].cost.combined = calculatePurchaseCost(state.data[action.worker].cost.base, state.data[action.worker].cost.multiplier, state.data[action.worker].quantity, state.buyQuant);
+      console.log(calculatePurchaseCost(state.data[action.worker].cost.base, state.data[action.worker].cost.multiplier, state.data[action.worker].quantity, state.buyQuant))
       return {
         ...state,
-        units: state.units.plus(state.buyQuant).isLessThanOrEqualTo(state.unitLimit) ? state.units.plus(state.buyQuant) : state.units
+        units: state.units.plus(value).isLessThanOrEqualTo(state.unitLimit) ? state.units.plus(value) : state.units
       }
     }
     case 'units/INCREASE_WORKER_EFFICIENCY': {

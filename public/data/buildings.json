@@ -19,7 +19,8 @@
     },
     "description": [
       "Each road decreases hour duration by 0.01s"
-    ]
+    ],
+    "unitBuilding": false
   },
   "townHalls": {
     "name": "Town Hall",
@@ -35,6 +36,11 @@
         "value": 0.1
       },
       {
+        "type": "units/ADD_WORKER",
+        "worker": "peasants",
+        "buildingUnit": true
+      },
+      {
         "type": "happiness/INCREASE_HAPPINESS",
         "value": 0.05
       },
@@ -48,9 +54,11 @@
       "combined": 100
     },
     "description": [
+      "Each town hall purchase grants you an additional peasant unit",
       "Each town hall increases peasants' efficiency by 0.1 gold per game tick",
       "Each town hall increases happiness by 0.05"
-    ]
+    ],
+    "unitBuilding": true
   },
   "cottages": {
     "name": "Cottage",
@@ -72,7 +80,8 @@
     },
     "description": [
       "Each cottage increases maximum unit limit by five."
-    ]
+    ],
+    "unitBuilding": false
   },
   "windmills": {
     "name": "Windmill",
@@ -88,6 +97,11 @@
         "value": 0.6
       },
       {
+        "type": "units/ADD_WORKER",
+        "worker": "farmers",
+        "buildingUnit": true
+      },
+      {
         "type": "units/UNLOCK_UNIT",
         "worker": "farmers"
       }
@@ -98,9 +112,11 @@
       "combined": 150
     },
     "description": [
+      "Each windmill purchase grants you an additional farmer unit",
       "Upon first purchase, windmill unlocks farmer unit.",
       "Each windmill increases farmers' efficiency by 0.6 gold per game tick"
-    ]
+    ],
+    "unitBuilding": true
   },
   "quarries": {
     "name": "Quarry",
@@ -116,6 +132,11 @@
         "value": 3
       },
       {
+        "type": "units/ADD_WORKER",
+        "worker": "quarriers",
+        "buildingUnit": true
+      },
+      {
         "type": "units/UNLOCK_UNIT",
         "worker": "quarriers"
       }
@@ -126,9 +147,11 @@
       "combined": 1900
     },
     "description": [
+      "Each quarry purchase grants you an additional quarrier unit",
       "Upon first purchase, quarry unlocks quarrier unit.",
       "Each quarry increases farmers' efficiency by 3 gold per game tick"
-    ]
+    ],
+    "unitBuilding": true
   },
   "sawmills": {
     "name": "Sawmill",
@@ -144,6 +167,11 @@
         "value": 8
       },
       {
+        "type": "units/ADD_WORKER",
+        "worker": "lumberjacks",
+        "buildingUnit": true
+      },
+      {
         "type": "units/UNLOCK_UNIT",
         "worker": "lumberjacks"
       }
@@ -154,9 +182,11 @@
       "combined": 13000
     },
     "description": [
+      "Each sawmill purchase grants you an additional lumberjack unit",
       "Upon first purchase, sawmill unlocks lumberjack unit.",
       "Each sawmill increases lumberjacks' efficiency by 8 gold per game tick"
-    ]
+    ],
+    "unitBuilding": true
   },
   "mines": {
     "name": "Mine",
@@ -172,6 +202,11 @@
         "value": 40
       },
       {
+        "type": "units/ADD_WORKER",
+        "worker": "miners",
+        "buildingUnit": true
+      },
+      {
         "type": "units/UNLOCK_UNIT",
         "worker": "miners"
       }
@@ -182,9 +217,11 @@
       "combined": 140000
     },
     "description": [
+      "Each mine purchase grants you an additional miner unit",
       "Upon first purchase, mine unlocks miner unit.",
       "Each mine increases miners' efficiency by 40 gold per game tick"
-    ]
+    ],
+    "unitBuilding": true
   },
   "markets": {
     "name": "Market",
@@ -200,6 +237,11 @@
         "value": 100
       },
       {
+        "type": "units/ADD_WORKER",
+        "worker": "merchants",
+        "buildingUnit": true
+      },
+      {
         "type": "units/UNLOCK_UNIT",
         "worker": "merchants"
       }
@@ -210,9 +252,11 @@
       "combined": 250000
     },
     "description": [
+      "Each market purchase grants you an additional merchant unit",
       "Upon first purchase, market unlocks merchant unit.",
       "Each market increases merchants' efficiency by 100 gold per game tick"
-    ]
+    ],
+    "unitBuilding": true
   },
   "parks": {
     "name": "Park",
@@ -238,7 +282,8 @@
     },
     "description": [
       "Each park reduces happiness penalty received from each unit by 0.0001"
-    ]
+    ],
+    "unitBuilding": false
   },
   "theaters": {
     "name": "Theatre",
@@ -254,6 +299,11 @@
         "value": 250
       },
       {
+        "type": "units/ADD_WORKER",
+        "worker": "bards",
+        "buildingUnit": true
+      },
+      {
         "type": "units/UNLOCK_UNIT",
         "worker": "bards"
       }
@@ -264,9 +314,11 @@
       "combined": 450000
     },
     "description": [
+      "Each theater purchase grants you an additional bard unit",
       "Upon first purchase, theater unlocks bard unit.",
       "Each theater increases bards' efficiency by 250 gold per game tick"
-    ]
+    ],
+    "unitBuilding": true
   },
   "barracks": {
     "name": "Barracks",
@@ -282,6 +334,11 @@
         "value": 600
       },
       {
+        "type": "units/ADD_WORKER",
+        "worker": "knights",
+        "buildingUnit": true
+      },
+      {
         "type": "units/UNLOCK_UNIT",
         "worker": "knights"
       }
@@ -292,8 +349,10 @@
       "combined": 1500000
     },
     "description": [
+      "Each barracks purchase grants you an additional knight unit",
       "Upon first purchase, barracks unlocks knight unit.",
       "Each barracks increases knights' efficiency by 600 gold per game tick"
-    ]
+    ],
+    "unitBuilding": true
   }
 }
