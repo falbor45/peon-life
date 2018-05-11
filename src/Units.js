@@ -44,8 +44,11 @@ class Units extends Component {
     return result
   };
 
+  canBuyUnit = unit => this.props.resources.gold.isGreaterThan(unit.cost.combined) &&
+    this.props.units.unitLimit.isGreaterThanOrEqualTo(this.props.units.units.plus(this.props.units.buyQuant))
+
   addUnit = unit => {
-    if (this.props.resources.gold.isGreaterThanOrEqualTo(unit.cost.combined) && this.props.units.unitLimit.isGreaterThanOrEqualTo(this.props.units.units.plus(this.props.units.buyQuant))) {
+    if (this.canBuyUnit(unit)) {
       this.props.loseGold(unit.cost.combined);
       this.props.addUnit(unit);
       return null;
@@ -59,8 +62,6 @@ class Units extends Component {
     return null;
   };
 
-  canBuyUnit = unit => this.props.resources.gold.isGreaterThan(unit.cost.combined) &&
-    this.props.units.unitLimit.isGreaterThanOrEqualTo(this.props.units.units.plus(this.props.units.buyQuant))
 
 
   mapUnit = unit => {
