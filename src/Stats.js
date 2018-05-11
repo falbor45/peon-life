@@ -26,7 +26,7 @@ class Stats extends Component {
         </div>
         <div className="stats-experience__wrapper">
           <ProgressBar fill={`${(this.props.experience.experience.dividedBy(this.props.experience.nextLevelExp)).multipliedBy(100)}%`}
-                       text={`Experience: ${this.props.experience.experience} / ${this.props.experience.nextLevelExp}`}/>
+                       text={`Experience: ${this.props.experience.experience.decimalPlaces(0)} / ${this.props.experience.nextLevelExp.decimalPlaces(0)}`}/>
         </div>
         <Listing textLeft="Gold in bank: " textRight={this.props.resources.gold.decimalPlaces(0).toString()} goldIcon={true}/>
         <Listing textLeft="Gold acquired: " textRight={this.props.resources.totalGold.decimalPlaces(0).toString()} goldIcon={true}/>
