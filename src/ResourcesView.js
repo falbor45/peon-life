@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import { BigNumber } from 'bignumber.js'
-import 'normalize.css'
 import './ResourcesView.css'
 
 let mapStateToProps = state => {

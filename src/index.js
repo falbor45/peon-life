@@ -5,6 +5,7 @@ import store from './store.js'
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import 'normalize.css'
 
 ReactDOM.render(
   <Provider store={store}>
