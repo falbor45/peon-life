@@ -3,6 +3,7 @@ import { BigNumber } from 'bignumber.js'
 const initialState = {
   level: new BigNumber(1),
   experience: new BigNumber(0),
+  experienceBonus: new BigNumber(1),
   nextLevelExpMulti: new BigNumber(1.15),
   nextLevelExp: new BigNumber(100),
   attributePoints: {
@@ -14,7 +15,7 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case 'experience/INCREASE_EXPERIENCE': {
-      let value = new BigNumber(action.value);
+      let value = new BigNumber(action.value).multipliedBy(state.experienceBonus);
       let newExperience = state.experience.plus(value);
       let didLevelUp = newExperience.isGreaterThanOrEqualTo(state.nextLevelExp);
       return {
@@ -26,6 +27,12 @@ export default (state = initialState, action) => {
           unspent: didLevelUp ? state.attributePoints.unspent.plus(1) : state.attributePoints.unspent,
           spent: state.attributePoints.spent
         }
+      }
+    }
+    case 'experience/INCREASE_EXPERIENCE_BONUS': {
+      return {
+        ...state,
+        experienceBonus: state.experienceBonus.plus(action.value)
       }
     }
     case 'experience/SPEND_ATTRIBUTE_POINT': {
