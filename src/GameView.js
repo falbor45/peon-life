@@ -27,7 +27,10 @@ let mapDipsatchToProps = dispatch => {
     buildingsFetchBegin: () => dispatch({type: 'buildings/FETCH_BEGIN'}),
     buildingsFetchFail: error => dispatch({type: 'buildings/FETCH_FAIL', error}),
     buildingsFetchSuccess: data => dispatch({type: 'buildings/FETCH_SUCCESS', data}),
-    buildingsSetSettings: data => dispatch({type: 'buildings/SET_SETTINGS', data})
+    buildingsSetSettings: data => dispatch({type: 'buildings/SET_SETTINGS', data}),
+    attributesFetchBegin: () => dispatch({type: 'attributes/FETCH_BEGIN'}),
+    attributesFetchFail: error => dispatch({type: 'attributes/FETCH_FAIL', error}),
+    attributesFetchSuccess: data => dispatch({type: 'attributes/FETCH_SUCCESS', data}),
   }
 }
 
@@ -64,6 +67,16 @@ class GameView extends Component {
     ).then(data => {
       this.props.buildingsFetchSuccess(data);
       this.props.buildingsSetSettings(data);
+    });
+
+    this.props.attributesFetchBegin()
+    fetch(
+      `${process.env.PUBLIC_URL}/data/attributes.json`
+    ).then(response => response.json()
+    ).then(json => JSON.stringify(json)
+    ).then(string => JSONBigNumber.parse(string)
+    ).then(data => {
+      this.props.attributesFetchSuccess(data);
     });
   }
 
