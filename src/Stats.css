@@ -1,0 +1,22 @@
+.stats-heading {
+  margin: 1rem 0 0.5rem; }
+
+.stats-heading__border {
+  display: block;
+  border: none;
+  color: white;
+  height: 1px;
+  background: -webkit-gradient(radial, -1% 0%, 0, 100% 100%, 200, from(#7079ab), to(rgba(0, 0, 0, 0))); }
+
+.stats-heading__title {
+  letter-spacing: 0.0625rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  margin: 0; }
+
+.stats-experience__wrapper {
+  margin: 0 auto;
+  width: 80%; }
+
+/*# sourceMappingURL=Stats.css.map */
