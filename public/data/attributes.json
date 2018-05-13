@@ -1,0 +1,70 @@
+{
+  "brutality": {
+    "name": "Brutality",
+    "effects": [
+      {
+        "type": "attributes/INCREASE_ATTRIBUTE",
+        "attribute": "brutality"
+      },
+      {
+        "type": "resources/INCREASE_PILLAGE_CHANCE",
+        "value": 0.01
+      }
+    ],
+    "level": 0,
+    "description": "",
+    "icon": "https://lorempizza.com/64/64"
+  },
+  "generosity": {
+    "name": "Generosity",
+    "effects": [
+      {
+        "type": "attributes/INCREASE_ATTRIBUTE",
+        "attribute": "generosity"
+      },
+      {
+        "type": "units/INCREASE_UNIT_LIMIT",
+        "value": 1
+      }
+    ],
+    "level": 0,
+    "description": "",
+    "icon": "https://lorempizza.com/64/64"
+  },
+  "dignity": {
+    "name": "Dignity",
+    "effects": [
+      {
+        "type": "attributes/INCREASE_ATTRIBUTE",
+        "attribute": "dignity"
+      },
+      {
+        "type": "experience/INCREASE_EXPERIENCE_BONUS",
+        "value": 0.05
+      }
+    ],
+    "level": 0,
+    "description": "",
+    "icon": "https://lorempizza.com/64/64"
+  },
+  "charity": {
+    "name": "Charity",
+    "effects": [
+      {
+        "type": "attributes/INCREASE_ATTRIBUTE",
+        "attribute": "charity"
+      },
+      {
+        "type": "happiness/CHANGE_HAPPINESS_BONUS",
+        "direction": "increase",
+        "value": 0.0002
+      },
+      {
+        "type": "happiness/CALCULATE_VALUE"
+      }
+    ],
+    "level": 0,
+    "description": "",
+    "icon": "https://lorempizza.com/64/64"
+  }
+}
