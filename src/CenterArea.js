@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import { BigNumber } from 'bignumber.js'
 import './CenterArea.css'
 import Stats from './Stats'
+import Policies from './Policies'
 
 let mapStateToProps = state => {
   return {
@@ -34,7 +35,7 @@ class CenterArea extends Component {
           <button className={`view-select__button ${this.state.viewedComponent[0] === 'Stats' ? 'view-select__button--active' : null}`}
                   onClick={() => this.setState({viewedComponent: ['Stats', <Stats/>]})}>Stats</button>
           <button className={`view-select__button ${this.state.viewedComponent[0] === 'Policies' ? 'view-select__button--active' : null}`}
-                  onClick={() => this.setState({viewedComponent: 'Policies'})}>Policies</button>
+                  onClick={() => this.setState({viewedComponent: ['Policies', <Policies/>]})}>Policies</button>
         </div>
         <div className="view-select__view">
           {
