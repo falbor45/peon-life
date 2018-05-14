@@ -1,11 +1,8 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import { BigNumber } from 'bignumber.js'
-import ReactTooltip from 'react-tooltip'
-import pluralize from 'pluralize'
+import Entity from './Entity'
 import './Units.css'
-import Info from './assets/info-icon.png'
-import Coin from './assets/gold-coin.png'
 
 let mapStateToProps = state => {
   return {
@@ -72,48 +69,15 @@ class Units extends Component {
       return unit.quantity.multipliedBy(unit.efficiency).multipliedBy(new BigNumber(1000).dividedBy(this.props.time.hourDuration)).toString()
     }
     return (
-      <div className="unit-wrapper">
-      <div className={`unit ${this.canBuyUnit(unit) ? 'enabled' : 'disabled'}`}
-           key={unit.name}
-           onClick={() => this.addUnit(unit)}>
-          <img src="https://lorempizza.com/64/64" alt="unit icon"/>
-          <div className="unit__info">
-            <p className="unit__name">{unit.name}</p>
-            <p className="unit__cost">
-              <img src={Coin} className="unit-cost__image" alt="coin"/>
-              {unit.cost.combined.decimalPlaces(0).toString()}
-            </p>
-          </div>
-        <p className="unit__quantity">{unit.quantity.toString()}</p>
-        <div className={`${this.canBuyUnit(unit) ? null : 'unit__overlay--disabled'}`}> </div>
-      </div>
-        <div data-tip data-for={`${unit.name}-tooltip`}
-             className="unit__info-icon">
-          <img src={Info} alt="info"/>
-          <ReactTooltip effect="solid" id={`${unit.name}-tooltip`}>
-            <div className="unit-tooltip">
-              <div className="unit-tooltip__icon">
-                <img src='https://lorempizza.com/64/64' alt="unit icon"/>
-              </div>
-              <div className="unit-tooltip__info">
-                <p className="unit-tooltip__name">{unit.name}</p>
-                <p className="unit-tooltip__owned">(Owned: {unit.quantity.toString()})</p>
-              </div>
-              <div className="unit-tooltip__cost">
-                <p>
-                  <img src={Coin} className="unit-cost__image" alt="coin"/>
-                  {unit.cost.combined.decimalPlaces(0).toString()}
-                </p>
-              </div>
-            </div>
-            <ul className="unit-tooltip__data">
-              <li>Each {unit.name.toLowerCase()} produces {calculateUnitYield(unit, true)} gold per second</li>
-              <li>You currently own {unit.quantity.toString()} {unit.quantity === 1 ? unit.name.toLowerCase() : pluralize(unit.name.toLowerCase())}.</li>
-              <li>Your {unit.quantity === 1 ? unit.name.toLowerCase() : pluralize(unit.name.toLowerCase())} are producing {calculateUnitYield(unit, false)} gold per second.</li>
-            </ul>
-          </ReactTooltip>
-        </div>
-      </div>
+        <Entity entity={unit}
+                enabled={this.canBuyUnit(unit)}
+                clickEvent={this.addUnit.bind(this)}
+                name={unit.name}
+                cost={unit.cost.combined.decimalPlaces(0).toString()}
+                quantity={unit.quantity.toString()}
+                unitYieldS={calculateUnitYield(unit, true)}
+                unitYieldM={calculateUnitYield(unit, false)}
+                unit={true}/>
     )
   };
 

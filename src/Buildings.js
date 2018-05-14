@@ -1,11 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import { BigNumber } from 'bignumber.js'
-import ReactTooltip from 'react-tooltip'
-import pluralize from 'pluralize'
+import Entity from './Entity'
 import './Buildings.css'
-import Info from './assets/info-icon.png'
-import Cost from './assets/gold-coin.png'
 
 let mapStateToProps = state => {
   return {
@@ -63,50 +59,13 @@ class Buildings extends Component {
 
   mapBuilding = building => {
     return (
-      <div className="building-wrapper">
-      <div className={`building ${this.canBuyBuilding(building) ?
-                      'enabled' : 'disabled'}`}
-           key={building.name}
-           onClick={() => this.addBuilding(building)}>
-        <img src="https://lorempizza.com/64/64" alt="building icon"/>
-        <div className="building__info">
-          <p className="building__name">{building.name}</p>
-          <p className="building__cost">
-            <img src={Cost} className="building-cost__image" alt="coin"/>
-            {building.cost.combined.decimalPlaces(0).toString()}
-          </p>
-        </div>
-        <p className="building__quantity">{building.quantity.toString()}</p>
-        <div className={`${this.canBuyBuilding(building) ? null : 'building__overlay--disabled'}`}> </div>
-      </div>
-        <div data-tip data-for={`${building.name}-tooltip`}
-             className="building__info-icon">
-          <img src={Info} alt="info"/>
-          <ReactTooltip effect="solid" id={`${building.name}-tooltip`}>
-            <div className="building-tooltip">
-              <div className="building-tooltip__icon">
-                <img src='https://lorempizza.com/64/64' alt='building icon'/>
-              </div>
-              <div className="building-tooltip__info">
-                <p className="building-tooltip__name">{building.name}</p>
-                <p className="building-tooltip__owned">(Owned: {building.quantity.toString()})</p>
-              </div>
-              <div className="building-tooltip__cost">
-                <p>
-                  <img src={Cost} className="building-cost__image" alt="coin"/>
-                  {building.cost.combined.decimalPlaces(0).toString()}
-                </p>
-              </div>
-            </div>
-            <ul className="building-tooltip__data">
-              {building.description.map(e =>
-                <li>{e}</li>
-              )}
-              <li>You currently own {building.quantity.toString()} {building.quantity === 1 ? building.name.toLowerCase() : pluralize(building.name.toLowerCase())}.</li>
-            </ul>
-          </ReactTooltip>
-        </div>
-      </div>
+        <Entity entity={building}
+                enabled={this.canBuyBuilding(building)}
+                clickEvent={this.addBuilding.bind(this)}
+                name={building.name}
+                cost={building.cost.combined.decimalPlaces(0).toString()}
+                quantity={building.quantity.toString()}
+                unit={true}/>
     )
   };
 
