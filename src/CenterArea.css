@@ -37,7 +37,8 @@
   color: white;
   background-color: #737AA8;
   border: none;
-  outline: none; }
+  outline: none;
+  transition: 0.0625s; }
   .view-select__button:hover {
     background-color: #5C6392; }
 
