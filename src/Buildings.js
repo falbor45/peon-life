@@ -78,7 +78,9 @@ class Buildings extends Component {
   render() {
     return (
       <div className="buildings__wrapper">
-        <h1>Buildings</h1>
+        <div className="buildings__heading">
+          <span>Buildings</span>
+        </div>
         <div className="buildings__quantity-select">
           <span>BUY</span>
           <button className={this.props.buildings.buyQuant.toString() === '1' ? "buildings__quantity-button--active" : null} onClick={() => this.props.changeBuyQuant(1)}>x1</button>

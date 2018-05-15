@@ -29,21 +29,28 @@
   text-align: center;
   box-sizing: border-box;
   background-color: #A0A6C7;
-  border-radius: 5px;
-  padding: 1rem 0;
-  box-shadow: 7px 7px #999999;
+  border-radius: 0 5px 5px 0;
+  padding-bottom: 1rem;
   margin-bottom: 2rem; }
-  .buildings__wrapper h1 {
-    color: #f3d970;
-    margin-bottom: 0.75rem; }
   @media screen and (min-width: 960px) {
     .buildings__wrapper {
-      width: 30%;
+      flex: 1 0 33.33%;
       vertical-align: top;
       height: 80vh; } }
-  @media screen and (max-height: 720px) {
+  @media screen and (max-width: 720px) {
     .buildings__wrapper {
-      height: 60vh; } }
+      border-radius: 5px; } }
+
+.buildings__heading {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .buildings__heading span {
+    margin: 0;
+    font-weight: bold;
+    font-size: 2rem;
+    color: #f3d970; }
 
 .buildings__quantity-select {
   display: flex;

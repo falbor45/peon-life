@@ -90,7 +90,9 @@ class Units extends Component {
   render() {
     return (
       <div className="units__wrapper">
-        <h1>Units</h1>
+        <div className="units__heading">
+          <span>Units</span>
+        </div>
         <div className="units__quantity-select">
           <span>BUY</span>
           <button className={this.props.units.buyQuant.toString() === '1' ? "units__quantity-button--active" : null} onClick={() => this.props.changeBuyQuant(1)}>x1</button>
