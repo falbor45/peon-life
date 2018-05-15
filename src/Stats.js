@@ -11,7 +11,8 @@ const mapStateToProps = state => {
     buildings: state.buildings,
     resources: state.resources,
     increments: state.increments,
-    experience: state.experience
+    experience: state.experience,
+    happiness: state.happiness
   }
 }
 
@@ -32,7 +33,8 @@ class Stats extends Component {
         <Listing textLeft="Gold in bank: " textRight={this.props.resources.gold.decimalPlaces(0).toString()} goldIcon={true}/>
         <Listing textLeft="Gold acquired: " textRight={this.props.resources.totalGold.decimalPlaces(0).toString()} goldIcon={true}/>
         <Listing textLeft="Gold per second: " textRight={this.props.increments.goldIncr.toString()} goldIcon={true}/>
-        <Listing textLeft="Owned units: " textRight={this.props.units.units.toString()}/>
+        <Listing textLeft="Happiness: " textRight={`${this.props.happiness.value.multipliedBy(100).toString()}%`}/>
+        <Listing textLeft="Owned units: " textRight={`${this.props.units.units.toString()} / ${this.props.units.unitLimit.toString()}`}/>
         <Listing textLeft="Owned buildings: " textRight={this.props.buildings.buildingsQuant.toString()}/>
       </div>
     )
