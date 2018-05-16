@@ -41,11 +41,14 @@
   animation: 0.2s vibrate; }
 
 .entity__name {
-  font-size: 1.5rem; }
+  font-size: 1.1rem; }
+  @media (min-width: 360px) {
+    .entity__name {
+      font-size: 1.3rem; } }
 
 .entity__quantity {
   margin: 0;
-  font-size: 3rem;
+  font-size: 2.8rem;
   margin-left: auto;
   padding-right: 0.5rem;
   align-self: center; }
@@ -76,12 +79,18 @@
   padding-left: 0.5rem; }
 
 .entity-tooltip__name {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin: 0; }
+  @media (min-width: 360px) {
+    .entity-tooltip__name {
+      font-size: 1.5rem; } }
 
 .entity-tooltip__owned {
-  font-size: 0.7rem;
+  font-size: 0.5rem;
   margin: 0; }
+  @media (min-width: 360px) {
+    .entity-tooltip__owned {
+      font-size: 0.7rem; } }
 
 .entity-tooltip__cost {
   position: absolute;

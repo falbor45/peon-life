@@ -1,3 +1,8 @@
+.stats {
+  overflow: scroll;
+  overflow-x: hidden;
+  max-height: 95%; }
+
 .stats-heading {
   margin: 1rem 0 0.5rem; }
 

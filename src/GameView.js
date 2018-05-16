@@ -87,13 +87,13 @@ class GameView extends Component {
   onSwipeMove(position, event) {
     if (position.x - position.y > 150 && this.state.wasComponentSwiped === false) {
       this.setState({
-        viewedComponent: this.state.viewedComponent + 1 > 2 ? this.state.viewedComponent : this.state.viewedComponent + 1,
+        viewedComponent: this.state.viewedComponent - 1 < 0 ? this.state.viewedComponent : this.state.viewedComponent - 1,
         wasComponentSwiped: true
       })
     }
     if (position.x - position.y < -150 && this.state.wasComponentSwiped === false) {
       this.setState({
-        viewedComponent: this.state.viewedComponent - 1 < 0 ? this.state.viewedComponent : this.state.viewedComponent - 1,
+        viewedComponent: this.state.viewedComponent + 1 > 2 ? this.state.viewedComponent : this.state.viewedComponent + 1,
         wasComponentSwiped: true
       })
     }
@@ -110,7 +110,7 @@ class GameView extends Component {
       <div>
         {this.props.units.data !== null && this.props.buildings.data !== null ? (
           <Swipe
-            className='game-view__swipe-wrapper'
+            className="game-view__swipe-wrapper"
             onSwipeStart={this.onSwipeStart.bind(this)}
             onSwipeMove={this.onSwipeMove.bind(this)}
             onSwipeEnd={this.onSwipeEnd.bind(this)}>
@@ -118,12 +118,12 @@ class GameView extends Component {
             <ResourcesBar/>
             <Errors/>
             <div className='game-view__wrapper'>
-              <MediaQuery query="(min-device-width: 961px)">
+              <MediaQuery query="(min-device-width: 992px)">
                 <Units/>
                 <CenterArea/>
                 <Buildings/>
               </MediaQuery>
-              <MediaQuery query="(max-device-width: 960px)">
+              <MediaQuery query="(max-device-width: 991px)">
                   {
                     this.state.components[this.state.viewedComponent] === 'units' ?
                       <Units/> : null

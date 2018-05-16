@@ -10,36 +10,30 @@
   display: inline-block;
   overflow: scroll;
   overflow-x: hidden;
-  max-height: 50vh;
   padding: 0 0.5rem;
-  width: 80%; }
-  @media screen and (min-width: 960px) {
-    .buildings {
-      max-height: 65vh; } }
-  @media screen and (max-width: 720px) {
-    .buildings {
-      max-height: 40vh; } }
+  width: 80%;
+  max-height: calc(100% - 8rem); }
 
 .buildings__wrapper {
   border: 2px solid #7079ab;
   width: 90%;
   margin: 0 auto;
   color: white;
-  height: 73vh;
   text-align: center;
   box-sizing: border-box;
   background-color: #A0A6C7;
-  border-radius: 0 5px 5px 0;
+  border-radius: 5px;
   padding-bottom: 1rem;
-  margin-bottom: 2rem; }
-  @media screen and (min-width: 960px) {
+  margin-bottom: 1rem;
+  height: calc(100vh - 11rem); }
+  @media (min-width: 768px) {
     .buildings__wrapper {
-      flex: 1 0 33.33%;
-      vertical-align: top;
-      height: 80vh; } }
-  @media screen and (max-width: 720px) {
+      width: 60%; } }
+  @media (min-width: 992px) {
     .buildings__wrapper {
-      border-radius: 5px; } }
+      border-radius: 0 5px 5px 0;
+      width: 32%;
+      margin: 0; } }
 
 .buildings__heading {
   height: 80px;
