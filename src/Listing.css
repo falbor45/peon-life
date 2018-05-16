@@ -1,0 +1,16 @@
+.listing {
+  margin: 0;
+  padding-left: 1rem;
+  color: #999999;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 0.3rem; }
+
+.listing-icon {
+  width: 1rem;
+  vertical-align: middle; }
+
+.listing-value {
+  color: white; }
+
+/*# sourceMappingURL=Listing.css.map */
