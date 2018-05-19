@@ -30,6 +30,7 @@ class Stats extends Component {
                        text={`Experience: ${this.props.experience.experience.decimalPlaces(0)} / ${this.props.experience.nextLevelExp.decimalPlaces(0)}`}/>
         </div>
         <Listing textLeft="Attribute points: " textRight={this.props.experience.attributePoints.unspent.toString()}/>
+        <Listing textLeft="Experience bonus: " textRight={`${this.props.experience.experienceBonus.minus(1).multipliedBy(100).toString()}%`}/>
         <Listing textLeft="Gold in bank: " textRight={this.props.resources.gold.decimalPlaces(0).toString()} goldIcon={true}/>
         <Listing textLeft="Gold acquired: " textRight={this.props.resources.totalGold.decimalPlaces(0).toString()} goldIcon={true}/>
         <Listing textLeft="Gold per second: " textRight={this.props.increments.goldIncr.toString()} goldIcon={true}/>
