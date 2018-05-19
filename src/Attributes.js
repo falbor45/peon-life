@@ -51,12 +51,13 @@ class Policies extends Component {
               <p>{attribute.name}</p>
               <p>Lvl. {attribute.level.toString()}</p>
             </div>
-            <div>
               <button className="attributes-item__button"
                       onClick={() => this.spendAttributePoint(attribute)}>Level up</button>
-            </div>
           </div>
         </div>
+        <p className="xx">
+          {attribute.description}
+        </p>
       </div>
     )
   };
