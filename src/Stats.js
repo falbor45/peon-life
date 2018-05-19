@@ -38,7 +38,7 @@ class Stats extends Component {
         <Listing textLeft="Owned buildings: " textRight={this.props.buildings.buildingsQuant.toString()}/>
         <Listing textLeft="Villages pillaged: " textRight={this.props.resources.pillagesDone.toString()}/>
         <Listing textLeft="Gold acquired from pillages: " textRight={this.props.resources.pillagesGold.toString()}/>
-        <Listing textLeft="Pillage chance: " textRight={this.props.resources.pillageChance.toString()}/>
+        <Listing textLeft="Pillage chance: " textRight={`${this.props.resources.pillageChance.multipliedBy(100).toString()}%`}/>
       </div>
     )
   }
