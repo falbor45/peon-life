@@ -19,7 +19,8 @@ let mapDipsatchToProps = dispatch => {
     calcIncr: productionBonus => dispatch({type: "increments/CALCULATE_INCREMENTS", productionBonus}),
     incrementGold: gold => dispatch({type: "resources/INCREMENT", gold}),
     timeTick: () => dispatch({type: "time/TIME_TICK"}),
-    increaseExperience: value => dispatch({type: "experience/INCREASE_EXPERIENCE", value})
+    increaseExperience: value => dispatch({type: "experience/INCREASE_EXPERIENCE", value}),
+    pillage: (times, gold) => dispatch({type: "resources/PILLAGE", times, gold})
   }
 }
 
@@ -31,6 +32,7 @@ class ResourcesView extends Component {
       this.setGoldBase();
       this.props.calcIncr(this.props.happiness.productionBonus);
       this.props.increaseExperience(this.props.increments.goldIncr);
+      this.pillage();
     }, this.props.time.hourDuration);
   }
 
@@ -44,6 +46,19 @@ class ResourcesView extends Component {
     }
 
     this.props.setGoldBase(result);
+    return null;
+  };
+
+  pillage = () => {
+    let goldToBePillaged = () => {
+      let {hour, day, month, year} = this.props.time.date;
+      return hour.plus(day.multipliedBy(24)).plus(month.multipliedBy(30)).plus(year.multipliedBy(300));
+    };
+    let pillageChance = this.props.resources.pillageChance.multipliedBy(100);
+    let strippedChance = pillageChance.mod(100);
+    let rollUncertainPillage = new BigNumber.random().multipliedBy(100).isLessThanOrEqualTo(strippedChance) ? new BigNumber(1) : new BigNumber(0);
+    let timesToBeCalled = pillageChance.dividedBy(100).decimalPlaces(0).plus(rollUncertainPillage).toNumber();
+    this.props.pillage(timesToBeCalled, goldToBePillaged());
     return null;
   };
 
