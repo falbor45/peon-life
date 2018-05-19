@@ -12,8 +12,8 @@
       }
     ],
     "level": 0,
-    "description": "",
-    "icon": "https://lorempizza.com/64/64"
+    "description": "Each point in increases your pillage chance by 1%",
+    "icon": "http://via.placeholder.com/64x64"
   },
   "generosity": {
     "name": "Generosity",
@@ -28,8 +28,8 @@
       }
     ],
     "level": 0,
-    "description": "",
-    "icon": "https://lorempizza.com/64/64"
+    "description": "Each point increases your unit limit by 1.",
+    "icon": "http://via.placeholder.com/64x64"
   },
   "dignity": {
     "name": "Dignity",
@@ -44,8 +44,8 @@
       }
     ],
     "level": 0,
-    "description": "",
-    "icon": "https://lorempizza.com/64/64"
+    "description": "Each point increases your experience bonus by 5%",
+    "icon": "http://via.placeholder.com/64x64"
   },
   "charity": {
     "name": "Charity",
@@ -64,7 +64,7 @@
       }
     ],
     "level": 0,
-    "description": "",
-    "icon": "https://lorempizza.com/64/64"
+    "description": "Each point increases your happiness bonus by 0.02%",
+    "icon": "http://via.placeholder.com/64x64"
   }
 }
