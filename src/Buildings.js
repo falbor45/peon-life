@@ -65,7 +65,7 @@ class Buildings extends Component {
                 name={building.name}
                 cost={building.cost.combined.decimalPlaces(0).toString()}
                 quantity={building.quantity.toString()}
-                unit={true}/>
+                unit={false}/>
     )
   };
 
