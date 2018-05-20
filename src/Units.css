@@ -1,11 +1,6 @@
 ::-webkit-scrollbar {
   width: 0; }
 
-@keyframes vibrate {
-  25% {
-    transform: translateX(5px); }
-  75% {
-    transform: translateX(-10px); } }
 .units {
   display: inline-block;
   overflow: scroll;
