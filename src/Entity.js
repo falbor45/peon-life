@@ -11,7 +11,7 @@ export default class Entity extends Component {
         <div className="entity-wrapper">
           <div className={`entity ${this.props.enabled === true ? 'enabled' : 'disabled'}`}
                onClick={() => this.props.clickEvent(this.props.entity)}>
-            <img src="https://lorempizza.com/64/64" alt="entity icon"/>
+            <img src="http://via.placeholder.com/64x64" alt="entity icon"/>
             <div className="entity__info">
               <p className="entity__name">{this.props.name}</p>
               <p className="entity__cost">
@@ -28,7 +28,7 @@ export default class Entity extends Component {
             <ReactTooltip effect="solid" id={`${this.props.name}-tooltip`}>
               <div className="entity-tooltip">
                 <div className="entity-tooltip__icon">
-                  <img src='https://lorempizza.com/64/64' alt="entity icon"/>
+                  <img src='http://via.placeholder.com/64x64' alt="entity icon"/>
                 </div>
                 <div className="entity-tooltip__info">
                   <p className="entity-tooltip__name">{this.props.name}</p>
