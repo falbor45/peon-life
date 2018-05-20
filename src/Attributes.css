@@ -1,3 +1,8 @@
+@keyframes vibrate {
+  25% {
+    transform: translateX(5px); }
+  75% {
+    transform: translateX(-10px); } }
 .attributes-heading {
   margin: 1rem 0 0.5rem; }
 
@@ -51,6 +56,12 @@
   border-radius: 4px; }
   .attributes-item__button:hover {
     background-color: #5C6392; }
+
+.attributes-item__button--enabled:active {
+  transform: translateY(1px); }
+
+.attributes-item__button--disabled:active {
+  animation: 0.2s vibrate; }
 
 .attributes__points-left {
   padding-left: 0.6rem;

@@ -22,6 +22,8 @@ const mapDispatchToProps = dispatch => {
 }
 
 class Policies extends Component {
+  canSpendAttributePoint = () => this.props.experience.attributePoints.unspent.isGreaterThan(0);
+
   objToArr = object => {
     let result = [];
     for (let prop in object) {
@@ -51,7 +53,7 @@ class Policies extends Component {
               <p>{attribute.name}</p>
               <p>Lvl. {attribute.level.toString()}</p>
             </div>
-              <button className="attributes-item__button"
+              <button className={`attributes-item__button attributes-item__button--${this.canSpendAttributePoint() ? 'enabled' : 'disabled'}`}
                       onClick={() => this.spendAttributePoint(attribute)}>Level up</button>
           </div>
         </div>
